@@ -84,13 +84,13 @@ export default function EventsPage() {
     };
 
     return (
-        <div className="bg-black min-h-screen text-white pt-12 pb-24">
+        <div className="bg-white min-h-screen text-black pt-12 pb-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mb-16">
-                    <h1 className="text-5xl font-black italic tracking-tighter uppercase mb-4">
+                    <h1 className="text-5xl font-black italic tracking-tighter uppercase mb-4 text-black">
                         PRO ATHLETE <span className="text-primary italic">EXPERIENCES.</span>
                     </h1>
-                    <p className="text-zinc-500 max-w-2xl font-medium">
+                    <p className="text-zinc-600 max-w-2xl font-medium">
                         Meet the stars of the Eagles, Phillies, Sixers, and Flyers.
                         Secure your spot for a professional photo, an official autograph, or the full experience.
                     </p>
@@ -100,11 +100,11 @@ export default function EventsPage() {
                     {EVENTS.map((event) => (
                         <div
                             key={event.id}
-                            className="group relative flex flex-col rounded-[2.5rem] bg-zinc-900/40 border border-white/5 p-8 md:p-10 transition-all hover:border-primary/50 hover:bg-zinc-900/60 overflow-hidden"
+                            className="group relative flex flex-col rounded-[2.5rem] bg-zinc-50 border border-black/5 p-8 md:p-10 transition-all hover:border-primary/50 hover:bg-zinc-100 overflow-hidden"
                         >
                             {/* Team Color Accent Bar */}
                             <div
-                                className="absolute top-0 right-0 h-32 w-32 blur-[80px] opacity-20 transition-opacity group-hover:opacity-40"
+                                className="absolute top-0 right-0 h-32 w-32 blur-[80px] opacity-10 transition-opacity group-hover:opacity-20"
                                 style={{ backgroundColor: event.teamColor }}
                             />
 
@@ -115,35 +115,35 @@ export default function EventsPage() {
                                 >
                                     {event.team}
                                 </div>
-                                <span className="text-xs font-bold text-zinc-700 uppercase tracking-widest">
+                                <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">
                                     Event #{event.id.toString().padStart(3, '0')}
                                 </span>
                             </div>
 
                             <div className="relative z-10 mb-8">
-                                <h3 className="text-3xl font-black mb-2 group-hover:text-primary transition-colors uppercase italic tracking-tighter">
+                                <h3 className="text-3xl font-black mb-2 group-hover:text-primary transition-colors uppercase italic tracking-tighter text-black">
                                     {event.athlete}
                                 </h3>
-                                <p className="text-sm font-bold text-zinc-400 uppercase tracking-widest">
+                                <p className="text-sm font-bold text-zinc-500 uppercase tracking-widest">
                                     Official {event.type}
                                 </p>
                             </div>
 
                             <div className="space-y-4 mb-10 relative z-10">
-                                <div className="flex items-center gap-4 text-sm text-zinc-400">
-                                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 border border-white/10">
+                                <div className="flex items-center gap-4 text-sm text-zinc-600">
+                                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black/5 border border-black/10">
                                         <Calendar size={14} className="text-zinc-500" />
                                     </div>
                                     <span>{event.date}</span>
                                 </div>
-                                <div className="flex items-center gap-4 text-sm text-zinc-400">
-                                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 border border-white/10">
+                                <div className="flex items-center gap-4 text-sm text-zinc-600">
+                                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black/5 border border-black/10">
                                         <Clock size={14} className="text-zinc-500" />
                                     </div>
                                     <span>{event.time}</span>
                                 </div>
-                                <div className="flex items-center gap-4 text-sm text-zinc-400">
-                                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 border border-white/10">
+                                <div className="flex items-center gap-4 text-sm text-zinc-600">
+                                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black/5 border border-black/10">
                                         <MapPin size={14} className="text-zinc-500" />
                                     </div>
                                     <span>{event.location}</span>
@@ -151,47 +151,47 @@ export default function EventsPage() {
                             </div>
 
                             {/* Pricing Tiers */}
-                            <div className="mt-auto border-t border-white/5 pt-8 relative z-10">
-                                <p className="text-[10px] font-black text-zinc-600 uppercase tracking-[0.2em] mb-6">Select your package</p>
+                            <div className="mt-auto border-t border-black/5 pt-8 relative z-10">
+                                <p className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] mb-6">Select your package</p>
                                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                     <button
                                         onClick={() => setSelectedPackages(prev => ({ ...prev, [event.id]: 'picture' }))}
                                         className={`flex flex-col items-center justify-center rounded-2xl border p-4 transition-all relative ${selectedPackages[event.id] === 'picture'
-                                                ? 'bg-primary/10 border-primary/50'
-                                                : 'bg-zinc-950/50 border-white/5 hover:border-white/10'
+                                            ? 'bg-primary/5 border-primary/50'
+                                            : 'bg-white border-black/5 hover:border-black/10'
                                             }`}
                                     >
                                         {selectedPackages[event.id] === 'picture' && <Check size={12} className="absolute top-2 right-2 text-primary" />}
-                                        <span className="text-[10px] font-black text-zinc-500 uppercase mb-1">Picture Only</span>
-                                        <span className="text-lg font-black text-white">$39</span>
+                                        <span className="text-[10px] font-black text-zinc-400 uppercase mb-1">Picture Only</span>
+                                        <span className="text-lg font-black text-black">$39</span>
                                     </button>
                                     <button
                                         onClick={() => setSelectedPackages(prev => ({ ...prev, [event.id]: 'autograph' }))}
                                         className={`flex flex-col items-center justify-center rounded-2xl border p-4 transition-all relative ${selectedPackages[event.id] === 'autograph'
-                                                ? 'bg-primary/10 border-primary/50'
-                                                : 'bg-zinc-950/50 border-white/5 hover:border-white/10'
+                                            ? 'bg-primary/5 border-primary/50'
+                                            : 'bg-white border-black/5 hover:border-black/10'
                                             }`}
                                     >
                                         {selectedPackages[event.id] === 'autograph' && <Check size={12} className="absolute top-2 right-2 text-primary" />}
-                                        <span className="text-[10px] font-black text-zinc-500 uppercase mb-1">Autograph Only</span>
-                                        <span className="text-lg font-black text-white">$39</span>
+                                        <span className="text-[10px] font-black text-zinc-400 uppercase mb-1">Autograph Only</span>
+                                        <span className="text-lg font-black text-black">$39</span>
                                     </button>
                                     <button
                                         onClick={() => setSelectedPackages(prev => ({ ...prev, [event.id]: 'combo' }))}
                                         className={`flex flex-col items-center justify-center rounded-2xl border p-4 transition-all relative ${selectedPackages[event.id] === 'combo'
-                                                ? 'bg-primary border-primary shadow-[0_0_20px_rgba(0,76,84,0.3)]'
-                                                : 'bg-zinc-950/50 border-white/5 hover:border-white/10'
+                                            ? 'bg-primary border-primary shadow-[0_10px_20px_rgba(0,76,84,0.1)] text-white'
+                                            : 'bg-white border-black/5 hover:border-black/10'
                                             }`}
                                     >
                                         {selectedPackages[event.id] === 'combo' && <Check size={12} className="absolute top-2 right-2 text-white" />}
-                                        <span className={`text-[10px] font-black uppercase mb-1 ${selectedPackages[event.id] === 'combo' ? 'text-white/70' : 'text-zinc-500'}`}>Combo Both</span>
-                                        <span className="text-lg font-black text-white">$59</span>
+                                        <span className={`text-[10px] font-black uppercase mb-1 ${selectedPackages[event.id] === 'combo' ? 'text-white/70' : 'text-zinc-400'}`}>Combo Both</span>
+                                        <span className={`text-lg font-black ${selectedPackages[event.id] === 'combo' ? 'text-white' : 'text-black'}`}>$59</span>
                                     </button>
                                 </div>
 
                                 <button
                                     onClick={() => handleBook(event)}
-                                    className="w-full mt-6 h-12 bg-white text-black rounded-full font-black uppercase text-xs tracking-widest hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 group/btn"
+                                    className="w-full mt-6 h-12 bg-black text-white rounded-full font-black uppercase text-xs tracking-widest hover:bg-primary transition-all flex items-center justify-center gap-2 group/btn"
                                 >
                                     <Ticket size={16} className="group-hover/btn:scale-110 transition-transform" />
                                     Book Ticket Now
@@ -202,20 +202,20 @@ export default function EventsPage() {
                 </div>
 
                 {/* Global Experiences CTA */}
-                <div className="mt-24 rounded-[3rem] bg-gradient-to-br from-primary/20 via-zinc-950 to-zinc-950 border border-white/5 p-12 md:p-16 text-center relative overflow-hidden">
-                    <div className="absolute top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 bg-primary/20 blur-[120px] -z-0" />
+                <div className="mt-24 rounded-[3rem] bg-gradient-to-br from-primary/5 via-zinc-50 to-zinc-50 border border-black/5 p-12 md:p-16 text-center relative overflow-hidden">
+                    <div className="absolute top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 bg-primary/10 blur-[120px] -z-0" />
 
                     <div className="relative z-10">
-                        <h4 className="text-3xl font-black uppercase mb-4 italic tracking-tighter">The Undrdawg Experience</h4>
-                        <p className="text-zinc-500 max-w-2xl mx-auto mb-10 font-medium">
+                        <h4 className="text-3xl font-black uppercase mb-4 italic tracking-tighter text-black">The Undrdawg Experience</h4>
+                        <p className="text-zinc-600 max-w-2xl mx-auto mb-10 font-medium">
                             We aren't just selling autographs. We're delivering the grit and heart
                             of Philadelphia sports directly to you. Every appearance is verified and authentic.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button className="h-14 px-10 bg-primary rounded-full font-black uppercase text-sm tracking-widest hover:bg-primary/80 transition-all">
+                            <button className="h-14 px-10 bg-primary rounded-full font-black uppercase text-sm tracking-widest hover:bg-primary/80 transition-all text-white">
                                 Book Custom Appearance
                             </button>
-                            <button className="h-14 px-10 bg-white/5 border border-white/10 backdrop-blur-sm rounded-full font-black uppercase text-sm tracking-widest hover:bg-white/10 transition-all text-white">
+                            <button className="h-14 px-10 bg-black/5 border border-black/10 backdrop-blur-sm rounded-full font-black uppercase text-sm tracking-widest hover:bg-black/10 transition-all text-black">
                                 Corporate Packages
                             </button>
                         </div>

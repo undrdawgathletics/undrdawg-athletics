@@ -1,28 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #004C54; /* Midnight Green */
-  --color-secondary: #A5ACAF; /* Silver */
+  --color-primary: #004C54;
+  /* Midnight Green */
+  --color-secondary: #4A4A4A;
+  /* Darker Silver for contrast */
   --color-accent: #000000;
-  
-  --color-background: #000000;
-  --color-foreground: #ffffff;
+
+  --color-background: #ffffff;
+  --color-foreground: #000000;
 
   --font-sans: "Inter", var(--font-geist-sans), sans-serif;
 }
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  --background: #ffffff;
+  --foreground: #000000;
   --primary: #004C54;
-  --secondary: #A5ACAF;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #ffffff;
-    --foreground: #000000;
-  }
+  --secondary: #4A4A4A;
 }
 
 body {
@@ -33,7 +28,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: -0.025em;
