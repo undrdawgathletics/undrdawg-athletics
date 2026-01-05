@@ -3,7 +3,7 @@
 export async function verifySerialNumber(serialNumber: string) {
     const AIRTABLE_TOKEN = process.env.AIRTABLE_TOKEN;
     const BASE_ID = "app8XF2MMtK2A2wUA";
-    const TABLE_NAME = "Memorabilia Authenticator";
+    const TABLE_NAME = process.env.AIRTABLE_TABLE_NAME || "Memorabilia Authenticator";
 
     if (!AIRTABLE_TOKEN) {
         console.error("AIRTABLE_TOKEN is not defined in environment variables.");
