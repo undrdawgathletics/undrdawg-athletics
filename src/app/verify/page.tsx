@@ -2,28 +2,46 @@
 
 import { useState } from "react";
 import { ShieldCheck, Search, CheckCircle2, AlertTriangle, Loader2 } from "lucide-react";
+import { verifySerialNumber } from "../actions/verify";
+
+type VerificationResult = {
+    serial: string;
+    athlete: string;
+    origin: string;
+    status: string;
+    date: string;
+} | null;
 
 type VerificationStatus = "idle" | "verifying" | "valid" | "invalid";
 
 export default function VerifyPage() {
     const [serial, setSerial] = useState("");
     const [status, setStatus] = useState<VerificationStatus>("idle");
+    const [result, setResult] = useState<VerificationResult>(null);
+    const [errorMsg, setErrorMsg] = useState("");
 
-    const handleVerify = (e: React.FormEvent) => {
+    const handleVerify = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!serial) return;
 
         setStatus("verifying");
+        setErrorMsg("");
 
-        // Simulate API delay
-        setTimeout(() => {
-            // Mock logic: Serials starting with "UD" are valid
-            if (serial.toUpperCase().startsWith("UD")) {
+        try {
+            const res = await verifySerialNumber(serial);
+
+            if (res.success && res.data) {
+                setResult(res.data);
                 setStatus("valid");
             } else {
                 setStatus("invalid");
+                setErrorMsg(res.error || "Not Found");
             }
-        }, 1500);
+        } catch (err) {
+            console.error(err);
+            setStatus("invalid");
+            setErrorMsg("Connection Error");
+        }
     };
 
     return (
@@ -37,7 +55,7 @@ export default function VerifyPage() {
                         VERIFY YOUR <span className="text-primary italic">GEAR.</span>
                     </h1>
                     <p className="text-zinc-600 max-w-xl mx-auto font-medium">
-                        Authenticity is central to Everything we do. Enter the serial number
+                        Authenticity is central to everything we do. Enter the serial number
                         found on your certificate of authenticity or product tag.
                     </p>
                 </div>
@@ -78,21 +96,37 @@ export default function VerifyPage() {
                     </form>
 
                     {/* Results Area */}
-                    <div className="mt-12 min-h-[160px] flex items-center justify-center border-t border-black/5 pt-12">
+                    <div className="mt-12 min-h-[200px] flex items-center justify-center border-t border-black/5 pt-12">
                         {status === "idle" && (
                             <p className="text-zinc-400 text-sm italic font-medium">Waiting for serial number input...</p>
                         )}
 
-                        {status === "valid" && (
-                            <div className="flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-500">
+                        {status === "valid" && result && (
+                            <div className="flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-500 text-center">
                                 <div className="h-14 w-14 rounded-full bg-green-500/10 flex items-center justify-center text-green-600 mb-4 border border-green-500/20">
                                     <CheckCircle2 size={32} />
                                 </div>
-                                <h3 className="text-2xl font-black uppercase tracking-tight text-black mb-2">Authenticity Verified</h3>
-                                <p className="text-zinc-600 text-sm">This is a legitimate Undrdawg Athletics product.</p>
-                                <div className="mt-4 flex gap-4">
-                                    <span className="text-[10px] font-bold px-3 py-1 bg-white border border-black/5 rounded-full text-zinc-500 uppercase tracking-widest">UD-ORIGINAL</span>
-                                    <span className="text-[10px] font-bold px-3 py-1 bg-white border border-black/5 rounded-full text-zinc-500 uppercase tracking-widest">PHILLY-MADE</span>
+                                <h3 className="text-2xl font-black uppercase tracking-tight text-black mb-1">Authenticity Verified</h3>
+                                <p className="text-zinc-500 text-sm font-bold uppercase tracking-widest mb-4">{result.serial}</p>
+
+                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full max-w-md mt-4">
+                                    <div className="bg-white p-3 rounded-xl border border-black/5 shadow-sm">
+                                        <p className="text-[10px] text-zinc-400 uppercase font-black tracking-widest">Athlete</p>
+                                        <p className="text-sm font-bold text-black">{result.athlete}</p>
+                                    </div>
+                                    <div className="bg-white p-3 rounded-xl border border-black/5 shadow-sm">
+                                        <p className="text-[10px] text-zinc-400 uppercase font-black tracking-widest">Origin</p>
+                                        <p className="text-sm font-bold text-black">{result.origin}</p>
+                                    </div>
+                                    <div className="bg-white p-3 rounded-xl border border-black/5 shadow-sm col-span-2 sm:col-span-1">
+                                        <p className="text-[10px] text-zinc-400 uppercase font-black tracking-widest">Date</p>
+                                        <p className="text-sm font-bold text-black">{result.date}</p>
+                                    </div>
+                                </div>
+
+                                <div className="mt-8 flex gap-4">
+                                    <span className="text-[10px] font-bold px-3 py-1 bg-primary text-white rounded-full uppercase tracking-widest">UD-ORIGINAL</span>
+                                    <span className="text-[10px] font-bold px-3 py-1 bg-black text-white rounded-full uppercase tracking-widest">OFFICIAL-LEDGER</span>
                                 </div>
                             </div>
                         )}
@@ -102,8 +136,14 @@ export default function VerifyPage() {
                                 <div className="h-14 w-14 rounded-full bg-red-500/10 flex items-center justify-center text-red-600 mb-4 border border-red-500/20">
                                     <AlertTriangle size={32} />
                                 </div>
-                                <h3 className="text-2xl font-black uppercase tracking-tight text-black mb-2">Unverified Serial</h3>
-                                <p className="text-zinc-600 text-sm text-center max-w-xs">We could not find this serial number in our database. Please check and try again.</p>
+                                <h3 className="text-2xl font-black uppercase tracking-tight text-black mb-2">
+                                    {errorMsg === "Configuration Error" ? "System Offline" : "Unverified Serial"}
+                                </h3>
+                                <p className="text-zinc-600 text-sm text-center max-w-xs">
+                                    {errorMsg === "Configuration Error"
+                                        ? "Airtable connection is not yet configured. Please add your credentials."
+                                        : "We could not find this serial number in our database. Please check and try again."}
+                                </p>
                                 <button
                                     onClick={() => setStatus("idle")}
                                     className="mt-6 text-xs font-bold text-primary uppercase underline tracking-widest"
