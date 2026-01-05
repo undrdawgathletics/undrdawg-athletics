@@ -3,7 +3,7 @@
 export async function verifySerialNumber(serialNumber: string) {
     const AIRTABLE_TOKEN = process.env.AIRTABLE_TOKEN;
     const BASE_ID = "app8XF2MMtK2A2wUA";
-    const TABLE_NAME = "Memorabilia Authenticator"; // Updated from user feedback
+    const TABLE_NAME = "Memorabilia Authenticator";
 
     if (!AIRTABLE_TOKEN) {
         console.error("AIRTABLE_TOKEN is not defined in environment variables.");
@@ -11,22 +11,31 @@ export async function verifySerialNumber(serialNumber: string) {
     }
 
     try {
-        // Airtable API uses a filterByFormula to find the specific record
-        // Assumes the field in Airtable is named "Serial"
-        const filter = encodeURIComponent(`{Serial} = '${serialNumber.trim()}'`);
-        const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}?filterByFormula=${filter}`;
+        // UPDATED: Using 'Hologram Number' as seen in your screenshot
+        const filter = encodeURIComponent(`{Hologram Number} = '${serialNumber.trim()}'`);
 
-        const response = await fetch(url, {
+        // Try the provided name first (properly encoded for spaces)
+        let url = `https://api.airtable.com/v0/${BASE_ID}/${encodeURIComponent(TABLE_NAME)}?filterByFormula=${filter}`;
+
+        let response = await fetch(url, {
             headers: {
                 Authorization: `Bearer ${AIRTABLE_TOKEN}`,
             },
-            next: { revalidate: 0 }, // Ensure we don't cache verification results
+            next: { revalidate: 0 },
         });
 
         if (!response.ok) {
-            const errorData = await response.json();
-            console.error("Airtable API Error:", errorData);
-            return { success: false, error: "Database Connection Error" };
+            // Fallback: Check if the table is actually just named "Table 1"
+            const fallbackUrl = `https://api.airtable.com/v0/${BASE_ID}/Table%201?filterByFormula=${filter}`;
+            response = await fetch(fallbackUrl, {
+                headers: { Authorization: `Bearer ${AIRTABLE_TOKEN}` },
+                next: { revalidate: 0 },
+            });
+        }
+
+        if (!response.ok) {
+            console.error("Airtable Connection Failed. Check Table Name and Token Permissions.");
+            return { success: false, error: "Connection Error" };
         }
 
         const data = await response.json();
@@ -36,11 +45,11 @@ export async function verifySerialNumber(serialNumber: string) {
             return {
                 success: true,
                 data: {
-                    serial: record.Serial,
-                    athlete: record.Athlete || "Official UD Product",
-                    origin: record.Origin || "Philly HQ",
-                    status: record.Status || "Verified",
-                    date: record.Date || "Recent Drop",
+                    serial: record["Hologram Number"] || serialNumber,
+                    athlete: record["Athlete"] || "Official UD Product",
+                    origin: record["Signing Location"] || "Philadelphia",
+                    status: "Verified",
+                    date: record["Year Signed"] || "2025",
                 },
             };
         }
