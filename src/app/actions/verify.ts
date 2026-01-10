@@ -1,55 +1,45 @@
 "use server";
 
-export async function verifySerialNumber(serialNumber: string) {
-    const AIRTABLE_TOKEN = process.env.AIRTABLE_TOKEN;
-    const BASE_ID = "app8XF2MMtK2A2wUA";
-    const TABLE_NAME = process.env.AIRTABLE_TABLE_NAME || "Memorabilia Authenticator";
+import { createClient } from "@supabase/supabase-js";
 
-    if (!AIRTABLE_TOKEN) {
-        console.error("AIRTABLE_TOKEN is not defined in environment variables.");
+export async function verifySerialNumber(serialNumber: string) {
+    const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    const TABLE_NAME = process.env.SUPABASE_TABLE_NAME || "memorabilia";
+
+    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+        console.error("Supabase credentials are not defined in environment variables.");
         return { success: false, error: "Configuration Error" };
     }
 
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
     try {
-        // UPDATED: Using 'Hologram Number' as seen in your screenshot
-        const filter = encodeURIComponent(`{Hologram Number} = '${serialNumber.trim()}'`);
+        // We search for the hologram number in the database
+        // We assume the column is named 'hologram_number' as per our instructions
+        const { data, error } = await supabase
+            .from(TABLE_NAME)
+            .select("*")
+            .eq("hologram_number", serialNumber.trim())
+            .single();
 
-        // Try the provided name first (properly encoded for spaces)
-        let url = `https://api.airtable.com/v0/${BASE_ID}/${encodeURIComponent(TABLE_NAME)}?filterByFormula=${filter}`;
-
-        let response = await fetch(url, {
-            headers: {
-                Authorization: `Bearer ${AIRTABLE_TOKEN}`,
-            },
-            next: { revalidate: 0 },
-        });
-
-        if (!response.ok) {
-            // Fallback: Check if the table is actually just named "Table 1"
-            const fallbackUrl = `https://api.airtable.com/v0/${BASE_ID}/Table%201?filterByFormula=${filter}`;
-            response = await fetch(fallbackUrl, {
-                headers: { Authorization: `Bearer ${AIRTABLE_TOKEN}` },
-                next: { revalidate: 0 },
-            });
+        if (error) {
+            if (error.code === "PGRST116") {
+                return { success: false, error: "Not Found" };
+            }
+            console.error("Supabase Query Error:", error);
+            return { success: false, error: "Database Connection Error" };
         }
 
-        if (!response.ok) {
-            console.error("Airtable Connection Failed. Check Table Name and Token Permissions.");
-            return { success: false, error: "Connection Error" };
-        }
-
-        const data = await response.json();
-
-        if (data.records && data.records.length > 0) {
-            const record = data.records[0].fields;
+        if (data) {
             return {
                 success: true,
                 data: {
-                    serial: record["Hologram Number"] || serialNumber,
-                    athlete: record["Athlete"] || "Official UD Product",
-                    origin: record["Signing Location"] || "Philadelphia",
+                    serial: data.hologram_number || serialNumber,
+                    athlete: data.athlete || "Official UD Product",
+                    origin: data.signing_location || "Philadelphia",
                     status: "Verified",
-                    date: record["Year Signed"] || "2025",
+                    date: data.year_signed || "2025",
                 },
             };
         }
