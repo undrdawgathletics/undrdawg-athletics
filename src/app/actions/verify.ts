@@ -20,7 +20,7 @@ export async function verifySerialNumber(serialNumber: string) {
         const { data, error } = await supabase
             .from(TABLE_NAME)
             .select("*")
-            .eq("hologram_number", serialNumber.trim())
+            .eq("auth_code", serialNumber.trim()) // Updated to match user schema
             .single();
 
         if (error) {
@@ -35,11 +35,11 @@ export async function verifySerialNumber(serialNumber: string) {
             return {
                 success: true,
                 data: {
-                    serial: data.hologram_number || serialNumber,
-                    athlete: data.athlete || "Official UD Product",
-                    origin: data.signing_location || "Philadelphia",
-                    status: "Verified",
-                    date: data.year_signed || "2025",
+                    serial: data.auth_code || serialNumber,
+                    athlete: data.player_name || "Official UD Product",
+                    origin: data.team_name || "Philadelphia",
+                    status: data.verified ? "Verified" : "Pending",
+                    date: data.event_date ? new Date(data.event_date).toLocaleDateString() : "Recent",
                 },
             };
         }
