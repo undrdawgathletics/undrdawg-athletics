@@ -22,7 +22,7 @@ export default function Footer() {
                             fueled by grit, and dedicated to authentic athletic experiences.
                         </p>
                         <div className="mt-6 flex space-x-4">
-                            <a href="#" className="text-zinc-400 hover:text-primary transition-colors">
+                            <a href="https://www.instagram.com/undrdawg.athletics/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-primary transition-colors">
                                 <Instagram size={20} />
                             </a>
                             <a href="#" className="text-zinc-400 hover:text-primary transition-colors">
