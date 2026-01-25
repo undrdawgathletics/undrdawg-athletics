@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Calendar, User, AlignLeft, Mail, Mic, Store, Handshake, Flag, Share2, GraduationCap, Target, Truck, Heart } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Calendar, User, AlignLeft, Mail, Mic, Store, Handshake, Flag, Share2, GraduationCap, Target, Truck, Heart, Quote } from "lucide-react";
 import { bookAthlete } from "../actions/book-athlete";
 
 export default function BookPage() {
@@ -93,35 +94,66 @@ export default function BookPage() {
     ];
 
     return (
-        <div className="bg-white min-h-screen text-black pt-24 pb-24">
+        <div className="bg-white min-h-screen text-black pt-32 pb-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* Hero Section */}
-                <div className="mb-20 text-center max-w-3xl mx-auto">
-                    <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase mb-6 text-black leading-none">
-                        BOOK AN <span className="text-primary">ATHLETE.</span>
-                    </h1>
-                    <p className="text-xl text-zinc-600 font-medium">
-                        Elevate Your Event with Undrdawg Athletics
-                    </p>
+                <div className="mb-24 grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+                    <div className="lg:col-span-3">
+                        <h1 className="text-5xl md:text-8xl font-[900] italic tracking-tighter uppercase mb-6 text-black leading-[0.9]">
+                            BOOK AN <br />
+                            <span className="text-primary">ATHLETE.</span>
+                        </h1>
+                        <p className="text-xl text-zinc-600 font-bold uppercase tracking-widest">
+                            Elevate Your Event with Undrdawg Athletics
+                        </p>
+                    </div>
+                    <div className="lg:col-span-2">
+                        <div className="bg-zinc-50 border border-black/5 rounded-[2.5rem] p-8 md:p-10 relative">
+                            <div className="absolute -top-4 -left-4 bg-primary text-white p-3 rounded-2xl shadow-lg">
+                                <Quote size={20} fill="currentColor" />
+                            </div>
+                            <p className="text-zinc-600 text-lg md:text-xl leading-relaxed italic font-medium">
+                                "Whether you are looking to drive brand loyalty, inspire a team, or draw a crowd, our roster of professional talent is ready to deliver."
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
-                {/* Introduction */}
-                <div className="mb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl font-black uppercase italic tracking-tight">The Undrdawg Spirit</h2>
-                        <div className="space-y-4 text-zinc-600 leading-relaxed text-lg">
+                {/* Introduction & Image Gallery */}
+                <div className="mb-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div className="space-y-8">
+                        <h2 className="text-4xl font-black uppercase italic tracking-tight">The Undrdawg Spirit</h2>
+                        <div className="space-y-6 text-zinc-600 leading-relaxed text-lg">
                             <p>
                                 At Undrdawg Athletics, we believe every great success story begins with grit and a "never count us out" attitude. We specialize in connecting businesses, brands, and organizations with professional athletes who embody this spirit.
                             </p>
                             <p>
                                 By leveraging our deep industry relationships and expertise in sports marketing, we help you create high-impact experiences that resonate with your audience.
                             </p>
+                            <div className="pt-4">
+                                <a href="#inquiry-form" className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest hover:gap-4 transition-all">
+                                    Start an Inquiry <ArrowRight size={20} />
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div className="bg-zinc-50 border border-black/5 rounded-[3rem] p-8 md:p-12">
-                        <p className="text-zinc-600 text-lg leading-relaxed italic">
-                            "Whether you are looking to drive brand loyalty, inspire a team, or draw a crowd, our roster of professional talent is ready to deliver."
-                        </p>
+                    <div className="grid grid-cols-2 gap-4">
+                        <div className="space-y-4">
+                            <div className="relative h-72 w-full overflow-hidden rounded-[2.5rem] border border-black/5 shadow-xl">
+                                <Image src="/images/athletes/athlete-1.jpg" alt="In-game performance" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                            </div>
+                            <div className="relative h-56 w-full overflow-hidden rounded-[2.5rem] border border-black/5 shadow-xl">
+                                <Image src="/images/athletes/athlete-2.jpg" alt="Fan engagement" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                            </div>
+                        </div>
+                        <div className="space-y-4 pt-12">
+                            <div className="relative h-56 w-full overflow-hidden rounded-[2.5rem] border border-black/5 shadow-xl">
+                                <Image src="/images/athletes/athlete-3.jpg" alt="Event appearance" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                            </div>
+                            <div className="relative h-72 w-full overflow-hidden rounded-[2.5rem] border border-black/5 shadow-xl">
+                                <Image src="/images/athletes/athlete-4.jpg" alt="Community impact" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                            </div>
+                        </div>
                     </div>
                 </div>
 
