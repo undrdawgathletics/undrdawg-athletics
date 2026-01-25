@@ -31,6 +31,8 @@ export async function verifySerialNumber(serialNumber: string) {
             return { success: false, error: "Database Connection Error" };
         }
 
+        console.log("Supabase Data for", serialNumber, ":", data);
+
         if (data) {
             return {
                 success: true,
