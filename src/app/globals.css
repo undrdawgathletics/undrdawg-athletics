@@ -35,6 +35,77 @@ h4,
 h5,
 h6 {
   font-weight: 800;
-  text-transform: uppercase;
   letter-spacing: -0.025em;
+}
+
+@keyframes fragment-1 {
+  0% {
+    transform: translate(-30px, -30px) scale(1.1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fragment-2 {
+  0% {
+    transform: translate(30px, -30px) scale(1.1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fragment-3 {
+  0% {
+    transform: translate(-30px, 30px) scale(1.1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fragment-4 {
+  0% {
+    transform: translate(30px, 30px) scale(1.1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-fragment-1 {
+  opacity: 0;
+  animation: fragment-1 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+.animate-fragment-2 {
+  opacity: 0;
+  animation: fragment-2 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+.animate-fragment-3 {
+  opacity: 0;
+  animation: fragment-3 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 0.3s;
+}
+
+.animate-fragment-4 {
+  opacity: 0;
+  animation: fragment-4 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 0.4s;
 }

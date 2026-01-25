@@ -11,14 +11,13 @@ export default function Navbar() {
   const { itemCount } = useCart();
 
   const navLinks = [
-    { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Events", href: "/events" },
     { name: "Shop", href: "/shop" },
   ];
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-md">
+    <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <div className="flex items-center">
@@ -41,22 +40,22 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-sm font-bold uppercase tracking-widest text-zinc-400 transition-colors hover:text-white"
+                  className="text-sm font-bold uppercase tracking-widest text-zinc-300 transition-colors hover:text-white"
                 >
                   {link.name}
                 </Link>
               ))}
               <Link
                 href="/verify"
-                className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-bold uppercase tracking-widest text-primary border border-primary/20 transition-all hover:bg-primary hover:text-white"
+                className="flex items-center gap-2 rounded-full bg-cyan-500/10 px-4 py-2 text-sm font-bold uppercase tracking-widest text-cyan-400 border border-cyan-500/20 transition-all hover:bg-cyan-500 hover:text-black"
               >
                 <ShieldCheck size={16} />
                 Verify Gear
               </Link>
-              <Link href="/checkout" className="relative text-zinc-400 hover:text-white transition-colors">
+              <Link href="/checkout" className="relative text-zinc-300 hover:text-white transition-colors">
                 <ShoppingCart size={20} />
                 {itemCount > 0 && (
-                  <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white">
+                  <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-cyan-500 text-[10px] font-bold text-black">
                     {itemCount}
                   </span>
                 )}
@@ -66,17 +65,17 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <div className="flex md:hidden items-center gap-4">
-            <Link href="/checkout" className="relative text-zinc-400 hover:text-white transition-colors">
+            <Link href="/checkout" className="relative text-zinc-300 hover:text-white transition-colors">
               <ShoppingCart size={20} />
               {itemCount > 0 && (
-                <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white">
+                <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-cyan-500 text-[10px] font-bold text-black">
                   {itemCount}
                 </span>
               )}
             </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center rounded-md p-2 text-zinc-400 hover:bg-zinc-900 hover:text-white focus:outline-none"
+              className="inline-flex items-center justify-center rounded-md p-2 text-zinc-300 hover:bg-zinc-800 hover:text-white focus:outline-none"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -92,7 +91,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="block rounded-md px-3 py-2 text-base font-medium text-zinc-400 hover:bg-zinc-900 hover:text-white"
+                className="block rounded-md px-3 py-2 text-base font-medium text-zinc-300 hover:bg-zinc-800 hover:text-white"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
@@ -100,7 +99,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/verify"
-              className="block rounded-md px-3 py-2 text-base font-medium text-primary hover:bg-primary/10"
+              className="block rounded-md px-3 py-2 text-base font-medium text-cyan-400 hover:bg-cyan-900/20"
               onClick={() => setIsOpen(false)}
             >
               Verify Gear

@@ -7,22 +7,26 @@ export default function Home() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden bg-white px-4 py-32 text-center">
-        {/* Background Decorative Elements */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/2 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[120px]" />
-          <div className="absolute top-0 right-0 h-[300px] w-[300px] bg-secondary/10 blur-[100px]" />
-        </div>
+
 
         <div className="relative z-10 mx-auto max-w-5xl flex flex-col items-center">
-          <div className="mb-12">
-            <Image
-              src="/logo.png"
-              alt="Undrdawg logo"
-              width={200}
-              height={200}
-              className="opacity-90"
-              priority
-            />
+          <div className="relative mb-12 h-[300px] w-[300px]">
+            {/* Fragment 1: Top Left */}
+            <div className="absolute inset-0 animate-fragment-1" style={{ clipPath: 'polygon(0 0, 50% 0, 50% 50%, 0 50%)' }}>
+              <Image src="/logo.png" alt="Undrdawg logo" fill className="object-contain" priority />
+            </div>
+            {/* Fragment 2: Top Right */}
+            <div className="absolute inset-0 animate-fragment-2" style={{ clipPath: 'polygon(50% 0, 99.5% 0, 99.5% 50%, 50% 50%)' }}>
+              <Image src="/logo.png" alt="Undrdawg logo" fill className="object-contain" priority />
+            </div>
+            {/* Fragment 3: Bottom Left */}
+            <div className="absolute inset-0 animate-fragment-3" style={{ clipPath: 'polygon(0 50%, 50% 50%, 50% 100%, 0 100%)' }}>
+              <Image src="/logo.png" alt="Undrdawg logo" fill className="object-contain" priority />
+            </div>
+            {/* Fragment 4: Bottom Right */}
+            <div className="absolute inset-0 animate-fragment-4" style={{ clipPath: 'polygon(50% 50%, 99.5% 50%, 99.5% 100%, 50% 100%)' }}>
+              <Image src="/logo.png" alt="Undrdawg logo" fill className="object-contain" priority />
+            </div>
           </div>
           <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-zinc-500">
             <Zap size={14} className="text-primary" />
@@ -41,7 +45,7 @@ export default function Home() {
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="/events"
+              href="/book"
               className="group flex h-14 w-full items-center justify-center gap-2 rounded-full bg-primary px-8 text-lg font-bold text-white transition-all hover:bg-primary/90 sm:w-auto"
             >
               Book an Athlete
@@ -58,7 +62,7 @@ export default function Home() {
       </section>
 
       {/* Featured Stats/Trust Section */}
-      <section className="border-y border-black/5 bg-zinc-50 py-12">
+      <section className="bg-white py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div className="flex items-center justify-center gap-4 text-center md:text-left">

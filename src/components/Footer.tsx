@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, Twitter, Facebook } from "lucide-react";
+import { Instagram, Twitter } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -22,14 +22,11 @@ export default function Footer() {
                             fueled by grit, and dedicated to authentic athletic experiences.
                         </p>
                         <div className="mt-6 flex space-x-4">
-                            <a href="#" className="text-zinc-400 hover:text-primary transition-colors">
+                            <a href="https://www.instagram.com/undrdawg.athletics/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-primary transition-colors">
                                 <Instagram size={20} />
                             </a>
                             <a href="#" className="text-zinc-400 hover:text-primary transition-colors">
                                 <Twitter size={20} />
-                            </a>
-                            <a href="#" className="text-zinc-400 hover:text-primary transition-colors">
-                                <Facebook size={20} />
                             </a>
                         </div>
                     </div>
@@ -38,7 +35,7 @@ export default function Footer() {
                         <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-6">Explore</h4>
                         <ul className="space-y-4 text-sm text-zinc-500">
                             <li><Link href="/shop" className="hover:text-white transition-colors">Shop All</Link></li>
-                            <li><Link href="/events" className="hover:text-white transition-colors">Upcoming Events</Link></li>
+                            <li><Link href="/events" className="hover:text-white transition-colors">Events</Link></li>
                             <li><Link href="/about" className="hover:text-white transition-colors">Our Story</Link></li>
                             <li><Link href="/verify" className="hover:text-white transition-colors">Verify Gear</Link></li>
                         </ul>
@@ -47,10 +44,11 @@ export default function Footer() {
                     <div>
                         <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-6">Support</h4>
                         <ul className="space-y-4 text-sm text-zinc-500">
-                            <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Shipping & Returns</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
+
+                            <li><Link href="/book" className="hover:text-white transition-colors">Contact Us</Link></li>
+                            <li><Link href="/shipping-returns" className="hover:text-white transition-colors">Shipping & Returns</Link></li>
+                            <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                            <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
                         </ul>
                     </div>
                 </div>
