@@ -7,7 +7,9 @@ import { verifySerialNumber } from "../actions/verify";
 type VerificationResult = {
     serial: string;
     athlete: string;
-    origin: string;
+    item: string;
+    hologram: string;
+    location: string;
     status: string;
     date: string;
 } | null;
@@ -107,20 +109,24 @@ export default function VerifyPage() {
                                     <CheckCircle2 size={32} />
                                 </div>
                                 <h3 className="text-2xl font-black uppercase tracking-tight text-black mb-1">Authenticity Verified</h3>
-                                <p className="text-zinc-500 text-sm font-bold uppercase tracking-widest mb-4">{result.serial}</p>
+                                <p className="text-primary text-sm font-black uppercase tracking-widest mb-4">Hologram # {result.hologram}</p>
 
-                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full max-w-md mt-4">
-                                    <div className="bg-white p-3 rounded-xl border border-black/5 shadow-sm">
-                                        <p className="text-[10px] text-zinc-400 uppercase font-black tracking-widest">Athlete</p>
-                                        <p className="text-sm font-bold text-black">{result.athlete}</p>
+                                <div className="grid grid-cols-2 gap-4 w-full max-w-lg mt-4">
+                                    <div className="bg-white p-4 rounded-xl border border-black/5 shadow-sm text-left">
+                                        <p className="text-[10px] text-zinc-400 uppercase font-black tracking-widest mb-1">Signed by</p>
+                                        <p className="text-sm font-black text-black">{result.athlete}</p>
                                     </div>
-                                    <div className="bg-white p-3 rounded-xl border border-black/5 shadow-sm">
-                                        <p className="text-[10px] text-zinc-400 uppercase font-black tracking-widest">Origin</p>
-                                        <p className="text-sm font-bold text-black">{result.origin}</p>
+                                    <div className="bg-white p-4 rounded-xl border border-black/5 shadow-sm text-left">
+                                        <p className="text-[10px] text-zinc-400 uppercase font-black tracking-widest mb-1">Item Type</p>
+                                        <p className="text-sm font-black text-black">{result.item}</p>
                                     </div>
-                                    <div className="bg-white p-3 rounded-xl border border-black/5 shadow-sm col-span-2 sm:col-span-1">
-                                        <p className="text-[10px] text-zinc-400 uppercase font-black tracking-widest">Date</p>
-                                        <p className="text-sm font-bold text-black">{result.date}</p>
+                                    <div className="bg-white p-4 rounded-xl border border-black/5 shadow-sm text-left">
+                                        <p className="text-[10px] text-zinc-400 uppercase font-black tracking-widest mb-1">Date Signed</p>
+                                        <p className="text-sm font-black text-black">{result.date}</p>
+                                    </div>
+                                    <div className="bg-white p-4 rounded-xl border border-black/5 shadow-sm text-left">
+                                        <p className="text-[10px] text-zinc-400 uppercase font-black tracking-widest mb-1">Location Signed</p>
+                                        <p className="text-sm font-black text-black">{result.location}</p>
                                     </div>
                                 </div>
 
