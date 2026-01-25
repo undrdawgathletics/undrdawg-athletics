@@ -96,23 +96,24 @@ export default function BookPage() {
     return (
         <div className="bg-white min-h-screen text-black pt-32 pb-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                {/* Hero Section */}
-                <div className="mb-24 grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
-                    <div className="lg:col-span-3">
-                        <h1 className="text-5xl md:text-8xl font-[900] italic tracking-tighter uppercase mb-6 text-black leading-[0.9]">
-                            BOOK AN <br />
-                            <span className="text-primary">ATHLETE.</span>
+                {/* Hero Section - Stacked & Centered */}
+                <div className="mb-24 text-center max-w-5xl mx-auto space-y-12">
+                    <div className="space-y-6">
+                        <h1 className="text-6xl md:text-9xl font-[900] italic tracking-tighter uppercase text-black leading-[0.85]">
+                            BOOK AN <br className="hidden md:block" />
+                            <span className="text-primary italic">ATHLETE.</span>
                         </h1>
-                        <p className="text-xl text-zinc-600 font-bold uppercase tracking-widest">
+                        <p className="text-xl md:text-2xl text-zinc-500 font-bold uppercase tracking-[0.2em]">
                             Elevate Your Event with Undrdawg Athletics
                         </p>
                     </div>
-                    <div className="lg:col-span-2">
-                        <div className="bg-zinc-50 border border-black/5 rounded-[2.5rem] p-8 md:p-10 relative">
-                            <div className="absolute -top-4 -left-4 bg-primary text-white p-3 rounded-2xl shadow-lg">
-                                <Quote size={20} fill="currentColor" />
+
+                    <div className="max-w-3xl mx-auto relative group">
+                        <div className="bg-zinc-50 border border-black/5 rounded-[3rem] p-10 md:p-14 transition-all hover:bg-zinc-100/50">
+                            <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-white p-4 rounded-2xl shadow-2xl">
+                                <Quote size={28} fill="currentColor" />
                             </div>
-                            <p className="text-zinc-600 text-lg md:text-xl leading-relaxed italic font-medium">
+                            <p className="text-zinc-700 text-xl md:text-3xl leading-snug italic font-semibold tracking-tight">
                                 "Whether you are looking to drive brand loyalty, inspire a team, or draw a crowd, our roster of professional talent is ready to deliver."
                             </p>
                         </div>
@@ -120,7 +121,7 @@ export default function BookPage() {
                 </div>
 
                 {/* Introduction & Image Gallery */}
-                <div className="mb-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="mb-32 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div className="space-y-8">
                         <h2 className="text-4xl font-black uppercase italic tracking-tight">The Undrdawg Spirit</h2>
                         <div className="space-y-6 text-zinc-600 leading-relaxed text-lg">
