@@ -26,7 +26,14 @@ export default function Footer() {
                                 <Instagram size={20} />
                             </a>
                             <a href="https://x.com/Undrdawg_Ath" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-primary transition-colors">
-                                <Twitter size={20} />
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    width="18"
+                                    height="18"
+                                    fill="currentColor"
+                                >
+                                    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.294 19.497h2.039L6.482 2.395H4.295L17.607 20.65z" />
+                                </svg>
                             </a>
                             <a href="https://www.tiktok.com/@undrdawg.athletics" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-primary transition-colors">
                                 <svg
