@@ -31,17 +31,15 @@ export async function verifySerialNumber(serialNumber: string) {
             return { success: false, error: "Database Connection Error" };
         }
 
-        console.log("Supabase Data for", serialNumber, ":", data);
-
         if (data) {
             return {
                 success: true,
                 data: {
                     serial: data.auth_code || serialNumber,
                     athlete: data.player_name || "Official UD Product",
-                    item: data.item || "Apparel",
+                    item: data["Item"] || "Apparel",
                     hologram: data.hologram_number || data.auth_code || serialNumber,
-                    location: data.location_signed || "Philadelphia",
+                    location: data["Location Signed"] || "Philadelphia",
                     status: data.verified ? "Verified" : "Pending",
                     date: data.event_date ? new Date(data.event_date).toLocaleDateString() : "Recent",
                 },
