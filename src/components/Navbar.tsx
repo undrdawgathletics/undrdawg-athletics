@@ -50,7 +50,7 @@ export default function Navbar() {
                 className="flex items-center gap-2 rounded-full bg-cyan-500/10 px-4 py-2 text-sm font-bold uppercase tracking-widest text-cyan-400 border border-cyan-500/20 transition-all hover:bg-cyan-500 hover:text-black"
               >
                 <ShieldCheck size={16} />
-                Verify Gear
+                Verify Memorabilia
               </Link>
               <Link href="/checkout" className="relative text-zinc-300 hover:text-white transition-colors">
                 <ShoppingCart size={20} />
@@ -102,7 +102,7 @@ export default function Navbar() {
               className="block rounded-md px-3 py-2 text-base font-medium text-cyan-400 hover:bg-cyan-900/20"
               onClick={() => setIsOpen(false)}
             >
-              Verify Gear
+              Verify Memorabilia
             </Link>
           </div>
         </div>
