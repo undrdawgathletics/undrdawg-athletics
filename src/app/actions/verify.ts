@@ -38,7 +38,7 @@ export async function verifySerialNumber(serialNumber: string) {
                     serial: data.auth_code || serialNumber,
                     athlete: data.player_name || "Official UD Product",
                     item: data.item || "Apparel",
-                    hologram: data.hologram_number || "N/A",
+                    hologram: data.hologram_number || data.auth_code || serialNumber,
                     location: data.location_signed || "Philadelphia",
                     status: data.verified ? "Verified" : "Pending",
                     date: data.event_date ? new Date(data.event_date).toLocaleDateString() : "Recent",
