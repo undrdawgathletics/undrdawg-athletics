@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, Twitter } from "lucide-react";
+import { Instagram, Twitter, Facebook } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -27,6 +27,23 @@ export default function Footer() {
                             </a>
                             <a href="#" className="text-zinc-400 hover:text-primary transition-colors">
                                 <Twitter size={20} />
+                            </a>
+                            <a href="https://www.tiktok.com/@undrdawg.athletics" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-primary transition-colors">
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    width="20"
+                                    height="20"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    fill="none"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                                </svg>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61584864543399#" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-primary transition-colors">
+                                <Facebook size={20} />
                             </a>
                         </div>
                     </div>
