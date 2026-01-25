@@ -25,7 +25,7 @@ export default function Footer() {
                             <a href="https://www.instagram.com/undrdawg.athletics/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-primary transition-colors">
                                 <Instagram size={20} />
                             </a>
-                            <a href="#" className="text-zinc-400 hover:text-primary transition-colors">
+                            <a href="https://x.com/Undrdawg_Ath" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-primary transition-colors">
                                 <Twitter size={20} />
                             </a>
                             <a href="https://www.tiktok.com/@undrdawg.athletics" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-primary transition-colors">
