@@ -54,11 +54,10 @@ export default function VerifyPage() {
                         <ShieldCheck size={40} />
                     </div>
                     <h1 className="text-5xl font-black italic tracking-tighter uppercase mb-4 text-black">
-                        VERIFY YOUR <span className="text-primary italic">GEAR.</span>
+                        VERIFY <span className="text-primary italic">MEMORABILIA.</span>
                     </h1>
                     <p className="text-zinc-600 max-w-xl mx-auto font-medium">
-                        Authenticity is central to everything we do. Enter the serial number
-                        found on your certificate of authenticity or product tag.
+                        Undrdawg Athletics provides witness based authentication. Our representatives are present at all events and signings.
                     </p>
                 </div>
 
@@ -78,7 +77,7 @@ export default function VerifyPage() {
                                         type="text"
                                         value={serial}
                                         onChange={(e) => setSerial(e.target.value)}
-                                        placeholder="e.g. UD-2024-8892"
+                                        placeholder="e.g. 67"
                                         className="w-full h-16 bg-white border border-black/5 rounded-2xl px-6 font-mono text-lg tracking-wider focus:border-primary focus:outline-none transition-all placeholder:text-zinc-300 text-black shadow-sm"
                                     />
                                     {status === "verifying" && (
@@ -129,11 +128,6 @@ export default function VerifyPage() {
                                         <p className="text-sm font-black text-black">{result.location}</p>
                                     </div>
                                 </div>
-
-                                <div className="mt-8 flex gap-4">
-                                    <span className="text-[10px] font-bold px-3 py-1 bg-primary text-white rounded-full uppercase tracking-widest">UD-ORIGINAL</span>
-                                    <span className="text-[10px] font-bold px-3 py-1 bg-black text-white rounded-full uppercase tracking-widest">OFFICIAL-LEDGER</span>
-                                </div>
                             </div>
                         )}
 
@@ -147,7 +141,7 @@ export default function VerifyPage() {
                                 </h3>
                                 <p className="text-zinc-600 text-sm text-center max-w-xs">
                                     {errorMsg === "Configuration Error"
-                                        ? "Airtable connection is not yet configured. Please add your credentials."
+                                        ? "Supabase connection is not yet configured. Please add your credentials."
                                         : "We could not find this serial number in our database. Please check and try again."}
                                 </p>
                                 <button
@@ -166,19 +160,19 @@ export default function VerifyPage() {
                     <div className="p-8 rounded-3xl bg-zinc-50 border border-black/5">
                         <h4 className="font-black uppercase tracking-tight mb-4 flex items-center gap-2 text-black">
                             <ShieldCheck size={18} className="text-primary" />
-                            Blockchain Secured
+                            What is witness authentication?
                         </h4>
                         <p className="text-sm text-zinc-600 leading-relaxed">
-                            Every piece of memorabilia is logged on our private ledger at the point of origin, ensuring a tamper-proof chain of custody.
+                            Witness authentication occurs when a representative from a certifying company physically watches an athlete or celebrity sign an item in person. This process guarantees the signature's authenticity because the representative verifies the origin of the autograph at the exact moment it is created.
                         </p>
                     </div>
                     <div className="p-8 rounded-3xl bg-zinc-50 border border-black/5">
                         <h4 className="font-black uppercase tracking-tight mb-4 flex items-center gap-2 text-black">
                             <ShieldCheck size={18} className="text-primary" />
-                            Athlete Witnessed
+                            Authentication Process
                         </h4>
                         <p className="text-sm text-zinc-600 leading-relaxed">
-                            Our representatives witness every signing session to ensure the validity of the signatures before assigning a serial tag.
+                            Undrdawg Athletics utilizes on-site representatives to personally witness each athlete or celebrity signature. Following the session, every item is affixed with a tamper-evident sticker, and the corresponding hologram number and details are recorded in our official database.
                         </p>
                     </div>
                 </div>
