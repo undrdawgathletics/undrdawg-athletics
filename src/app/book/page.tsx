@@ -23,14 +23,20 @@ export default function BookAthletePage() {
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzmPxAYtxze4GrotOiq7akyk5naZJ5Si93WpXZV3qYanA08RsyB_UGN_VffyMVQQxpg/exec";
 
         try {
-            await fetch(WEB_APP_URL, {
-                method: 'POST',
-                mode: 'no-cors', // Important for Google Apps Script
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData)
-            });
+            // Create a timeout promise to prevent hanging
+            const timeoutPromise = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error('Request timed out')), 10000)
+            );
+
+            await Promise.race([
+                fetch(WEB_APP_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Important for Google Apps Script
+                    // Content-Type header removed to avoid preflight issues in no-cors mode
+                    body: JSON.stringify(formData)
+                }),
+                timeoutPromise
+            ]);
 
             setStatus('success');
             setFormData({ firstName: "", lastName: "", email: "", date: "", description: "" });
@@ -303,6 +309,7 @@ export default function BookAthletePage() {
                                     {loading ? "Sending..." : "Submit Request"} <ArrowRight size={16} />
                                 </button>
                             </form>
+                        )}
                     </div>
                 </div>
             </div>
