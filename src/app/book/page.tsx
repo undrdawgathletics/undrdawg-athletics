@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ArrowRight, Calendar, User, AlignLeft, Mail, Mic, Store, Handshake, Flag, Share2, GraduationCap, Target, Truck, Heart, Quote } from "lucide-react";
-import { bookAthlete } from "../actions/book-athlete";
+import { ArrowRight, Calendar, User, AlignLeft, Mail, Mic, Store, Handshake, Flag, Share2, GraduationCap, Target, Truck, Heart, Quote, CheckCircle } from "lucide-react";
 
-export default function BookPage() {
+export default function BookAthletePage() {
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -14,31 +13,32 @@ export default function BookPage() {
         description: "",
     });
     const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
+        setStatus('idle');
 
-        const data = new FormData();
-        Object.entries(formData).forEach(([key, value]) => {
-            data.append(key, value);
-        });
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzmPxAYtxze4GrotOiq7akyk5naZJ5Si93WpXZV3qYanA08RsyB_UGN_VffyMVQQxpg/exec";
 
-        const result = await bookAthlete(data);
-        setLoading(false);
-
-        if (result.success) {
-            alert("Request received! We'll be in touch soon.");
-            setFormData({
-                firstName: "",
-                lastName: "",
-                email: "",
-                date: "",
-                description: "",
+        try {
+            await fetch(WEB_APP_URL, {
+                method: 'POST',
+                mode: 'no-cors', // Important for Google Apps Script
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
             });
-        } else {
-            console.error(result.error);
-            alert("Something went wrong. Please try again or contact us directly.");
+
+            setStatus('success');
+            setFormData({ firstName: "", lastName: "", email: "", date: "", description: "" });
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            setStatus('error');
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -97,8 +97,8 @@ export default function BookPage() {
         <div className="bg-white min-h-screen text-black pt-32 pb-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* Hero Section - Stacked & Centered */}
-                <div className="mb-24 text-center max-w-7xl mx-auto space-y-12">
-                    <div className="space-y-6">
+                <div className="mb-12 text-center max-w-7xl mx-auto space-y-6">
+                    <div className="space-y-4">
                         <h1 className="text-6xl md:text-9xl font-[900] italic tracking-tighter uppercase text-black leading-none whitespace-nowrap">
                             BOOK AN <span className="text-primary italic">ATHLETE.</span>
                         </h1>
@@ -108,7 +108,7 @@ export default function BookPage() {
                     </div>
 
                     <div className="max-w-4xl mx-auto relative group">
-                        <div className="p-8 md:p-10 relative">
+                        <div className="p-4 md:p-6 relative">
                             <p className="text-zinc-600 text-lg leading-relaxed italic font-semibold tracking-tight relative z-10">
                                 "Whether you are looking to drive brand loyalty, inspire a team, or draw a crowd, our roster of professional talent is ready to deliver."
                             </p>
@@ -202,85 +202,107 @@ export default function BookPage() {
                     </div>
 
                     <div className="bg-zinc-50 border border-black/5 rounded-[2.5rem] p-8 md:p-12">
-                        <form onSubmit={handleSubmit} className="space-y-8">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {status === 'success' ? (
+                            <div className="text-center space-y-4 py-12">
+                                <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <CheckCircle size={32} />
+                                </div>
+                                <h3 className="text-2xl font-black italic uppercase">Request Received!</h3>
+                                <p className="text-zinc-600 max-w-md mx-auto">
+                                    Thank you, {formData.firstName}. We have received your inquiry and will be in touch shortly.
+                                </p>
+                                <button
+                                    onClick={() => setStatus('idle')}
+                                    className="pt-4 text-primary text-sm font-bold uppercase tracking-widest hover:underline"
+                                >
+                                    Send Another Request
+                                </button>
+                            </div>
+                        ) : (
+                            <form onSubmit={handleSubmit} className="space-y-8">
+                                {status === 'error' && (
+                                    <div className="bg-red-50 text-red-600 p-4 rounded-xl text-center text-sm font-medium">
+                                        Something went wrong. Please try again later.
+                                    </div>
+                                )}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div className="space-y-2">
+                                        <label className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest flex items-center gap-2">
+                                            <User size={12} /> First Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            required
+                                            value={formData.firstName}
+                                            onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                                            className="w-full h-12 bg-white border border-black/5 rounded-xl px-4 text-sm focus:border-primary focus:outline-none transition-colors text-black"
+                                            placeholder="First Name"
+                                        />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest flex items-center gap-2">
+                                            <User size={12} /> Last Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            required
+                                            value={formData.lastName}
+                                            onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                                            className="w-full h-12 bg-white border border-black/5 rounded-xl px-4 text-sm focus:border-primary focus:outline-none transition-colors text-black"
+                                            placeholder="Last Name"
+                                        />
+                                    </div>
+                                </div>
+
                                 <div className="space-y-2">
                                     <label className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest flex items-center gap-2">
-                                        <User size={12} /> First Name
+                                        <Mail size={12} /> Email Address
                                     </label>
                                     <input
-                                        type="text"
+                                        type="email"
                                         required
-                                        value={formData.firstName}
-                                        onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                                        value={formData.email}
+                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                         className="w-full h-12 bg-white border border-black/5 rounded-xl px-4 text-sm focus:border-primary focus:outline-none transition-colors text-black"
-                                        placeholder="First Name"
+                                        placeholder="name@example.com"
                                     />
                                 </div>
+
                                 <div className="space-y-2">
                                     <label className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest flex items-center gap-2">
-                                        <User size={12} /> Last Name
+                                        <Calendar size={12} /> Request Date
                                     </label>
                                     <input
-                                        type="text"
+                                        type="date"
                                         required
-                                        value={formData.lastName}
-                                        onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                                        value={formData.date}
+                                        onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                                         className="w-full h-12 bg-white border border-black/5 rounded-xl px-4 text-sm focus:border-primary focus:outline-none transition-colors text-black"
-                                        placeholder="Last Name"
                                     />
                                 </div>
-                            </div>
 
-                            <div className="space-y-2">
-                                <label className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest flex items-center gap-2">
-                                    <Mail size={12} /> Email Address
-                                </label>
-                                <input
-                                    type="email"
-                                    required
-                                    value={formData.email}
-                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                    className="w-full h-12 bg-white border border-black/5 rounded-xl px-4 text-sm focus:border-primary focus:outline-none transition-colors text-black"
-                                    placeholder="name@example.com"
-                                />
-                            </div>
+                                <div className="space-y-2">
+                                    <label className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest flex items-center gap-2">
+                                        <AlignLeft size={12} /> Event Details & Player Request
+                                    </label>
+                                    <textarea
+                                        required
+                                        rows={5}
+                                        value={formData.description}
+                                        onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                                        className="w-full bg-white border border-black/5 rounded-xl p-4 text-sm focus:border-primary focus:outline-none transition-colors text-black resize-none"
+                                        placeholder="Describe your event and tell us which athlete(s) you are interested in booking..."
+                                    />
+                                </div>
 
-                            <div className="space-y-2">
-                                <label className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest flex items-center gap-2">
-                                    <Calendar size={12} /> Request Date
-                                </label>
-                                <input
-                                    type="date"
-                                    required
-                                    value={formData.date}
-                                    onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                                    className="w-full h-12 bg-white border border-black/5 rounded-xl px-4 text-sm focus:border-primary focus:outline-none transition-colors text-black"
-                                />
-                            </div>
-
-                            <div className="space-y-2">
-                                <label className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest flex items-center gap-2">
-                                    <AlignLeft size={12} /> Event Details & Player Request
-                                </label>
-                                <textarea
-                                    required
-                                    rows={5}
-                                    value={formData.description}
-                                    onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                                    className="w-full bg-white border border-black/5 rounded-xl p-4 text-sm focus:border-primary focus:outline-none transition-colors text-black resize-none"
-                                    placeholder="Describe your event and tell us which athlete(s) you are interested in booking..."
-                                />
-                            </div>
-
-                            <button
-                                type="submit"
-                                disabled={loading}
-                                className="w-full h-14 bg-black text-white rounded-full font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-xl text-sm disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                                {loading ? "Sending..." : "Submit Request"} <ArrowRight size={16} />
-                            </button>
-                        </form>
+                                <button
+                                    type="submit"
+                                    disabled={loading}
+                                    className="w-full h-14 bg-black text-white rounded-full font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-xl text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                                >
+                                    {loading ? "Sending..." : "Submit Request"} <ArrowRight size={16} />
+                                </button>
+                            </form>
                     </div>
                 </div>
             </div>
