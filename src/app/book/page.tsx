@@ -23,9 +23,11 @@ export default function BookAthletePage() {
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzmPxAYtxze4GrotOiq7akyk5naZJ5Si93WpXZV3qYanA08RsyB_UGN_VffyMVQQxpg/exec";
 
         try {
+            console.log("Submitting form to Apps Script...");
+
             // Create a timeout promise to prevent hanging
             const timeoutPromise = new Promise((_, reject) =>
-                setTimeout(() => reject(new Error('Request timed out')), 10000)
+                setTimeout(() => reject(new Error('Request timed out')), 5000)
             );
 
             await Promise.race([
