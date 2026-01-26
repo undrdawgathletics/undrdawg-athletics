@@ -109,9 +109,6 @@ export default function BookPage() {
 
                     <div className="max-w-4xl mx-auto relative group">
                         <div className="p-8 md:p-10 relative">
-                            <div className="absolute -top-8 left-1/2 -translate-x-1/2 text-primary/20">
-                                <Quote size={80} fill="currentColor" />
-                            </div>
                             <p className="text-zinc-800 text-2xl md:text-4xl leading-tight italic font-semibold tracking-tight relative z-10">
                                 "Whether you are looking to drive brand loyalty, inspire a team, or draw a crowd, our roster of professional talent is ready to deliver."
                             </p>
@@ -140,18 +137,18 @@ export default function BookPage() {
                     <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-4">
                             <div className="relative h-72 w-full overflow-hidden rounded-[2.5rem] border border-black/5 shadow-xl">
-                                <Image src="/images/athletes/athlete-1.jpg" alt="In-game performance" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                                <Image src="/images/athletes/athlete-1.png" alt="In-game performance" fill className="object-cover hover:scale-105 transition-transform duration-500" />
                             </div>
                             <div className="relative h-56 w-full overflow-hidden rounded-[2.5rem] border border-black/5 shadow-xl">
-                                <Image src="/images/athletes/athlete-2.jpg" alt="Fan engagement" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                                <Image src="/images/athletes/athlete-2.png" alt="Fan engagement" fill className="object-cover hover:scale-105 transition-transform duration-500" />
                             </div>
                         </div>
                         <div className="space-y-4 pt-12">
                             <div className="relative h-56 w-full overflow-hidden rounded-[2.5rem] border border-black/5 shadow-xl">
-                                <Image src="/images/athletes/athlete-3.jpg" alt="Event appearance" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                                <Image src="/images/athletes/athlete-3.png" alt="Event appearance" fill className="object-cover hover:scale-105 transition-transform duration-500" />
                             </div>
                             <div className="relative h-72 w-full overflow-hidden rounded-[2.5rem] border border-black/5 shadow-xl">
-                                <Image src="/images/athletes/athlete-4.jpg" alt="Community impact" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                                <Image src="/images/athletes/athlete-4.png" alt="Community impact" fill className="object-cover hover:scale-105 transition-transform duration-500" />
                             </div>
                         </div>
                     </div>
