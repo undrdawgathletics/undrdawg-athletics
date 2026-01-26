@@ -41,7 +41,7 @@ export default function BookAthletePage() {
             ]);
 
             setStatus('success');
-            setFormData({ firstName: "", lastName: "", email: "", date: "", description: "" });
+            // Form data remains populated for the "Thank you, {firstName}" message
         } catch (error) {
             console.error("Error submitting form:", error);
             setStatus('error');
@@ -220,7 +220,10 @@ export default function BookAthletePage() {
                                     Thank you, {formData.firstName}. We have received your inquiry and will be in touch shortly.
                                 </p>
                                 <button
-                                    onClick={() => setStatus('idle')}
+                                    onClick={() => {
+                                        setStatus('idle');
+                                        setFormData({ firstName: "", lastName: "", email: "", date: "", description: "" });
+                                    }}
                                     className="pt-4 text-primary text-sm font-bold uppercase tracking-widest hover:underline"
                                 >
                                     Send Another Request
