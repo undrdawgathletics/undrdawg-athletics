@@ -109,7 +109,7 @@ export default function BookPage() {
 
                     <div className="max-w-4xl mx-auto relative group">
                         <div className="p-8 md:p-10 relative">
-                            <p className="text-zinc-500 text-xl md:text-2xl leading-tight italic font-semibold tracking-tight relative z-10">
+                            <p className="text-zinc-600 text-lg leading-relaxed italic font-semibold tracking-tight relative z-10">
                                 "Whether you are looking to drive brand loyalty, inspire a team, or draw a crowd, our roster of professional talent is ready to deliver."
                             </p>
                         </div>
