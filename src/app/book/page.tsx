@@ -145,10 +145,10 @@ export default function BookAthletePage() {
                     <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-4">
                             <div className="relative h-72 w-full overflow-hidden rounded-[2.5rem] border border-black/5 shadow-xl">
-                                <Image src="/images/athletes/athlete-1.png" alt="In-game performance" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                                <Image src="/images/athletes/athlete-1.jpg" alt="In-game performance" fill className="object-cover hover:scale-105 transition-transform duration-500" />
                             </div>
                             <div className="relative h-56 w-full overflow-hidden rounded-[2.5rem] border border-black/5 shadow-xl">
-                                <Image src="/images/athletes/athlete-2.png" alt="Fan engagement" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                                <Image src="/images/athletes/athlete-2.jpg" alt="Fan engagement" fill className="object-cover hover:scale-105 transition-transform duration-500" />
                             </div>
                         </div>
                         <div className="space-y-4 pt-12">
