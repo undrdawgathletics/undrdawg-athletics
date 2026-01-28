@@ -150,7 +150,7 @@ export default function BookAthletePage() {
                             </div>
                             {/* Bottom Left: Was Top Left (Athlete 1) */}
                             <div className="relative h-56 w-full overflow-hidden rounded-[2.5rem] border border-black/5 shadow-xl">
-                                <Image src="/images/athletes/athlete-1.jpg" alt="In-game performance" fill className="object-cover object-top hover:scale-105 transition-transform duration-500" />
+                                <Image src="/images/athletes/athlete-1.jpg" alt="In-game performance" fill className="object-cover object-[center_30%] hover:scale-105 transition-transform duration-500" />
                             </div>
                         </div>
                         <div className="space-y-4 pt-12">

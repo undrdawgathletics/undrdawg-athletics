@@ -41,6 +41,14 @@ export default function Navbar() {
                 type="text"
                 placeholder="Search..."
                 className="w-full bg-zinc-900 border border-zinc-800 text-white text-sm rounded-full py-2 px-4 focus:outline-none focus:border-zinc-700 transition-colors placeholder:text-zinc-600"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    const target = e.target as HTMLInputElement;
+                    if (target.value.trim()) {
+                      window.location.href = `/search?q=${encodeURIComponent(target.value)}`;
+                    }
+                  }
+                }}
               />
             </div>
           </div>
