@@ -34,6 +34,17 @@ export default function Navbar() {
             </Link>
           </div>
 
+          {/* Search Bar */}
+          <div className="hidden md:flex flex-1 ml-8 max-w-sm">
+            <div className="relative w-full">
+              <input
+                type="text"
+                placeholder="Search..."
+                className="w-full bg-zinc-900 border border-zinc-800 text-white text-sm rounded-full py-2 px-4 focus:outline-none focus:border-zinc-700 transition-colors placeholder:text-zinc-600"
+              />
+            </div>
+          </div>
+
           {/* Desktop Nav */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">

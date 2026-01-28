@@ -85,30 +85,30 @@ export default function BookAthletePage() {
 
     const whyWorkWithUs = [
         {
-            icon: <Target className="text-primary" size={24} />,
+            icon: <Target className="text-white" size={24} />,
             title: "Strategic Matching",
             description: "We align athlete personalities with your brand values to ensure the partnership feels authentic."
         },
         {
-            icon: <Truck className="text-primary" size={24} />,
+            icon: <Truck className="text-white" size={24} />,
             title: "Full-Service Logistics",
             description: "From initial outreach to event-day management, we handle the details so you can focus on your guests."
         },
         {
-            icon: <Heart className="text-primary" size={24} />,
+            icon: <Heart className="text-white" size={24} />,
             title: "Real Connection",
             description: "We focus on creating authentic moments that resonate, leaving a lasting legacy."
         }
     ];
 
     return (
-        <div className="bg-white min-h-screen text-black pt-32 pb-24">
+        <div className="bg-white min-h-screen text-black pt-20 pb-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* Hero Section - Stacked & Centered */}
                 <div className="mb-12 text-center max-w-7xl mx-auto space-y-6">
                     <div className="space-y-4">
                         <h1 className="text-6xl md:text-9xl font-[900] italic tracking-tighter uppercase text-black leading-none whitespace-nowrap">
-                            BOOK AN <span className="text-primary italic">ATHLETE.</span>
+                            BOOK AN <span className="text-primary italic">ATHLETE</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-zinc-500 font-bold uppercase tracking-[0.2em]">
                             Elevate Your Event with Undrdawg Athletics
@@ -144,19 +144,23 @@ export default function BookAthletePage() {
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-4">
+                            {/* Top Left: Was Top Right (Athlete 3) */}
                             <div className="relative h-72 w-full overflow-hidden rounded-[2.5rem] border border-black/5 shadow-xl">
-                                <Image src="/images/athletes/athlete-1.jpg" alt="In-game performance" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                                <Image src="/images/athletes/athlete-3.png" alt="Event appearance" fill className="object-cover object-top hover:scale-105 transition-transform duration-500" />
                             </div>
+                            {/* Bottom Left: Was Top Left (Athlete 1) */}
                             <div className="relative h-56 w-full overflow-hidden rounded-[2.5rem] border border-black/5 shadow-xl">
-                                <Image src="/images/athletes/athlete-2.jpg" alt="Fan engagement" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                                <Image src="/images/athletes/athlete-1.jpg" alt="In-game performance" fill className="object-cover object-top hover:scale-105 transition-transform duration-500" />
                             </div>
                         </div>
                         <div className="space-y-4 pt-12">
+                            {/* Top Right: Was Bottom Right (Athlete 4) */}
                             <div className="relative h-56 w-full overflow-hidden rounded-[2.5rem] border border-black/5 shadow-xl">
-                                <Image src="/images/athletes/athlete-3.png" alt="Event appearance" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                                <Image src="/images/athletes/athlete-4.png" alt="Community impact" fill className="object-cover object-top hover:scale-105 transition-transform duration-500" />
                             </div>
+                            {/* Bottom Right: Was Bottom Left (Athlete 2) - Zoomed */}
                             <div className="relative h-72 w-full overflow-hidden rounded-[2.5rem] border border-black/5 shadow-xl">
-                                <Image src="/images/athletes/athlete-4.png" alt="Community impact" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                                <Image src="/images/athletes/athlete-2.jpg" alt="Fan engagement" fill className="object-cover object-top scale-125 hover:scale-125 transition-transform duration-500" />
                             </div>
                         </div>
                     </div>
@@ -185,7 +189,7 @@ export default function BookAthletePage() {
                 <div className="mb-32 py-24 bg-black rounded-[4rem] text-white px-8 md:px-16">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-black uppercase italic tracking-tight mb-4">Why Work with Undrdawg?</h2>
-                        <p className="text-zinc-400">We don't just "find a name"; we find the right fit.</p>
+                        <p className="text-white">We don't just "find a name"; we find the right fit.</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                         {whyWorkWithUs.map((item, index) => (
@@ -194,7 +198,7 @@ export default function BookAthletePage() {
                                     {item.icon}
                                 </div>
                                 <h3 className="text-2xl font-bold">{item.title}</h3>
-                                <p className="text-zinc-400 leading-relaxed">{item.description}</p>
+                                <p className="text-white/80 leading-relaxed">{item.description}</p>
                             </div>
                         ))}
                     </div>

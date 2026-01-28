@@ -8,7 +8,7 @@ export default function EventsPage() {
                 {/* A nnouncing Soon Section */}
                 <div className="flex flex-col items-center justify-center py-24 md:py-32">
                     <h1 className="text-5xl md:text-8xl font-black uppercase text-black tracking-tighter text-center italic leading-none">
-                        EVENTS <span className="text-primary">ANNOUNCING SOON.</span>
+                        EVENTS <span className="text-primary">ANNOUNCING SOON</span>
                     </h1>
                 </div>
 

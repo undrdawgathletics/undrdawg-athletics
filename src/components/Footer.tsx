@@ -81,9 +81,6 @@ export default function Footer() {
                     <p className="text-xs text-zinc-600">
                         © {new Date().getFullYear()} Undrdawg Athletics. All rights reserved.
                     </p>
-                    <p className="text-xs text-zinc-600 italic">
-                        Founded by the Underdogs of Philadelphia.
-                    </p>
                 </div>
             </div>
         </footer>
