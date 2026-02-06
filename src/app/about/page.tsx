@@ -1,7 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import { GraduationCap, MapPin, Rocket, PlayCircle } from "lucide-react";
+import { useRef, useState } from "react";
 
 export default function AboutPage() {
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const handlePlay = () => {
+        if (videoRef.current) {
+            videoRef.current.play();
+            setIsPlaying(true);
+        }
+    };
+
     return (
         <div className="flex flex-col bg-white text-black">
             {/* Header */}
@@ -28,18 +41,29 @@ export default function AboutPage() {
                         </p>
                     </div>
 
-                    <div className="relative h-full min-h-[400px] w-full bg-black rounded-3xl overflow-hidden flex items-center justify-center group cursor-pointer shadow-2xl">
-                        {/* Placeholder for 6abc News Clip */}
-                        <Image
-                            src="/images/athletes/athlete-1.jpg" // Using an existing image as placeholder poster
-                            alt="6abc News Coverage"
-                            fill
-                            className="object-cover opacity-60 group-hover:opacity-80 transition-opacity"
-                        />
-                        <div className="absolute z-10 flex flex-col items-center text-white">
-                            <PlayCircle size={80} className="mb-4 drop-shadow-md group-hover:scale-110 transition-transform" />
-                            <span className="text-xl font-bold uppercase tracking-widest drop-shadow-md">Watch the 6abc News Clip</span>
-                        </div>
+                    <div
+                        className="relative h-full min-h-[400px] w-full bg-black rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center group cursor-pointer"
+                        onClick={handlePlay}
+                    >
+                        <video
+                            ref={videoRef}
+                            controls={isPlaying}
+                            playsInline
+                            className="w-full h-full object-cover"
+                            onPause={() => setIsPlaying(false)}
+                            onPlay={() => setIsPlaying(true)}
+                        >
+                            <source src="/videos/news-clip.mov" type="video/quicktime" />
+                            <source src="/videos/news-clip.mov" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+
+                        {!isPlaying && (
+                            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 hover:bg-black/30 transition-colors z-10 font-sans">
+                                <PlayCircle size={80} className="mb-4 text-white drop-shadow-md group-hover:scale-110 transition-transform" />
+                                <span className="text-xl font-bold uppercase tracking-widest text-white drop-shadow-md">Watch the 6abc News Clip</span>
+                            </div>
+                        )}
                     </div>
                 </div>
             </section>
