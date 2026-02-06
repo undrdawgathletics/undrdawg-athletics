@@ -17,10 +17,7 @@ export default function Footer() {
                                 className="invert brightness-200"
                             />
                         </Link>
-                        <p className="mt-4 max-w-xs text-zinc-500 text-sm leading-relaxed">
-                            Delivering Notable Athletes - it's in our DNA. Born in Philadelphia,
-                            fueled by grit, and dedicated to authentic athletic experiences.
-                        </p>
+                        {/* Social Icons moved up since text is gone */}
                         <div className="mt-6 flex space-x-4">
                             <a href="https://www.instagram.com/undrdawg.athletics/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-primary transition-colors">
                                 <Instagram size={20} />
@@ -58,9 +55,10 @@ export default function Footer() {
                     <div>
                         <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-6">Explore</h4>
                         <ul className="space-y-4 text-sm text-zinc-500">
-                            <li><Link href="/shop" className="hover:text-white transition-colors">Shop All</Link></li>
+                            <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
                             <li><Link href="/events" className="hover:text-white transition-colors">Events</Link></li>
-                            <li><Link href="/about" className="hover:text-white transition-colors">Our Story</Link></li>
+                            <li><Link href="/book" className="hover:text-white transition-colors">Book an Athlete</Link></li>
+                            <li><Link href="/shop" className="hover:text-white transition-colors">Shop</Link></li>
                             <li><Link href="/verify" className="hover:text-white transition-colors">Verify Memorabilia</Link></li>
                         </ul>
                     </div>
@@ -69,7 +67,8 @@ export default function Footer() {
                         <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-6">Support</h4>
                         <ul className="space-y-4 text-sm text-zinc-500">
 
-                            <li><Link href="/book" className="hover:text-white transition-colors">Contact Us</Link></li>
+
+                            <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
                             <li><Link href="/shipping-returns" className="hover:text-white transition-colors">Shipping & Returns</Link></li>
                             <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
                             <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>

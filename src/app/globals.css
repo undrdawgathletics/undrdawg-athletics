@@ -104,8 +104,27 @@ h6 {
   animation-delay: 0.3s;
 }
 
+
 .animate-fragment-4 {
   opacity: 0;
   animation: fragment-4 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   animation-delay: 0.4s;
+}
+
+@keyframes scroll-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-33.33%); }
+}
+
+@keyframes scroll-down {
+  0% { transform: translateY(-33.33%); }
+  100% { transform: translateY(0); }
+}
+
+.animate-scroll-up {
+  animation: scroll-up 25s linear infinite;
+}
+
+.animate-scroll-down {
+  animation: scroll-down 25s linear infinite;
 }

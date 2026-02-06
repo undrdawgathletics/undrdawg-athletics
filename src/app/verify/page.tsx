@@ -54,7 +54,7 @@ export default function VerifyPage() {
                         <ShieldCheck size={40} />
                     </div>
                     <h1 className="text-5xl font-black italic tracking-tighter uppercase mb-4 text-black">
-                        VERIFY <span className="text-primary italic">MEMORABILIA.</span>
+                        VERIFY <span className="text-primary italic">MEMORABILIA</span>
                     </h1>
                     <p className="text-zinc-600 max-w-xl mx-auto font-medium">
                         Undrdawg Athletics provides witness based authentication. Our representatives are present at all events and signings.
@@ -77,7 +77,7 @@ export default function VerifyPage() {
                                         type="text"
                                         value={serial}
                                         onChange={(e) => setSerial(e.target.value)}
-                                        placeholder="e.g. 67"
+                                        placeholder="ENTER HERE"
                                         className="w-full h-16 bg-white border border-black/5 rounded-2xl px-6 font-mono text-lg tracking-wider focus:border-primary focus:outline-none transition-all placeholder:text-zinc-300 text-black shadow-sm"
                                     />
                                     {status === "verifying" && (

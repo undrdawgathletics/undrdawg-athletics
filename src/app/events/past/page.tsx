@@ -25,18 +25,17 @@ const PAST_EVENTS = [
     }
 ];
 
+import EventsTab from "@/components/EventsTab";
+
 export default function PastEventsPage() {
     return (
         <div className="bg-white min-h-screen text-black pt-28 pb-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="mb-16">
-                    <h1 className="text-5xl font-black italic tracking-tighter uppercase mb-4 text-black">
+                <div className="mb-16 text-center">
+                    <h1 className="text-5xl font-black italic tracking-tighter uppercase mb-8 text-black">
                         PAST <span className="text-primary italic">EXPERIENCES.</span>
                     </h1>
-                    <p className="text-zinc-600 max-w-2xl font-medium">
-                        A look back at our exclusive events and athlete appearances.
-                        Subscribe to our newsletter to never miss the next one.
-                    </p>
+                    <EventsTab />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

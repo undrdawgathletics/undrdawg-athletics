@@ -5,10 +5,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, ShoppingCart, ShieldCheck } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { itemCount } = useCart();
+  const router = useRouter();
 
   const navLinks = [
     { name: "About", href: "/about" },
@@ -20,15 +22,15 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
-          <div className="flex items-center">
+        <div className="flex h-24 items-center justify-between">
+          <div className="flex items-center -mt-2">
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/logo.png"
                 alt="Undrdawg Athletics"
-                width={64}
-                height={64}
-                className="invert brightness-200 object-contain max-h-16 w-auto"
+                width={90}
+                height={90}
+                className="invert brightness-200 object-contain max-h-24 w-auto scale-110"
                 priority
               />
             </Link>
@@ -40,12 +42,12 @@ export default function Navbar() {
               <input
                 type="text"
                 placeholder="Search..."
-                className="w-full bg-zinc-900 border border-zinc-800 text-white text-sm rounded-full py-2 px-4 focus:outline-none focus:border-zinc-700 transition-colors placeholder:text-zinc-600"
+                className="w-full bg-zinc-900 border-2 border-white text-white text-sm rounded-full py-2 px-4 focus:outline-none focus:border-zinc-300 transition-colors placeholder:text-white"
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     const target = e.target as HTMLInputElement;
                     if (target.value.trim()) {
-                      window.location.href = `/search?q=${encodeURIComponent(target.value)}`;
+                      router.push(`/search?q=${encodeURIComponent(target.value)}`);
                     }
                   }
                 }}
@@ -67,7 +69,7 @@ export default function Navbar() {
               ))}
               <Link
                 href="/verify"
-                className="flex items-center gap-2 rounded-full bg-cyan-500/10 px-4 py-2 text-sm font-bold uppercase tracking-widest text-cyan-400 border border-cyan-500/20 transition-all hover:bg-cyan-500 hover:text-black"
+                className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-widest text-white border-2 border-white transition-all hover:bg-white hover:text-black"
               >
                 <ShieldCheck size={16} />
                 Verify Memorabilia
@@ -119,7 +121,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/verify"
-              className="block rounded-md px-3 py-2 text-base font-medium text-cyan-400 hover:bg-cyan-900/20"
+              className="block rounded-md px-3 py-2 text-base font-medium text-white border border-white hover:bg-white/10"
               onClick={() => setIsOpen(false)}
             >
               Verify Memorabilia

@@ -1,108 +1,93 @@
 import Image from "next/image";
-import { GraduationCap, MapPin, Rocket } from "lucide-react";
+import { GraduationCap, MapPin, Rocket, PlayCircle } from "lucide-react";
 
 export default function AboutPage() {
     return (
         <div className="flex flex-col bg-white text-black">
-            {/* Introduction Hero */}
-            <section className="relative py-24 px-4 overflow-hidden border-b border-black/5">
+            {/* Header */}
+            <section className="relative pt-24 pb-12 px-4 overflow-hidden border-b border-black/5">
                 <div className="mx-auto max-w-4xl text-center">
-                    <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter mb-8 text-black">
-                        BORN FROM <span className="text-primary italic">GRIT.</span>
+                    <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter mb-4 text-black">
+                        THE UNDRDAWG <span className="text-primary italic">STORY</span>
                     </h1>
-                    <p className="text-xl text-zinc-600 leading-relaxed font-medium">
-                        Undrdawg Athletics isn't just a brand; it's a movement born in the classrooms
-                        and on the campuses of Philadelphia's hardest-working institutions.
-                    </p>
                 </div>
             </section>
 
-            {/* Origin Story */}
-            <section className="py-24 px-4 bg-zinc-50">
-                <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                    <div className="space-y-8">
-                        <h2 className="text-4xl font-black tracking-tight uppercase text-black">
-                            The University <br />
-                            <span className="text-primary">Connection</span>
-                        </h2>
-                        <div className="space-y-6">
-                            <div className="flex gap-4">
-                                <div className="flex-shrink-0 mt-1 h-10 w-10 flex items-center justify-center rounded-lg bg-black/5 border border-black/10 text-primary">
-                                    <GraduationCap size={20} />
-                                </div>
-                                <div>
-                                    <h4 className="text-lg font-bold text-black">Student-Led & Driven</h4>
-                                    <p className="text-zinc-600 mt-1">
-                                        Founded by visionary students from <span className="text-black font-semibold">Penn State University</span> and <span className="text-black font-semibold">Drexel University</span>,
-                                        we understand the hustle of the next generation of athletes.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="flex gap-4">
-                                <div className="flex-shrink-0 mt-1 h-10 w-10 flex items-center justify-center rounded-lg bg-black/5 border border-black/10 text-primary">
-                                    <MapPin size={20} />
-                                </div>
-                                <div>
-                                    <h4 className="text-lg font-bold text-black">Philadelphia Roots</h4>
-                                    <p className="text-zinc-600 mt-1">
-                                        Operated out of the City of Brotherly Love. Our "Undrdawg" mentality
-                                        is etched into the Philadelphia region's identity.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="flex gap-4">
-                                <div className="flex-shrink-0 mt-1 h-10 w-10 flex items-center justify-center rounded-lg bg-black/5 border border-black/10 text-primary">
-                                    <Rocket size={20} />
-                                </div>
-                                <div>
-                                    <h4 className="text-lg font-bold text-black">The Mission</h4>
-                                    <p className="text-zinc-600 mt-1">
-                                        To deliver premium, authentic experiences that bridge the gap
-                                        between notable athletes and their most dedicated fans.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+            {/* The Undrdawg Story */}
+            <section className="py-16 px-4 bg-white">
+                <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                    <div className="space-y-6 text-lg text-zinc-700 leading-relaxed font-medium">
+                        <p>
+                            Founded in January 2026 by four partners, Undrdawg Athletics wasn’t built in a boardroom—it was built on a lifelong bond. Two of the founders, Chris and Julian, have been friends since birth, a relationship that continued through their years at St. Mary Interparochial School for grade school. That decades-long trust serves as the primary engine behind everything we do, and our "Undrdawg" identity is rooted in our different, yet complementary, paths through sports, defined by a shared commitment to outworking the competition.
+                        </p>
+                        <p>
+                            Julian’s athletic journey is marked by high-level success; a National Champion and high school Tournament MVP, he eventually proved the doubters wrong by earning a spot on the Division I Drexel Men’s Soccer roster as a walk-on. Chris’s story is one of discipline and rapid growth; despite never playing football prior to high school, he earned his place in the elite St. Joseph’s Prep football program. He was a member of the 2019 team that secured a PIAA State Championship, a Philadelphia City Title, and a Philadelphia Catholic League Title.
+                        </p>
+                        <p>
+                            After attending different high schools, the two reunited at Drexel University, where they successfully conceptualized and executed a series of historic public meet-and-greets. Beginning with Brandon Graham in 2023 and expanding in 2024 to include AJ Brown and Jake Elliott, they managed every aspect of these high-profile appearances. Their work captured major media attention, earning coverage on 6abc and Fox 29, as they independently fundraised and navigated the complex logistics of professional athlete events. This successful venture served as the ultimate proof of concept and provided the inspiration for Undrdawg Athletics. Whether as a national standout, a championship teammate, or partners delivering historic, televised events, we have lived the grind and are here to bring that South Philly work ethic to the industry.
+                        </p>
                     </div>
 
-                    <div className="relative">
-                        <div className="aspect-[4/5] rounded-3xl bg-white border border-black/5 overflow-hidden flex flex-col items-center justify-center p-12 shadow-xl">
-                            <Image
-                                src="/logo.png"
-                                alt="Undrdawg Official Logo"
-                                width={180}
-                                height={180}
-                                className="mb-8"
-                            />
-                            <div className="text-center">
-                                <p className="text-sm font-bold tracking-[0.3em] text-primary uppercase mb-4">Established 2024</p>
-                                <h3 className="text-2xl font-black italic uppercase text-black">"Notable by Nature. Underdog by Choice."</h3>
-                            </div>
+                    <div className="relative h-full min-h-[400px] w-full bg-black rounded-3xl overflow-hidden flex items-center justify-center group cursor-pointer shadow-2xl">
+                        {/* Placeholder for 6abc News Clip */}
+                        <Image
+                            src="/images/athletes/athlete-1.jpg" // Using an existing image as placeholder poster
+                            alt="6abc News Coverage"
+                            fill
+                            className="object-cover opacity-60 group-hover:opacity-80 transition-opacity"
+                        />
+                        <div className="absolute z-10 flex flex-col items-center text-white">
+                            <PlayCircle size={80} className="mb-4 drop-shadow-md group-hover:scale-110 transition-transform" />
+                            <span className="text-xl font-bold uppercase tracking-widest drop-shadow-md">Watch the 6abc News Clip</span>
                         </div>
-                        {/* Decorative element */}
-                        <div className="absolute -bottom-6 -right-6 h-32 w-32 bg-primary/10 blur-3xl" />
                     </div>
                 </div>
             </section>
 
-            {/* Values Section */}
-            <section className="py-24 px-4 border-t border-black/5">
-                <div className="mx-auto max-w-4xl text-center">
-                    <h2 className="text-3xl font-black uppercase mb-12 text-black">The Undrdawg Manifesto</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                        <div className="p-8 rounded-2xl bg-zinc-50 border border-black/5">
-                            <h3 className="text-primary font-bold mb-4 italic">01. GRIT ABOVE ALL</h3>
-                            <p className="text-zinc-600 text-sm leading-relaxed">
-                                Success isn't given; it's earned in the shadows when no one is watching.
-                                We celebrate the grind that creates notable athletes.
-                            </p>
+            {/* Meet the Founders */}
+            <section className="py-24 px-4 bg-zinc-50 border-t border-black/5">
+                <div className="mx-auto max-w-6xl">
+                    <h2 className="text-4xl md:text-5xl font-black uppercase text-center mb-20 text-black">
+                        Meet the <span className="text-primary italic">Founders</span>
+                    </h2>
+
+                    <div className="space-y-24">
+                        {/* Chris */}
+                        <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
+                            <div className="flex-shrink-0 w-64 h-64 relative rounded-full overflow-hidden border-4 border-primary shadow-xl">
+                                <Image
+                                    src="/logo.png" // Placeholder
+                                    alt="Chris Gallelli"
+                                    fill
+                                    className="object-cover invert brightness-200 bg-black"
+                                />
+                            </div>
+                            <div className="flex-1 text-center md:text-left">
+                                <h3 className="text-3xl font-black uppercase text-black mb-2">Chris Gallelli</h3>
+                                <p className="text-primary font-bold tracking-widest uppercase mb-6">President & CEO</p>
+                                <p className="text-zinc-600 leading-relaxed text-lg">
+                                    A Senior at Drexel University double-majoring in Finance and Sport Management, Chris is the strategic engine behind Undrdawg Athletics. Drawing on the discipline and leadership cultivated within the championship-winning football program at St. Joseph’s Prep, he specializes in high-stakes talent negotiation and the logistical strategy required to secure premier athletes. Chris excels at navigating the intricate landscape of sports contracts, leveraging his finance background to manage budgets and ensure favorable terms for all parties involved. With professional experience as a Financial Analyst, he combines fiscal precision with industry-specific grit, ensuring that every partnership and event is executed with the highest standard of corporate service.
+                                </p>
+                            </div>
                         </div>
-                        <div className="p-8 rounded-2xl bg-zinc-50 border border-black/5">
-                            <h3 className="text-primary font-bold mb-4 italic">02. RADICAL AUTHENTICITY</h3>
-                            <p className="text-zinc-600 text-sm leading-relaxed">
-                                In a world of filters, we deal in truth. Every item we sell and
-                                every athlete we book is verified for 100% authenticity.
-                            </p>
+
+                        {/* Julian */}
+                        <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
+                            <div className="flex-shrink-0 w-64 h-64 relative rounded-full overflow-hidden border-4 border-primary shadow-xl">
+                                <Image
+                                    src="/logo.png" // Placeholder
+                                    alt="Julian Pittaoulis"
+                                    fill
+                                    className="object-cover invert brightness-200 bg-black"
+                                />
+                            </div>
+                            <div className="flex-1 text-center md:text-left">
+                                <h3 className="text-3xl font-black uppercase text-black mb-2">Julian Pittaoulis</h3>
+                                <p className="text-primary font-bold tracking-widest uppercase mb-6">Chief Marketing Officer (CMO)</p>
+                                <p className="text-zinc-600 leading-relaxed text-lg">
+                                    Julian is a Senior at Drexel University majoring in Economics and brings an elite competitive mindset to the brand. His journey to the Division I level as a walk-on for Drexel Men’s Soccer defines the persistence and "Undrdawg" work ethic he applies to every project. He specializes in market analysis and fan engagement to ensure every activation delivers maximum impact. Leveraging his professional background in Marketing, Operations, and Logistics Management, Julian excels at generating massive notability and public visibility, utilizing his marketing expertise to put "eyes" on every event and secure the media attention necessary for a historic turnout.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
