@@ -75,46 +75,61 @@ export default function Home() {
 
       {/* Main Content Area - Below the Hero section to fill the white space */}
       <section className="w-full py-12 bg-white">
-        <div className="w-full px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-          {/* 3-Column Stats Row - Spaced out */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-7xl mb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+          {/* 3-Column Stats Row */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl mb-12">
             {/* Events */}
-            <div className="flex flex-col items-center text-center p-8 rounded-3xl bg-zinc-50 border border-zinc-100 transition-all hover:bg-zinc-100 hover:scale-[1.02]">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-black text-white shadow-lg">
-                <Calendar size={28} />
+            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-zinc-50 border border-zinc-100 transition-colors hover:bg-zinc-100">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-black text-white">
+                <Calendar size={24} />
               </div>
-              <h3 className="text-2xl font-black text-black uppercase tracking-tighter mb-3">Events</h3>
-              <p className="text-base text-zinc-600 font-medium">Public & Private Signings</p>
+              <h3 className="text-xl font-bold text-black uppercase tracking-wider mb-2">Events</h3>
+              <p className="text-sm text-zinc-600">Public & Private Signings</p>
             </div>
 
             {/* Memorabilia */}
-            <div className="flex flex-col items-center text-center p-8 rounded-3xl bg-zinc-50 border border-zinc-100 transition-all hover:bg-zinc-100 hover:scale-[1.02]">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-black text-white shadow-lg">
-                <Trophy size={28} />
+            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-zinc-50 border border-zinc-100 transition-colors hover:bg-zinc-100">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-black text-white">
+                <Trophy size={24} />
               </div>
-              <h3 className="text-2xl font-black text-black uppercase tracking-tighter mb-3">Memorabilia</h3>
-              <p className="text-base text-zinc-600 font-medium">Verified Authentic Gear</p>
+              <h3 className="text-xl font-bold text-black uppercase tracking-wider mb-2">Memorabilia</h3>
+              <p className="text-sm text-zinc-600">Verified Authentic Gear</p>
             </div>
 
-            {/* Roster -> Elite Roster */}
-            <div className="flex flex-col items-center text-center p-8 rounded-3xl bg-zinc-50 border border-zinc-100 transition-all hover:bg-zinc-100 hover:scale-[1.02]">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-black text-white shadow-lg">
-                <Users size={28} />
+            {/* Roster */}
+            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-zinc-50 border border-zinc-100 transition-colors hover:bg-zinc-100">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-black text-white">
+                <Users size={24} />
               </div>
-              <h3 className="text-2xl font-black text-black uppercase tracking-tighter mb-3">Elite Roster</h3>
-              <p className="text-base text-zinc-600 font-medium">Top Talent Connection</p>
+              <h3 className="text-xl font-bold text-black uppercase tracking-wider mb-2">Roster</h3>
+              <p className="text-sm text-zinc-600">Top Talent Connection</p>
             </div>
           </div>
 
-          {/* Quote Block - Full Width */}
-          <div className="w-full mb-12 text-center">
-            <div className="h-px w-full bg-zinc-200 mb-10" />
-            <div className="max-w-5xl mx-auto px-4">
-              <p className="text-3xl md:text-4xl font-bold text-black italic leading-tight tracking-tight">
-                "Delivering Notable Athletes - it's in our DNA. We help you book and meet all athletes - overcoming odds to create authentic & memorable experiences!"
-              </p>
-            </div>
-            <div className="h-px w-full bg-zinc-200 mt-10" />
+          {/* Quote Block */}
+          <div className="w-full max-w-3xl mb-12 text-center decoration-zinc-200">
+            <div className="h-px w-full bg-zinc-100 mb-8" />
+            <p className="text-2xl font-medium text-black italic leading-relaxed">
+              "Delivering Notable Athletes - it's in our DNA. We help you book and meet all athletes - overcoming odds to create authentic & memorable experiences!"
+            </p>
+            <div className="h-px w-full bg-zinc-100 mt-8" />
+          </div>
+
+          {/* Buttons */}
+          <div className="flex flex-col items-center justify-center gap-6 sm:flex-row w-full max-w-2xl">
+            <Link
+              href="/book"
+              className="group flex h-14 w-full items-center justify-center gap-3 rounded-full bg-black px-10 text-lg font-bold text-white transition-all hover:bg-zinc-800 sm:w-auto shadow-lg hover:shadow-xl active:scale-95"
+            >
+              Book an Athlete
+              <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link
+              href="/shop"
+              className="flex h-14 w-full items-center justify-center gap-3 rounded-full border-2 border-zinc-200 bg-transparent px-10 text-lg font-bold text-black transition-all hover:bg-zinc-50 sm:w-auto hover:border-zinc-300 active:scale-95"
+            >
+              Shop the Drop
+            </Link>
           </div>
         </div>
       </section>
