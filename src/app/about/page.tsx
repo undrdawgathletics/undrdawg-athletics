@@ -48,9 +48,8 @@ export default function AboutPage() {
                         </video>
 
                         {!isPlaying && (
-                            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 hover:bg-black/30 transition-colors z-10 font-sans p-4">
-                                <PlayCircle size={64} className="mb-4 text-white drop-shadow-md group-hover:scale-110 transition-transform" />
-                                <span className="text-lg font-bold uppercase tracking-widest text-white drop-shadow-md text-center">Watch the 6abc News Clip</span>
+                            <div className="absolute inset-0 flex items-center justify-center group-hover:bg-black/10 transition-colors z-10 p-4">
+                                <PlayCircle size={80} className="text-white/80 drop-shadow-2xl group-hover:scale-110 group-hover:text-white transition-all" />
                             </div>
                         )}
                     </div>
@@ -64,7 +63,7 @@ export default function AboutPage() {
                             Julian’s athletic journey is marked by high-level success; a National Champion and high school Tournament MVP, he eventually proved the doubters wrong by earning a spot on the Division I Drexel Men’s Soccer roster as a walk-on. Chris’s story is one of discipline and rapid growth; despite never playing football prior to high school, he earned his place in the elite St. Joseph’s Prep football program. He was a member of the 2019 team that secured a PIAA State Championship, a Philadelphia City Title, and a Philadelphia Catholic League Title.
                         </p>
                         <p>
-                            After attending different high schools, the two reunited at Drexel University, where they successfully conceptualized and executed a series of historic public meet-and-greets. Beginning with Brandon Graham in 2023 and expanding in 2024 to include AJ Brown and Jake Elliott, they managed every aspect of these high-profile appearances. Their work captured major media attention, earning coverage on 6abc and Fox 29, as they independently fundraised and navigated the complex logistics of professional athlete events. This successful venture served as the ultimate proof of concept and provided the inspiration for Undrdawg Athletics. Whether as a national standout, a championship teammate, or partners delivering historic, televised events, we have lived the grind and are here to bring that South Philly work ethic to the industry.
+                            After attending different high schools, the two reunited at Drexel University, where they successfully conceptualized and executed a series of historic public meet-and-greets. Beginning with Brandon Graham in 2023 and expanding in 2024 to include AJ Brown and Jake Elliott, they managed every aspect of these high-profile appearances. Their work captured major media attention, earning coverage on 6abc, as they independently fundraised and navigated the complex logistics of professional athlete events. This successful venture served as the ultimate proof of concept and provided the inspiration for Undrdawg Athletics. Whether as a national standout, a championship teammate, or partners delivering historic, televised events, we have lived the grind and are here to bring that South Philly work ethic to the industry.
                         </p>
                     </div>
                 </div>
