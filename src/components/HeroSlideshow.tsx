@@ -6,6 +6,17 @@ import { useEffect, useState } from "react";
 const images = [
     "/images/slideshow/IMG_6507.jpeg",
     "/images/slideshow/IMG_0321.jpeg",
+    "/images/slideshow/392419D6-D028-4AB1-9E05-279BAA72BDC4OFF08509-Enhanced-NR (1).jpeg",
+    "/images/slideshow/IMG_0186 (1) (1).jpeg",
+    "/images/slideshow/IMG_0206.jpeg",
+    "/images/slideshow/IMG_0318.jpeg",
+    "/images/slideshow/IMG_0319.jpeg",
+    "/images/slideshow/IMG_0320.jpeg",
+    "/images/slideshow/IMG_0321 copy.jpeg",
+    "/images/slideshow/IMG_0322.jpeg",
+    "/images/slideshow/IMG_0323.jpeg",
+    "/images/slideshow/IMG_0324.jpeg",
+    "/images/slideshow/IMG_4290 (1).jpeg",
 ];
 
 export default function HeroSlideshow({ direction = "up" }: { direction?: "up" | "down" }) {
