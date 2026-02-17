@@ -28,10 +28,10 @@ export default function AboutPage() {
 
             {/* The Undrdawg Story */}
             <section className="py-16 px-4 bg-white">
-                <div className="mx-auto max-w-4xl flex flex-col items-center text-center">
-                    {/* Portrait Video at the top */}
+                <div className="mx-auto max-w-7xl">
+                    {/* Video wrapper - floating on desktop */}
                     <div
-                        className="relative w-full max-w-[320px] aspect-[9/16] bg-black rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center group cursor-pointer lg:mb-16 mb-12"
+                        className="lg:float-right lg:ml-12 lg:mb-8 mb-12 w-full lg:w-[500px] aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center group cursor-pointer relative"
                         onClick={handlePlay}
                     >
                         <video
@@ -55,12 +55,12 @@ export default function AboutPage() {
                         )}
                     </div>
 
-                    {/* Text Block shifted below */}
-                    <div className="space-y-6 text-lg text-zinc-700 leading-relaxed font-medium text-left">
-                        <p>
+                    {/* Text Block wrapping around video */}
+                    <div className="text-lg text-zinc-700 leading-relaxed font-medium">
+                        <p className="mb-6">
                             Founded in January 2026 by four partners, Undrdawg Athletics wasn’t built in a boardroom—it was built on a lifelong bond. Two of the founders, Chris and Julian, have been friends since birth, a relationship that continued through their years at St. Mary Interparochial School for grade school. That decades-long trust serves as the primary engine behind everything we do, and our "Undrdawg" identity is rooted in our different, yet complementary, paths through sports, defined by a shared commitment to outworking the competition.
                         </p>
-                        <p>
+                        <p className="mb-6">
                             Julian’s athletic journey is marked by high-level success; a National Champion and high school Tournament MVP, he eventually proved the doubters wrong by earning a spot on the Division I Drexel Men’s Soccer roster as a walk-on. Chris’s story is one of discipline and rapid growth; despite never playing football prior to high school, he earned his place in the elite St. Joseph’s Prep football program. He was a member of the 2019 team that secured a PIAA State Championship, a Philadelphia City Title, and a Philadelphia Catholic League Title.
                         </p>
                         <p>
