@@ -7,14 +7,14 @@ export default function Home() {
   return (
     <div className="flex flex-col bg-white">
       {/* Main Content Area */}
-      <section className="flex pt-24 pb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full gap-8 items-end">
+      <section className="flex pt-24 pb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full gap-8">
         {/* Left Slideshow */}
-        <div className="hidden lg:block w-[28%] relative aspect-[3/4] self-end rounded-2xl overflow-hidden shadow-2xl">
+        <div className="hidden lg:block w-[28%] relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
           <HeroSlideshow direction="up" />
         </div>
 
         {/* Center Content */}
-        <div className="flex-1 flex flex-col items-center justify-end pb-0 z-10">
+        <div className="flex-1 flex flex-col items-center z-10">
           {/* Logo Animation */}
           <div className="relative mb-8 h-[300px] w-[300px]">
             {/* Fragment 1: Top Left */}
@@ -91,7 +91,7 @@ export default function Home() {
         </div>
 
         {/* Right Slideshow */}
-        <div className="hidden lg:block w-[28%] relative aspect-[3/4] self-end rounded-2xl overflow-hidden shadow-2xl">
+        <div className="hidden lg:block w-[28%] relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
           <HeroSlideshow direction="down" />
         </div>
       </section>
