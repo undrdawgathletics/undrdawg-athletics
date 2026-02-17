@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 const images = [
     "/images/slideshow/IMG_6507.jpeg",
@@ -19,21 +19,31 @@ const images = [
     "/images/slideshow/IMG_4290 (1).jpeg",
 ];
 
+function shuffleArray(arr: string[]) {
+    const shuffled = [...arr];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+
 export default function HeroSlideshow({ direction = "up" }: { direction?: "up" | "down" }) {
-    // Start with different images based on direction so they aren't identical
-    const [currentIndex, setCurrentIndex] = useState(direction === "up" ? 0 : 1);
+    // Each instance gets its own randomized order
+    const shuffledImages = useMemo(() => shuffleArray(images), []);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % images.length);
-        }, 2500); // Change every 2.5 seconds (faster)
+            setCurrentIndex((prev) => (prev + 1) % shuffledImages.length);
+        }, 2500);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [shuffledImages.length]);
 
     return (
         <div className="relative w-full h-full overflow-hidden select-none pointer-events-none">
-            {images.map((src, index) => (
+            {shuffledImages.map((src, index) => (
                 <div
                     key={src}
                     className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentIndex ? "opacity-100" : "opacity-0"}`}

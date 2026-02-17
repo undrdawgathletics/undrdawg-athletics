@@ -10,14 +10,14 @@ export default function Home() {
       <section className="relative w-full -mt-20 pt-24">
         <div className="flex w-full">
           {/* Left Slideshow - flush to left edge, rectangular */}
-          <div className="hidden lg:block w-[30%] relative overflow-hidden" style={{ minHeight: '650px' }}>
+          <div className="hidden lg:block w-[30%] relative overflow-hidden h-[400px]">
             <HeroSlideshow direction="up" />
           </div>
 
           {/* Center Content */}
-          <div className="flex-1 flex flex-col items-center z-10 px-4 pt-4">
+          <div className="flex-1 flex flex-col items-center justify-center z-10 px-4 h-[400px]">
             {/* Logo Animation - bigger */}
-            <div className="relative mb-6 h-[350px] w-[350px]">
+            <div className="relative mb-2 h-[400px] w-[400px]">
               {/* Fragment 1: Top Left */}
               <div className="absolute inset-0 animate-fragment-1" style={{ clipPath: 'polygon(0 0, 50% 0, 50% 50%, 0 50%)' }}>
                 <Image src="/logo.png" alt="Undrdawg logo" fill className="object-contain" priority />
@@ -37,7 +37,7 @@ export default function Home() {
             </div>
 
             {/* 3-Column Stats Row */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-2xl mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-2xl mb-2">
               {/* Events */}
               <div className="flex flex-col items-center text-center">
                 <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-black/5 text-black">
@@ -67,14 +67,14 @@ export default function Home() {
             </div>
 
             {/* Quote Block */}
-            <div className="w-full max-w-2xl border-t border-black/10 pt-6 mb-6 text-center">
+            <div className="w-full max-w-2xl border-t border-black/10 pt-2 mb-2 text-center">
               <p className="text-lg font-medium text-black italic">
                 "Delivering Notable Athletes - it's in our DNA. We help you book and meet all athletes - overcoming odds to create authentic & memorable experiences!"
               </p>
             </div>
 
             {/* Buttons */}
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row w-full max-w-md mb-8">
+            <div className="flex flex-col items-center justify-center gap-2 sm:flex-row w-full max-w-md">
               <Link
                 href="/book"
                 className="group flex h-12 w-full items-center justify-center gap-2 rounded-full bg-black px-6 text-base font-bold text-white transition-all hover:bg-black/80 sm:w-auto"
@@ -92,7 +92,7 @@ export default function Home() {
           </div>
 
           {/* Right Slideshow - flush to right edge, rectangular */}
-          <div className="hidden lg:block w-[30%] relative overflow-hidden" style={{ minHeight: '650px' }}>
+          <div className="hidden lg:block w-[30%] relative overflow-hidden h-[400px]">
             <HeroSlideshow direction="down" />
           </div>
         </div>
