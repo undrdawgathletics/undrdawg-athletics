@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="flex flex-col bg-white">
       {/* Main Content Area - full width, no horizontal padding, flush under navbar */}
-      <section className="relative w-full pt-24">
+      <section className="relative w-full -mt-20 pt-24">
         <div className="flex w-full">
           {/* Left Slideshow - flush to left edge, rectangular */}
           <div className="hidden lg:block w-[30%] relative overflow-hidden" style={{ minHeight: '650px' }}>
