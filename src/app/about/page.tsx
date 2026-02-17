@@ -28,21 +28,10 @@ export default function AboutPage() {
 
             {/* The Undrdawg Story */}
             <section className="py-16 px-4 bg-white">
-                <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                    <div className="space-y-6 text-lg text-zinc-700 leading-relaxed font-medium">
-                        <p>
-                            Founded in January 2026 by four partners, Undrdawg Athletics wasn’t built in a boardroom—it was built on a lifelong bond. Two of the founders, Chris and Julian, have been friends since birth, a relationship that continued through their years at St. Mary Interparochial School for grade school. That decades-long trust serves as the primary engine behind everything we do, and our "Undrdawg" identity is rooted in our different, yet complementary, paths through sports, defined by a shared commitment to outworking the competition.
-                        </p>
-                        <p>
-                            Julian’s athletic journey is marked by high-level success; a National Champion and high school Tournament MVP, he eventually proved the doubters wrong by earning a spot on the Division I Drexel Men’s Soccer roster as a walk-on. Chris’s story is one of discipline and rapid growth; despite never playing football prior to high school, he earned his place in the elite St. Joseph’s Prep football program. He was a member of the 2019 team that secured a PIAA State Championship, a Philadelphia City Title, and a Philadelphia Catholic League Title.
-                        </p>
-                        <p>
-                            After attending different high schools, the two reunited at Drexel University, where they successfully conceptualized and executed a series of historic public meet-and-greets. Beginning with Brandon Graham in 2023 and expanding in 2024 to include AJ Brown and Jake Elliott, they managed every aspect of these high-profile appearances. Their work captured major media attention, earning coverage on 6abc and Fox 29, as they independently fundraised and navigated the complex logistics of professional athlete events. This successful venture served as the ultimate proof of concept and provided the inspiration for Undrdawg Athletics. Whether as a national standout, a championship teammate, or partners delivering historic, televised events, we have lived the grind and are here to bring that South Philly work ethic to the industry.
-                        </p>
-                    </div>
-
+                <div className="mx-auto max-w-4xl flex flex-col items-center text-center">
+                    {/* Portrait Video at the top */}
                     <div
-                        className="relative h-full min-h-[400px] w-full bg-black rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center group cursor-pointer"
+                        className="relative w-full max-w-[320px] aspect-[9/16] bg-black rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center group cursor-pointer lg:mb-16 mb-12"
                         onClick={handlePlay}
                     >
                         <video
@@ -59,11 +48,24 @@ export default function AboutPage() {
                         </video>
 
                         {!isPlaying && (
-                            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 hover:bg-black/30 transition-colors z-10 font-sans">
-                                <PlayCircle size={80} className="mb-4 text-white drop-shadow-md group-hover:scale-110 transition-transform" />
-                                <span className="text-xl font-bold uppercase tracking-widest text-white drop-shadow-md">Watch the 6abc News Clip</span>
+                            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 hover:bg-black/30 transition-colors z-10 font-sans p-4">
+                                <PlayCircle size={64} className="mb-4 text-white drop-shadow-md group-hover:scale-110 transition-transform" />
+                                <span className="text-lg font-bold uppercase tracking-widest text-white drop-shadow-md text-center">Watch the 6abc News Clip</span>
                             </div>
                         )}
+                    </div>
+
+                    {/* Text Block shifted below */}
+                    <div className="space-y-6 text-lg text-zinc-700 leading-relaxed font-medium text-left">
+                        <p>
+                            Founded in January 2026 by four partners, Undrdawg Athletics wasn’t built in a boardroom—it was built on a lifelong bond. Two of the founders, Chris and Julian, have been friends since birth, a relationship that continued through their years at St. Mary Interparochial School for grade school. That decades-long trust serves as the primary engine behind everything we do, and our "Undrdawg" identity is rooted in our different, yet complementary, paths through sports, defined by a shared commitment to outworking the competition.
+                        </p>
+                        <p>
+                            Julian’s athletic journey is marked by high-level success; a National Champion and high school Tournament MVP, he eventually proved the doubters wrong by earning a spot on the Division I Drexel Men’s Soccer roster as a walk-on. Chris’s story is one of discipline and rapid growth; despite never playing football prior to high school, he earned his place in the elite St. Joseph’s Prep football program. He was a member of the 2019 team that secured a PIAA State Championship, a Philadelphia City Title, and a Philadelphia Catholic League Title.
+                        </p>
+                        <p>
+                            After attending different high schools, the two reunited at Drexel University, where they successfully conceptualized and executed a series of historic public meet-and-greets. Beginning with Brandon Graham in 2023 and expanding in 2024 to include AJ Brown and Jake Elliott, they managed every aspect of these high-profile appearances. Their work captured major media attention, earning coverage on 6abc and Fox 29, as they independently fundraised and navigated the complex logistics of professional athlete events. This successful venture served as the ultimate proof of concept and provided the inspiration for Undrdawg Athletics. Whether as a national standout, a championship teammate, or partners delivering historic, televised events, we have lived the grind and are here to bring that South Philly work ethic to the industry.
+                        </p>
                     </div>
                 </div>
             </section>
