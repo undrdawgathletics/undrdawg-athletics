@@ -24,21 +24,21 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-24 items-center justify-between gap-4">
           {/* Logo - Left Corner & Vertically Centered */}
-          <div className="flex-shrink-0 flex items-center pt-2">
+          <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/logo.png"
                 alt="Undrdawg Athletics"
                 width={90}
                 height={90}
-                className="invert brightness-200 object-contain max-h-24 w-auto scale-110"
+                className="invert brightness-200 object-contain max-h-24 w-auto"
                 priority
               />
             </Link>
           </div>
 
           {/* Search Bar - Fill Empty Space */}
-          <div className="hidden md:flex flex-1 mx-4 lg:mx-8">
+          <div className="hidden md:flex flex-1 mx-4">
             <div className="relative w-full">
               <input
                 type="text"
