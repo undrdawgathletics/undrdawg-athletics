@@ -66,7 +66,7 @@ export default function UpcomingEventsPage() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mb-16">
                     <h1 className="text-5xl font-black italic tracking-tighter uppercase mb-4 text-black">
-                        UPCOMING <span className="text-primary italic">EXPERIENCES.</span>
+                        UPCOMING <span className="text-primary italic">EXPERIENCES</span>
                     </h1>
                     <p className="text-zinc-600 max-w-2xl font-medium">
                         Secure your spot for future appearances from Philadelphia stars.

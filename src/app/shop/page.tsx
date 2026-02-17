@@ -29,51 +29,19 @@ export default function ShopPage() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h1 className="text-5xl md:text-8xl font-black italic tracking-tighter uppercase text-black mb-4">
-                        SHOP <span className="text-primary">THE DROP.</span>
+                        SHOP <span className="text-primary">THE DROP</span>
                     </h1>
                     <p className="text-zinc-500 font-medium">Limited edition releases and exclusive memorabilia.</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {PRODUCTS.map((product) => (
-                        <div key={product.id} className="group relative bg-zinc-50 rounded-[2.5rem] border border-black/5 overflow-hidden hover:shadow-xl transition-all duration-300">
-                            <div className="relative aspect-square w-full bg-white">
-                                <Image
-                                    src={product.image}
-                                    alt={product.name}
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                />
-                                <div className="absolute top-4 left-4 bg-black/90 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">
-                                    {product.category}
-                                </div>
-                            </div>
-
-                            <div className="p-8">
-                                <div className="flex justify-between items-start mb-4">
-                                    <div>
-                                        <h3 className="text-xl font-black uppercase italic tracking-tight text-black mb-1">{product.name}</h3>
-                                        <p className="text-lg font-bold text-zinc-500">${product.price.toFixed(2)}</p>
-                                    </div>
-                                </div>
-
-                                <button
-                                    onClick={() => addItem({
-                                        id: product.id,
-                                        name: product.name,
-                                        price: product.price,
-                                        image: product.image,
-                                        quantity: 1,
-                                        type: "product"
-                                    })}
-                                    className="w-full h-14 bg-white border border-black/10 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-black hover:text-white transition-all flex items-center justify-center gap-2"
-                                >
-                                    <ShoppingCart size={16} />
-                                    Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    ))}
+                <div className="flex flex-col items-center justify-center py-20 bg-zinc-50 rounded-[3rem] border border-black/5">
+                    <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-black text-white shadow-xl">
+                        <ShoppingCart size={40} />
+                    </div>
+                    <h2 className="text-4xl font-black italic uppercase tracking-tighter text-black mb-4">Coming Soon</h2>
+                    <p className="text-zinc-500 font-medium max-w-md text-center px-4">
+                        Our official shop is currently under construction. Check back soon for exclusive limited-edition merchandise and authentic memorabilia!
+                    </p>
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@ export default function MailInPage() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h1 className="text-5xl font-black italic tracking-tighter uppercase mb-8 text-black">
-                        MAIL-IN <span className="text-primary italic">ORDER.</span>
+                        MAIL-IN <span className="text-primary italic">ORDER</span>
                     </h1>
                     <EventsTab />
                 </div>
