@@ -21,9 +21,10 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black backdrop-blur-md">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-24 items-center justify-between">
-          <div className="flex items-center -mt-2">
+      <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex h-24 items-center justify-between gap-4">
+          {/* Logo - Left Corner & Vertically Centered */}
+          <div className="flex-shrink-0 flex items-center pt-2">
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/logo.png"
@@ -36,8 +37,8 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Search Bar */}
-          <div className="hidden md:flex flex-1 ml-8 max-w-sm">
+          {/* Search Bar - Fill Empty Space */}
+          <div className="hidden md:flex flex-1 mx-4 lg:mx-8">
             <div className="relative w-full">
               <input
                 type="text"
@@ -55,9 +56,9 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+          {/* Desktop Nav - Right Side */}
+          <div className="hidden md:block flex-shrink-0">
+            <div className="flex items-baseline space-x-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
