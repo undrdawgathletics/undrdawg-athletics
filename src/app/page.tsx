@@ -5,9 +5,9 @@ import HeroSlideshow from "@/components/HeroSlideshow";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col bg-white">
       {/* Main Content Area */}
-      <section className="flex flex-1 pt-24 pb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full gap-8 items-end">
+      <section className="flex pt-24 pb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full gap-8 items-end">
         {/* Left Slideshow */}
         <div className="hidden lg:block w-[28%] relative aspect-[3/4] self-end rounded-2xl overflow-hidden shadow-2xl">
           <HeroSlideshow direction="up" />
