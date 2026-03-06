@@ -41,29 +41,29 @@ export default function PastEventsPage() {
 
                     {/* Athlete name */}
                     <div className="relative z-10 mb-6">
-                        <h3 className="text-4xl md:text-5xl font-black mb-2 uppercase italic tracking-tighter text-black leading-none">
-                            Jamie<br />Drysdale
+                        <h3 className="text-4xl md:text-5xl font-black mb-2 uppercase italic tracking-tighter text-black leading-none whitespace-nowrap">
+                            Jamie Drysdale
                         </h3>
                     </div>
 
                     {/* Signature + Photo — fill full width */}
-                    <div className="relative z-10 flex gap-4 mb-4 w-full items-center h-72">
+                    <div className="relative z-10 flex gap-4 mb-4 w-full items-center h-80">
                         {/* Signature */}
-                        <div className="relative w-[45%] h-32 flex items-center justify-center overflow-hidden">
+                        <div className="relative w-[45%] h-48 flex items-center justify-center overflow-visible z-20">
                             <Image
                                 src="/images/past-events/signature-nobg.png"
                                 alt="Jamie Drysdale Signature"
                                 fill
-                                className="object-contain"
+                                className="object-contain scale-[1.4]"
                             />
                         </div>
                         {/* Photo */}
-                        <div className="relative w-[55%] h-full flex items-end justify-center overflow-hidden -mr-4">
+                        <div className="relative w-[55%] h-full flex items-end justify-center overflow-visible z-10">
                             <Image
                                 src="/images/past-events/image-nobg.png"
                                 alt="Jamie Drysdale"
                                 fill
-                                className="object-contain object-bottom scale-[1.3] origin-bottom-right"
+                                className="object-contain object-bottom scale-[1.6] translate-x-6 origin-bottom"
                             />
                         </div>
                     </div>
