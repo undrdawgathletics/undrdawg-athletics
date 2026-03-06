@@ -6,8 +6,9 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight, X, ArrowLeft } from "lucide-react";
 
 const GALLERY_IMAGES = [
-    "/images/gallery/drysdale/image.png",
-    // Add more images here as: "/images/gallery/drysdale/filename.jpg"
+    "/images/gallery/drysdale/IMG_0165.JPG",
+    "/images/gallery/drysdale/unnamed.jpg",
+    "/images/gallery/drysdale/unnamed-1.jpg",
 ];
 
 export default function DrysdaleGalleryPage() {
