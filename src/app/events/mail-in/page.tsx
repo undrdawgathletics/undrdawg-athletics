@@ -20,7 +20,7 @@ export default function MailInPage() {
                             </div>
                             <h2 className="text-3xl font-black uppercase italic text-black mb-4">Send us your item</h2>
                             <p className="text-zinc-600 max-w-lg font-medium">
-                                Can't make it to the signing? No problem. Send us your verify memorabilia and our team will get it signed for you.
+                                Can't make it to the signing? No problem. Send us your memorabilia and our team will get it signed for you.
                             </p>
                         </div>
 
@@ -28,23 +28,23 @@ export default function MailInPage() {
                             <div className="bg-white p-6 rounded-2xl border border-black/5 text-center">
                                 <div className="mx-auto h-12 w-12 bg-zinc-100 rounded-xl flex items-center justify-center mb-4 text-black font-black text-xl">1</div>
                                 <h3 className="font-bold uppercase mb-2">Download Form</h3>
-                                <p className="text-sm text-zinc-500">Print and fill out the order form.</p>
+                                <p className="text-sm text-zinc-500">Print and fill out the order form</p>
                             </div>
                             <div className="bg-white p-6 rounded-2xl border border-black/5 text-center">
                                 <div className="mx-auto h-12 w-12 bg-zinc-100 rounded-xl flex items-center justify-center mb-4 text-black font-black text-xl">2</div>
                                 <h3 className="font-bold uppercase mb-2">Ship Item</h3>
-                                <p className="text-sm text-zinc-500">Ship your item with the form.</p>
+                                <p className="text-sm text-zinc-500">Ship your item with the form</p>
                             </div>
                             <div className="bg-white p-6 rounded-2xl border border-black/5 text-center">
                                 <div className="mx-auto h-12 w-12 bg-zinc-100 rounded-xl flex items-center justify-center mb-4 text-black font-black text-xl">3</div>
-                                <h3 className="font-bold uppercase mb-2">Get Signed</h3>
-                                <p className="text-sm text-zinc-500">We return it authenticated.</p>
+                                <h3 className="font-bold uppercase mb-2">Signed &amp; Returned</h3>
+                                <p className="text-sm text-zinc-500">Item is signed and returned to you</p>
                             </div>
                         </div>
 
                         <div className="flex justify-center">
                             <a
-                                href="/forms/mail-in-form.pdf"
+                                href="/pdfs/form.pdf"
                                 target="_blank"
                                 className="h-16 px-10 bg-black text-white rounded-full font-black uppercase tracking-widest flex items-center gap-3 hover:bg-zinc-800 transition-all shadow-xl hover:-translate-y-1"
                             >
