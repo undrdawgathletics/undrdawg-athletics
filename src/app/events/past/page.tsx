@@ -44,15 +44,15 @@ export default function PastEventsPage() {
                         <h3 className="text-3xl font-black mb-2 uppercase italic tracking-tighter text-black">
                             Jamie Drysdale
                         </h3>
-                        <p className="text-sm font-bold text-zinc-500 uppercase tracking-widest">
+                        <p className="inline-block text-sm font-black text-white bg-black px-3 py-1 rounded-lg uppercase tracking-widest mt-2">
                             Meet &amp; Greet
                         </p>
                     </div>
 
-                    {/* Photo + Signature — larger, side by side */}
-                    <div className="relative z-10 flex gap-5 mb-8 items-end">
-                        {/* Photo — larger */}
-                        <div className="relative w-56 h-64 rounded-2xl overflow-hidden bg-zinc-200 flex-shrink-0 shadow-md">
+                    {/* Photo + Signature — fill full width */}
+                    <div className="relative z-10 flex gap-4 mb-8 w-full items-stretch h-64">
+                        {/* Photo — takes up 55% of width */}
+                        <div className="relative w-[55%] rounded-2xl overflow-hidden bg-zinc-200 shadow-md">
                             <Image
                                 src="/images/past-events/image.png"
                                 alt="Jamie Drysdale"
@@ -60,23 +60,21 @@ export default function PastEventsPage() {
                                 className="object-cover"
                             />
                         </div>
-                        {/* Signature — slightly smaller */}
-                        <div className="relative flex-1 h-40 flex-shrink-0">
+                        {/* Signature — takes up remaining 45% */}
+                        <div className="relative w-[45%] rounded-2xl bg-white border border-black/5 flex items-center justify-center overflow-hidden">
                             <Image
                                 src="/images/past-events/5E312072-67F2-4F46-B732-5C782185D579_4_5005_c.jpeg"
                                 alt="Jamie Drysdale Signature"
                                 fill
-                                className="object-contain object-left"
+                                className="object-contain p-4 mix-blend-multiply"
                             />
                         </div>
                     </div>
 
                     {/* Date only */}
                     <div className="relative z-10 mb-6">
-                        <div className="flex items-center gap-4 text-sm text-zinc-500 font-medium">
-                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black/5 border border-black/10">
-                                <Calendar size={14} />
-                            </div>
+                        <div className="inline-flex items-center gap-3 text-sm font-bold text-white bg-black px-4 py-2 rounded-xl">
+                            <Calendar size={16} />
                             <span>Jan 16, 2026</span>
                         </div>
                     </div>
