@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight, X, ArrowLeft } from "lucide-react";
 
 const GALLERY_MEDIA = [
+    "/images/gallery/drysdale/copy_3A950674-934A-4EA3-BB02-1614CD7222B5.mov",
     "/images/gallery/drysdale/IMG_0165.JPG",
     "/images/gallery/drysdale/unnamed.jpg",
     "/images/gallery/drysdale/unnamed-1.jpg",
@@ -17,7 +18,6 @@ const GALLERY_MEDIA = [
     "/images/gallery/drysdale/JMF09295 (1).jpg",
     "/images/gallery/drysdale/JMF09299 (2).jpg",
     "/images/gallery/drysdale/JMF09323.jpg",
-    "/images/gallery/drysdale/copy_3A950674-934A-4EA3-BB02-1614CD7222B5.mov"
 ];
 
 const isVideo = (src: string) => src.endsWith(".mov") || src.endsWith(".mp4");
