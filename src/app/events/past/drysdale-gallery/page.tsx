@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, X, ArrowLeft } from "lucide-react";
 
-const GALLERY_IMAGES = [
+const GALLERY_MEDIA = [
     "/images/gallery/drysdale/IMG_0165.JPG",
     "/images/gallery/drysdale/unnamed.jpg",
     "/images/gallery/drysdale/unnamed-1.jpg",
@@ -17,26 +17,29 @@ const GALLERY_IMAGES = [
     "/images/gallery/drysdale/JMF09295 (1).jpg",
     "/images/gallery/drysdale/JMF09299 (2).jpg",
     "/images/gallery/drysdale/JMF09323.jpg",
+    "/images/gallery/drysdale/copy_3A950674-934A-4EA3-BB02-1614CD7222B5.mov"
 ];
+
+const isVideo = (src: string) => src.endsWith(".mov") || src.endsWith(".mp4");
 
 export default function DrysdaleGalleryPage() {
     const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
     const [current, setCurrent] = useState(0);
 
     const prev = useCallback(() => {
-        setCurrent((c) => (c - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length);
+        setCurrent((c) => (c - 1 + GALLERY_MEDIA.length) % GALLERY_MEDIA.length);
     }, []);
 
     const next = useCallback(() => {
-        setCurrent((c) => (c + 1) % GALLERY_IMAGES.length);
+        setCurrent((c) => (c + 1) % GALLERY_MEDIA.length);
     }, []);
 
     const prevLightbox = useCallback(() => {
-        setLightboxIndex((i) => i !== null ? (i - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length : null);
+        setLightboxIndex((i) => i !== null ? (i - 1 + GALLERY_MEDIA.length) % GALLERY_MEDIA.length : null);
     }, []);
 
     const nextLightbox = useCallback(() => {
-        setLightboxIndex((i) => i !== null ? (i + 1) % GALLERY_IMAGES.length : null);
+        setLightboxIndex((i) => i !== null ? (i + 1) % GALLERY_MEDIA.length : null);
     }, []);
 
     // Keyboard navigation
@@ -80,14 +83,18 @@ export default function DrysdaleGalleryPage() {
                 </div>
 
                 {/* Hero Slideshow */}
-                <div className="relative w-full h-[60vh] rounded-[2rem] overflow-hidden mb-6 group">
-                    {GALLERY_IMAGES.map((src, i) => (
+                <div className="relative w-full h-[70vh] rounded-[2rem] overflow-hidden mb-6 group bg-zinc-900 border border-zinc-800">
+                    {GALLERY_MEDIA.map((src, i) => (
                         <div
                             key={src}
-                            className={`absolute inset-0 transition-opacity duration-700 ease-in-out cursor-pointer ${i === current ? "opacity-100" : "opacity-0"}`}
+                            className={`absolute inset-0 transition-opacity duration-700 ease-in-out cursor-pointer flex items-center justify-center ${i === current ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"}`}
                             onClick={() => setLightboxIndex(i)}
                         >
-                            <Image src={src} alt={`Gallery photo ${i + 1}`} fill className="object-cover" />
+                            {isVideo(src) ? (
+                                <video src={src} autoPlay muted loop playsInline className="w-full h-full object-contain" />
+                            ) : (
+                                <Image src={src} alt={`Gallery photo ${i + 1}`} fill className="object-contain" />
+                            )}
                         </div>
                     ))}
 
@@ -100,27 +107,31 @@ export default function DrysdaleGalleryPage() {
                     </button>
 
                     {/* Dots */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                        {GALLERY_IMAGES.map((_, i) => (
-                            <button key={i} onClick={() => setCurrent(i)} className={`h-1.5 rounded-full transition-all ${i === current ? "w-6 bg-white" : "w-1.5 bg-white/40"}`} />
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                        {GALLERY_MEDIA.map((_, i) => (
+                            <button key={i} onClick={() => setCurrent(i)} className={`h-1.5 rounded-full transition-all ${i === current ? "w-6 bg-[#F74F07]" : "w-1.5 bg-white/40"}`} />
                         ))}
                     </div>
 
                     {/* Click to expand hint */}
-                    <div className="absolute top-4 right-4 z-10 bg-black/50 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all">
+                    <div className="absolute top-4 right-4 z-20 bg-black/50 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all pointer-events-none">
                         Click to expand
                     </div>
                 </div>
 
                 {/* Thumbnail Grid */}
                 <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2">
-                    {GALLERY_IMAGES.map((src, i) => (
+                    {GALLERY_MEDIA.map((src, i) => (
                         <button
                             key={src}
                             onClick={() => { setCurrent(i); setLightboxIndex(i); }}
-                            className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all ${i === current ? "border-[#F74F07]" : "border-transparent hover:border-white/30"}`}
+                            className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all bg-zinc-900 ${i === current ? "border-[#F74F07]" : "border-transparent hover:border-white/30"}`}
                         >
-                            <Image src={src} alt={`Thumbnail ${i + 1}`} fill className="object-cover" />
+                            {isVideo(src) ? (
+                                <video src={src} className="w-full h-full object-cover opacity-80" />
+                            ) : (
+                                <Image src={src} alt={`Thumbnail ${i + 1}`} fill className="object-cover" />
+                            )}
                         </button>
                     ))}
                 </div>
@@ -135,14 +146,20 @@ export default function DrysdaleGalleryPage() {
                     <button className="absolute left-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors" onClick={(e) => { e.stopPropagation(); prevLightbox(); }}>
                         <ChevronLeft size={48} />
                     </button>
-                    <div className="relative w-[90vw] h-[85vh]" onClick={(e) => e.stopPropagation()}>
-                        <Image src={GALLERY_IMAGES[lightboxIndex]} alt="Gallery photo" fill className="object-contain" />
+                    <div className="relative w-[90vw] h-[85vh] flex items-center justify-center p-4" onClick={(e) => e.stopPropagation()}>
+                        {isVideo(GALLERY_MEDIA[lightboxIndex]) ? (
+                            <video src={GALLERY_MEDIA[lightboxIndex]} controls autoPlay className="max-w-full max-h-full object-contain rounded-xl" />
+                        ) : (
+                            <div className="relative w-full h-full">
+                                <Image src={GALLERY_MEDIA[lightboxIndex]} alt="Gallery photo" fill className="object-contain" />
+                            </div>
+                        )}
                     </div>
                     <button className="absolute right-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors" onClick={(e) => { e.stopPropagation(); nextLightbox(); }}>
                         <ChevronRight size={48} />
                     </button>
                     <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 text-sm font-bold uppercase tracking-widest">
-                        {lightboxIndex + 1} / {GALLERY_IMAGES.length}
+                        {lightboxIndex + 1} / {GALLERY_MEDIA.length}
                     </div>
                 </div>
             )}
