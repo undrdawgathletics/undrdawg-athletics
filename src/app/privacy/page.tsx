@@ -4,7 +4,7 @@ export default function PrivacyPolicyPage() {
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
                 <div className="mb-12">
                     <h1 className="text-4xl md:text-5xl font-black italic tracking-tighter uppercase mb-4 text-black">
-                        PRIVACY <span className="text-primary italic">POLICY.</span>
+                        PRIVACY <span className="text-primary italic">POLICY</span>
                     </h1>
                     <p className="text-zinc-500 text-sm uppercase tracking-widest font-bold">
                         Last Updated: January 25, 2026

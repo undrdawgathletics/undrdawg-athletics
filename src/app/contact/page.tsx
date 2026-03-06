@@ -18,7 +18,7 @@ export default function ContactPage() {
             <div className="mx-auto max-w-4xl">
                 <div className="text-center mb-16">
                     <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase mb-6 text-black">
-                        GET IN <span className="text-primary italic">TOUCH.</span>
+                        GET IN <span className="text-primary italic">TOUCH</span>
                     </h1>
                     <p className="text-zinc-600 font-medium text-lg max-w-2xl mx-auto">
                         Have a question about an event, an order, or booking an athlete?
