@@ -1,7 +1,8 @@
 "use client";
 
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import EventsTab from "@/components/EventsTab";
 
 const FLYERS_ORANGE = "#F74F07";
@@ -39,7 +40,7 @@ export default function PastEventsPage() {
                     </div>
 
                     {/* Athlete name + event type */}
-                    <div className="relative z-10 mb-8">
+                    <div className="relative z-10 mb-6">
                         <h3 className="text-3xl font-black mb-2 uppercase italic tracking-tighter text-black">
                             Jamie Drysdale
                         </h3>
@@ -48,9 +49,10 @@ export default function PastEventsPage() {
                         </p>
                     </div>
 
-                    {/* Photo + Signature */}
-                    <div className="relative z-10 flex gap-6 mb-8 items-center">
-                        <div className="relative w-40 h-48 rounded-2xl overflow-hidden bg-zinc-200 flex-shrink-0">
+                    {/* Photo + Signature — larger, side by side */}
+                    <div className="relative z-10 flex gap-5 mb-8 items-end">
+                        {/* Photo — larger */}
+                        <div className="relative w-56 h-64 rounded-2xl overflow-hidden bg-zinc-200 flex-shrink-0 shadow-md">
                             <Image
                                 src="/images/past-events/image.png"
                                 alt="Jamie Drysdale"
@@ -58,36 +60,36 @@ export default function PastEventsPage() {
                                 className="object-cover"
                             />
                         </div>
-                        <div className="relative w-48 h-28 flex-shrink-0">
+                        {/* Signature — slightly smaller */}
+                        <div className="relative flex-1 h-40 flex-shrink-0">
                             <Image
                                 src="/images/past-events/5E312072-67F2-4F46-B732-5C782185D579_4_5005_c.jpeg"
                                 alt="Jamie Drysdale Signature"
                                 fill
-                                className="object-contain"
+                                className="object-contain object-left"
                             />
                         </div>
                     </div>
 
-                    {/* Date + Location */}
-                    <div className="space-y-4 relative z-10">
+                    {/* Date only */}
+                    <div className="relative z-10 mb-6">
                         <div className="flex items-center gap-4 text-sm text-zinc-400 line-through">
                             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black/5 border border-black/10">
                                 <Calendar size={14} />
                             </div>
-                            <span>Dec 22, 2025</span>
-                        </div>
-                        <div className="flex items-center gap-4 text-sm text-zinc-400">
-                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black/5 border border-black/10">
-                                <MapPin size={14} />
-                            </div>
-                            <span>Lincoln Financial Field - Suite Level</span>
+                            <span>Jan 16, 2026</span>
                         </div>
                     </div>
 
-                    {/* Footer */}
-                    <div className="mt-8 pt-8 border-t border-black/5 flex items-center justify-between relative z-10">
-                        <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Gallery Coming Soon</span>
-                        <div className="h-2 w-2 rounded-full bg-zinc-200" />
+                    {/* Gallery link */}
+                    <div className="mt-auto pt-6 border-t border-black/5 relative z-10">
+                        <Link
+                            href="/events/past/drysdale-gallery"
+                            className="flex items-center gap-2 text-sm font-black uppercase tracking-widest transition-colors hover:opacity-70"
+                            style={{ color: FLYERS_ORANGE }}
+                        >
+                            <span>→ View Event Gallery</span>
+                        </Link>
                     </div>
                 </div>
             </div>
