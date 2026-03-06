@@ -9,6 +9,14 @@ const GALLERY_IMAGES = [
     "/images/gallery/drysdale/IMG_0165.JPG",
     "/images/gallery/drysdale/unnamed.jpg",
     "/images/gallery/drysdale/unnamed-1.jpg",
+    "/images/gallery/drysdale/JMF09269.jpg",
+    "/images/gallery/drysdale/JMF09274.jpg",
+    "/images/gallery/drysdale/JMF09275.jpg",
+    "/images/gallery/drysdale/JMF09279.jpg",
+    "/images/gallery/drysdale/JMF09289 (2).jpg",
+    "/images/gallery/drysdale/JMF09295 (1).jpg",
+    "/images/gallery/drysdale/JMF09299 (2).jpg",
+    "/images/gallery/drysdale/JMF09323.jpg",
 ];
 
 export default function DrysdaleGalleryPage() {
