@@ -13,6 +13,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Undrdawg Athletics | Delivering Notable Athletes",
   description: "High-energy, premium e-commerce and booking website for Undrdawg Athletics. Born in Philadelphia.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({

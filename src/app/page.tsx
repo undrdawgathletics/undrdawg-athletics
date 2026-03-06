@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Trophy, Users, Calendar } from "lucide-react";
 import HeroSlideshow from "@/components/HeroSlideshow";
-import { useMemo } from "react";
+import { useState, useEffect } from "react";
 
 const SLIDESHOW_IMAGES = [
   "/images/slideshow/IMG_6507.jpeg",
@@ -32,7 +32,11 @@ function shuffleArray(arr: string[]) {
 }
 
 export default function Home() {
-  const shuffledImages = useMemo(() => shuffleArray(SLIDESHOW_IMAGES), []);
+  const [shuffledImages, setShuffledImages] = useState(SLIDESHOW_IMAGES);
+
+  useEffect(() => {
+    setShuffledImages(shuffleArray(SLIDESHOW_IMAGES));
+  }, []);
 
   return (
     <div className="flex flex-col bg-white">
