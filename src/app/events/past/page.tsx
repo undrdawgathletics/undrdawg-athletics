@@ -19,7 +19,7 @@ export default function PastEventsPage() {
                 </div>
 
                 {/* Jamie Drysdale Card */}
-                <div className="group relative flex flex-col rounded-[2.5rem] bg-zinc-50 border border-black/5 p-8 md:p-10 opacity-75 grayscale hover:grayscale-0 hover:opacity-100 transition-all overflow-hidden max-w-2xl">
+                <div className="group relative flex flex-col rounded-[2.5rem] bg-zinc-50 border border-black/5 p-8 md:p-10 transition-all overflow-hidden max-w-2xl shadow-sm hover:shadow-md">
                     {/* Background glow */}
                     <div
                         className="absolute top-0 right-0 h-32 w-32 blur-[80px] opacity-10 transition-opacity group-hover:opacity-20"
@@ -73,7 +73,7 @@ export default function PastEventsPage() {
 
                     {/* Date only */}
                     <div className="relative z-10 mb-6">
-                        <div className="flex items-center gap-4 text-sm text-zinc-400 line-through">
+                        <div className="flex items-center gap-4 text-sm text-zinc-500 font-medium">
                             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black/5 border border-black/10">
                                 <Calendar size={14} />
                             </div>
