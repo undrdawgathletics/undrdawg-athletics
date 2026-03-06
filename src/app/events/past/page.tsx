@@ -39,29 +39,17 @@ export default function PastEventsPage() {
                         </span>
                     </div>
 
-                    {/* Athlete name + event type */}
+                    {/* Athlete name */}
                     <div className="relative z-10 mb-6">
-                        <h3 className="text-3xl font-black mb-2 uppercase italic tracking-tighter text-black">
-                            Jamie Drysdale
+                        <h3 className="text-4xl md:text-5xl font-black mb-2 uppercase italic tracking-tighter text-black leading-none">
+                            Jamie<br />Drysdale
                         </h3>
-                        <p className="inline-block text-sm font-black text-white bg-black px-3 py-1 rounded-lg uppercase tracking-widest mt-2">
-                            Public Signing
-                        </p>
                     </div>
 
-                    {/* Photo + Signature — fill full width */}
+                    {/* Signature + Photo — fill full width */}
                     <div className="relative z-10 flex gap-4 mb-4 w-full items-center h-72">
-                        {/* Photo — takes up 60% of width, made larger */}
-                        <div className="relative w-[60%] h-full flex items-end justify-center overflow-hidden -ml-4">
-                            <Image
-                                src="/images/past-events/image-nobg.png"
-                                alt="Jamie Drysdale"
-                                fill
-                                className="object-contain object-bottom scale-125"
-                            />
-                        </div>
-                        {/* Signature — takes up remaining 40% */}
-                        <div className="relative w-[40%] h-32 flex items-center justify-center overflow-hidden">
+                        {/* Signature */}
+                        <div className="relative w-[45%] h-32 flex items-center justify-center overflow-hidden">
                             <Image
                                 src="/images/past-events/signature-nobg.png"
                                 alt="Jamie Drysdale Signature"
@@ -69,13 +57,25 @@ export default function PastEventsPage() {
                                 className="object-contain"
                             />
                         </div>
+                        {/* Photo */}
+                        <div className="relative w-[55%] h-full flex items-end justify-center overflow-hidden -mr-4">
+                            <Image
+                                src="/images/past-events/image-nobg.png"
+                                alt="Jamie Drysdale"
+                                fill
+                                className="object-contain object-bottom scale-[1.3] origin-bottom-right"
+                            />
+                        </div>
                     </div>
 
-                    {/* Date only */}
-                    <div className="relative z-10 mb-6">
+                    {/* Date and Event Type */}
+                    <div className="relative z-10 mb-6 flex flex-wrap items-center gap-3">
                         <div className="inline-flex items-center gap-3 text-sm font-bold text-white bg-black px-4 py-2 rounded-xl">
                             <Calendar size={16} />
                             <span>Jan 16, 2026</span>
+                        </div>
+                        <div className="inline-flex items-center gap-3 text-sm font-black text-white bg-[#F74F07] px-4 py-2 rounded-xl uppercase tracking-widest">
+                            Public Signing
                         </div>
                     </div>
 
