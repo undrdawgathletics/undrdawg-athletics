@@ -44,7 +44,7 @@ export default function MailInPage() {
 
                         <div className="flex justify-center">
                             <a
-                                href="/pdfs/form.pdf"
+                                href="/pdfs/Undrdawg%20Athletics%20Mail%20in%20Form%20(1).pdf"
                                 target="_blank"
                                 className="h-16 px-10 bg-black text-white rounded-full font-black uppercase tracking-widest flex items-center gap-3 hover:bg-zinc-800 transition-all shadow-xl hover:-translate-y-1"
                             >
