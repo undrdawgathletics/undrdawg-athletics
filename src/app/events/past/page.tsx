@@ -45,28 +45,28 @@ export default function PastEventsPage() {
                             Jamie Drysdale
                         </h3>
                         <p className="inline-block text-sm font-black text-white bg-black px-3 py-1 rounded-lg uppercase tracking-widest mt-2">
-                            Meet &amp; Greet
+                            Public Signing
                         </p>
                     </div>
 
                     {/* Photo + Signature — fill full width */}
-                    <div className="relative z-10 flex gap-4 mb-8 w-full items-stretch h-64">
-                        {/* Photo — takes up 55% of width */}
-                        <div className="relative w-[55%] rounded-2xl overflow-hidden bg-zinc-200 shadow-md">
+                    <div className="relative z-10 flex gap-4 mb-4 w-full items-center h-72">
+                        {/* Photo — takes up 60% of width, made larger */}
+                        <div className="relative w-[60%] h-full flex items-end justify-center overflow-hidden -ml-4">
                             <Image
-                                src="/images/past-events/image.png"
+                                src="/images/past-events/image-nobg.png"
                                 alt="Jamie Drysdale"
                                 fill
-                                className="object-cover"
+                                className="object-contain object-bottom scale-125"
                             />
                         </div>
-                        {/* Signature — takes up remaining 45% */}
-                        <div className="relative w-[45%] rounded-2xl bg-white border border-black/5 flex items-center justify-center overflow-hidden">
+                        {/* Signature — takes up remaining 40% */}
+                        <div className="relative w-[40%] h-32 flex items-center justify-center overflow-hidden">
                             <Image
-                                src="/images/past-events/5E312072-67F2-4F46-B732-5C782185D579_4_5005_c.jpeg"
+                                src="/images/past-events/signature-nobg.png"
                                 alt="Jamie Drysdale Signature"
                                 fill
-                                className="object-contain p-4 mix-blend-multiply"
+                                className="object-contain"
                             />
                         </div>
                     </div>

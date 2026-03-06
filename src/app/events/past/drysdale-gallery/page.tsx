@@ -54,12 +54,14 @@ export default function DrysdaleGalleryPage() {
         return () => window.removeEventListener("keydown", handler);
     }, [lightboxIndex, prevLightbox, nextLightbox]);
 
+    const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+
     // Auto-advance slideshow
     useEffect(() => {
-        if (lightboxIndex !== null) return;
+        if (lightboxIndex !== null || isVideoPlaying) return;
         const t = setInterval(next, 3500);
         return () => clearInterval(t);
-    }, [lightboxIndex, next]);
+    }, [lightboxIndex, next, isVideoPlaying]);
 
     return (
         <div className="bg-black min-h-screen text-white pt-28 pb-24">
@@ -91,7 +93,20 @@ export default function DrysdaleGalleryPage() {
                             onClick={() => setLightboxIndex(i)}
                         >
                             {isVideo(src) ? (
-                                <video src={src} autoPlay muted loop playsInline className="w-full h-full object-contain" />
+                                <video
+                                    src={src}
+                                    autoPlay
+                                    muted
+                                    loop={false}
+                                    playsInline
+                                    className="w-full h-full object-contain"
+                                    onPlay={() => setIsVideoPlaying(true)}
+                                    onPause={() => setIsVideoPlaying(false)}
+                                    onEnded={() => {
+                                        setIsVideoPlaying(false);
+                                        next();
+                                    }}
+                                />
                             ) : (
                                 <Image src={src} alt={`Gallery photo ${i + 1}`} fill className="object-contain" />
                             )}
