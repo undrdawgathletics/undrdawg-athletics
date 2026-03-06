@@ -69,19 +69,19 @@ export default function DrysdaleGalleryPage() {
 
                 {/* Header */}
                 <div className="mb-12">
-                    <Link href="/events/past" className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest mb-8">
+                    <Link href="/events/past" className="inline-flex items-center gap-2 text-white hover:text-white/80 transition-colors text-sm font-bold uppercase tracking-widest mb-8">
                         <ArrowLeft size={16} /> Back to Past Events
                     </Link>
                     <div className="flex items-center gap-4 mb-4">
                         <span className="rounded-full px-4 py-1.5 text-[10px] font-black uppercase tracking-widest text-white shadow-xl" style={{ backgroundColor: "#F74F07" }}>
                             Philadelphia Flyers
                         </span>
-                        <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Jan 16, 2026</span>
+                        <span className="text-xs font-bold text-white uppercase tracking-widest">Jan 16, 2026</span>
                     </div>
                     <h1 className="text-5xl md:text-6xl font-black italic tracking-tighter uppercase mb-2">
                         Jamie <span className="text-[#F74F07] italic">Drysdale</span>
                     </h1>
-                    <p className="text-zinc-400 font-bold uppercase tracking-widest text-sm">Meet &amp; Greet · Event Gallery</p>
+                    <p className="text-white font-bold uppercase tracking-widest text-sm">Public Signing · Event Gallery</p>
                 </div>
 
                 {/* Hero Slideshow */}
@@ -96,7 +96,8 @@ export default function DrysdaleGalleryPage() {
                                 <video
                                     src={src}
                                     autoPlay
-                                    muted
+                                    controls
+                                    muted={false}
                                     loop={false}
                                     playsInline
                                     className="w-full h-full object-contain"
