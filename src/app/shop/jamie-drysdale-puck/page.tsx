@@ -8,15 +8,29 @@ import { ArrowLeft, CheckCircle2, ShoppingCart } from "lucide-react";
 export default function JamieDrysdalePuckPage() {
     // True for 'white', False for 'orange'
     const [isWhiteSignature, setIsWhiteSignature] = useState(true);
+    const [activeImageIndex, setActiveImageIndex] = useState(0);
 
-    // Dynamic data based on selection
-    const currentImage = isWhiteSignature
-        ? "/images/shop/hpuck.webp"
-        : "/images/shop/orangepuck.webp";
+    const whiteImages = [
+        "/images/shop/hpuck.webp",
+        "/images/shop/whitesig#2.webp"
+    ];
+
+    const orangeImages = [
+        "/images/shop/orangepuck.webp",
+        "/images/shop/orangesig#2.webp"
+    ];
+
+    const currentImages = isWhiteSignature ? whiteImages : orangeImages;
+    const currentImage = currentImages[activeImageIndex];
 
     const ebayLink = isWhiteSignature
         ? "https://www.ebay.com/itm/147157282022?_skw=jamie+drysdale+autographed+puck&itmmeta=01KK88T2G1EGTR8TJ03RX5KF5J&hash=item224341ece6:g:efAAAeSwLQFpk4fX&itmprp=enc%3AAQALAAAA4GfYFPkwiKCW4ZNSs2u11xDNJ9y%2Fu%2BJUy8zjQndbOB3qbyj3lVrYIGZurPakke2A4Z5%2F%2BHltNO9CWdMPnF%2B%2Bko%2BEoqkjVRvw30iOysdu6KoL%2FoakOYxxfvrQFMMPkKqg8rDZy7sp3ZP%2FBoAToaRhAOjodSDm0ncortBLFxcXXTFmttTcmlluPGqAiNBQBHDTlKME8vIHyNqbqWuAFO%2Fz15qT7Ct2vBjr7rVb0H36Xjahaoy6BeuvxjZXGGfqOUN8Fj2zaMAF3fZcaRN3q%2B6kilxOo9weijpRO3Xqga81mhis%7Ctkp%3ABk9SR5qo6IiaZw"
         : "https://www.ebay.com/itm/147157294272?itmmeta=01KK89GGZDT7H6GQASX38Y4F1X&hash=item2243421cc0:g:TUEAAeSwIoBpk4vG";
+
+    const handleSignatureChange = (isWhite: boolean) => {
+        setIsWhiteSignature(isWhite);
+        setActiveImageIndex(0); // Reset to first image of new variant
+    };
 
     return (
         <div className="bg-white min-h-screen text-black pt-28 pb-24">
@@ -31,14 +45,30 @@ export default function JamieDrysdalePuckPage() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-                    {/* Left Column: Product Image */}
-                    <div className="bg-zinc-50 border border-black/5 rounded-[3rem] p-8 aspect-square flex items-center justify-center relative overflow-hidden">
-                        <Image
-                            src={currentImage}
-                            alt="Jamie Drysdale Autographed Puck"
-                            fill
-                            className="object-contain p-8 lg:p-12 transition-all duration-300"
-                        />
+                    {/* Left Column: Product Image Gallery */}
+                    <div className="flex flex-col gap-6">
+                        <div className="bg-zinc-50 border border-black/5 rounded-[3rem] p-8 aspect-square flex items-center justify-center relative overflow-hidden">
+                            <Image
+                                src={currentImage}
+                                alt="Jamie Drysdale Autographed Puck"
+                                fill
+                                className="object-contain p-8 lg:p-12 transition-all duration-300"
+                            />
+                        </div>
+
+                        {/* Thumbnails */}
+                        <div className="flex gap-4">
+                            {currentImages.map((img, idx) => (
+                                <button
+                                    key={img}
+                                    onClick={() => setActiveImageIndex(idx)}
+                                    className={`relative w-24 h-24 rounded-2xl border-2 overflow-hidden transition-all bg-zinc-50 ${activeImageIndex === idx ? "border-black shadow-md scale-105" : "border-black/5 opacity-60 hover:opacity-100"
+                                        }`}
+                                >
+                                    <Image src={img} alt={`Thumbnail ${idx + 1}`} fill className="object-contain p-2" />
+                                </button>
+                            ))}
+                        </div>
                     </div>
 
                     {/* Right Column: Product Details */}
@@ -66,10 +96,10 @@ export default function JamieDrysdalePuckPage() {
                             <div className="flex flex-wrap gap-4">
                                 {/* White Variant */}
                                 <button
-                                    onClick={() => setIsWhiteSignature(true)}
+                                    onClick={() => handleSignatureChange(true)}
                                     className={`relative flex items-center gap-3 px-6 py-4 rounded-2xl border-2 transition-all overflow-hidden ${isWhiteSignature
-                                            ? "border-black bg-black text-white shadow-lg"
-                                            : "border-black/10 bg-white text-black hover:border-black/30"
+                                        ? "border-black bg-black text-white shadow-lg"
+                                        : "border-black/10 bg-white text-black hover:border-black/30"
                                         }`}
                                 >
                                     <div className={`w-6 h-6 rounded-full border-2 flex-shrink-0 ${isWhiteSignature ? "bg-white border-white" : "bg-white border-zinc-200"
@@ -82,10 +112,10 @@ export default function JamieDrysdalePuckPage() {
 
                                 {/* Orange Variant */}
                                 <button
-                                    onClick={() => setIsWhiteSignature(false)}
+                                    onClick={() => handleSignatureChange(false)}
                                     className={`relative flex items-center gap-3 px-6 py-4 rounded-2xl border-2 transition-all overflow-hidden ${!isWhiteSignature
-                                            ? "border-black bg-black text-white shadow-lg"
-                                            : "border-black/10 bg-white text-black hover:border-black/30"
+                                        ? "border-black bg-black text-white shadow-lg"
+                                        : "border-black/10 bg-white text-black hover:border-black/30"
                                         }`}
                                 >
                                     <div className={`w-6 h-6 rounded-full border-2 flex-shrink-0 ${!isWhiteSignature ? "bg-[#F74F07] border-[#F74F07]" : "bg-[#F74F07] border-[#F74F07]/20"
