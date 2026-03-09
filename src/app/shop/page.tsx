@@ -37,10 +37,14 @@ export default function ShopPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Jamie Drysdale Autographed Puck Card */}
                     <div className="bg-zinc-50 border border-black/5 rounded-[2.5rem] p-6 hover:shadow-lg transition-all flex flex-col items-center">
-                        {/* Image Placeholder */}
-                        <div className="relative w-full aspect-square bg-zinc-200 rounded-3xl mb-6 flex items-center justify-center overflow-hidden">
-                            <ShoppingCart size={48} className="text-zinc-400 opacity-50 mb-2" />
-                            <span className="absolute bottom-4 text-xs font-bold text-zinc-500 uppercase tracking-widest">Image Here</span>
+                        {/* Image Placeholder -> Replaced with actual image */}
+                        <div className="relative w-full aspect-square bg-zinc-100 rounded-3xl mb-6 flex items-center justify-center overflow-hidden">
+                            <Image
+                                src="/images/shop/hpuck.webp"
+                                alt="Jamie Drysdale Autographed Puck"
+                                fill
+                                className="object-contain p-4"
+                            />
                         </div>
 
                         <div className="mb-6 w-full text-left">
