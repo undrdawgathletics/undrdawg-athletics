@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
@@ -58,14 +59,12 @@ export default function ShopPage() {
                             <p className="text-zinc-500 font-bold mt-2">Check eBay for price</p>
                         </div>
 
-                        <a
-                            href="https://www.ebay.com/itm/147157282022?_skw=jamie+drysdale+autographed+puck&itmmeta=01KK88T2G1EGTR8TJ03RX5KF5J&hash=item224341ece6:g:efAAAeSwLQFpk4fX&itmprp=enc%3AAQALAAAA4GfYFPkwiKCW4ZNSs2u11xDNJ9y%2Fu%2BJUy8zjQndbOB3qbyj3lVrYIGZurPakke2A4Z5%2F%2BHltNO9CWdMPnF%2B%2Bko%2BEoqkjVRvw30iOysdu6KoL%2FoakOYxxfvrQFMMPkKqg8rDZy7sp3ZP%2FBoAToaRhAOjodSDm0ncortBLFxcXXTFmttTcmlluPGqAiNBQBHDTlKME8vIHyNqbqWuAFO%2Fz15qT7Ct2vBjr7rVb0H36Xjahaoy6BeuvxjZXGGfqOUN8Fj2zaMAF3fZcaRN3q%2B6kilxOo9weijpRO3Xqga81mhis%7Ctkp%3ABk9SR5qo6IiaZw"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <Link
+                            href="/shop/jamie-drysdale-puck"
                             className="mt-auto w-full h-14 bg-black hover:bg-zinc-800 transition-colors text-white rounded-2xl flex items-center justify-center font-black uppercase tracking-widest gap-2 shadow-xl hover:-translate-y-1"
                         >
-                            Buy Now on eBay
-                        </a>
+                            View Details
+                        </Link>
                     </div>
                 </div>
             </div>
