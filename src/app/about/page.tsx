@@ -89,7 +89,7 @@ export default function AboutPage() {
                             </div>
                             <div className="flex-1 text-center md:text-left">
                                 <h3 className="text-3xl font-black uppercase text-black mb-2">Chris Gallelli</h3>
-                                <p className="text-primary font-bold tracking-widest uppercase mb-6">President & CEO</p>
+                                <p className="text-black font-bold tracking-widest uppercase mb-6">President & CEO</p>
                                 <p className="text-zinc-600 leading-relaxed text-lg">
                                     A recent graduate at Drexel University who double-majored in Finance and Sport Management, Chris is the strategic engine behind Undrdawg Athletics. Drawing on the discipline and leadership cultivated within the championship-winning football program at St. Joseph’s Prep, he specializes in high-stakes talent negotiation and the logistical strategy required to secure premier athletes. Chris excels at navigating the intricate landscape of sports contracts, leveraging his finance background to manage budgets and ensure favorable terms for all parties involved. With professional experience as a Financial Analyst, he combines fiscal precision with industry-specific grit, ensuring that every partnership and event is executed with the highest standard of corporate service.
                                 </p>
@@ -108,7 +108,7 @@ export default function AboutPage() {
                             </div>
                             <div className="flex-1 text-center md:text-left">
                                 <h3 className="text-3xl font-black uppercase text-black mb-2">Julian Pittaoulis</h3>
-                                <p className="text-primary font-bold tracking-widest uppercase mb-6">Chief Marketing Officer (CMO)</p>
+                                <p className="text-black font-bold tracking-widest uppercase mb-6">Chief Marketing Officer (CMO)</p>
                                 <p className="text-zinc-600 leading-relaxed text-lg">
                                     Julian is a Senior at Drexel University majoring in Economics and brings an elite competitive mindset to the brand. His journey to the Division I level as a walk-on for Drexel Men’s Soccer defines the persistence and "Undrdawg" work ethic he applies to every project. He specializes in market analysis and fan engagement to ensure every activation delivers maximum impact. Leveraging his professional background in Marketing, Operations, and Logistics Management, Julian excels at generating massive notability and public visibility, utilizing his marketing expertise to put "eyes" on every event and secure the media attention necessary for a historic turnout.
                                 </p>
