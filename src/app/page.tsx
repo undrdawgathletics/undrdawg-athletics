@@ -70,7 +70,7 @@ export default function Home() {
       <section className="w-full py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           {/* 4-Column Stats Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full px-4 sm:px-8 lg:px-12 mb-16">
             {/* Events */}
             <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-zinc-50 border border-zinc-100 transition-colors hover:bg-zinc-100">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-black text-white">
@@ -104,34 +104,21 @@ export default function Home() {
                 <Handshake size={24} />
               </div>
               <h3 className="text-xl font-bold text-black uppercase tracking-wider mb-2">Partnerships</h3>
-              <p className="text-sm text-zinc-600">Elevate your event</p>
+              <p className="text-sm text-zinc-600">Elevate Your Event</p>
             </div>
           </div>
 
-          {/* Quote Block */}
-          <div className="w-full max-w-3xl mb-12 text-center decoration-zinc-200">
-            <div className="h-px w-full bg-zinc-100 mb-8" />
-            <p className="text-2xl font-medium text-black italic leading-relaxed">
-              "Delivering Notable Athletes - it's in our DNA. We help you book and meet all athletes - overcoming odds to create authentic & memorable experiences!"
+          {/* About Text Section */}
+          <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-lg text-zinc-700 leading-relaxed space-y-6 text-center md:text-left">
+            <p>
+              At Undrdawg Athletics, we understand that an athlete's presence can transform an ordinary event into a landmark occasion. Our firm is built on the foundation of professional excellence, providing seamless coordination between elite talent and the organizations or fans who support them.
             </p>
-            <div className="h-px w-full bg-zinc-100 mt-8" />
-          </div>
-
-          {/* Buttons */}
-          <div className="flex flex-col items-center justify-center gap-6 sm:flex-row w-full max-w-2xl">
-            <Link
-              href="/book"
-              className="group flex h-14 w-full items-center justify-center gap-3 rounded-full bg-black px-10 text-lg font-bold text-white transition-all hover:bg-zinc-800 sm:w-auto shadow-lg hover:shadow-xl active:scale-95"
-            >
-              Book an Athlete
-              <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link
-              href="/shop"
-              className="flex h-14 w-full items-center justify-center gap-3 rounded-full border-2 border-zinc-200 bg-transparent px-10 text-lg font-bold text-black transition-all hover:bg-zinc-50 sm:w-auto hover:border-zinc-300 active:scale-95"
-            >
-              Shop the Drop
-            </Link>
+            <p>
+              Our fan-centric services are designed to bring you closer to the action than ever before. Through high-quality signing events and structured meet-and-greets, we facilitate genuine interactions with sports icons. Each event is meticulously planned to ensure that every photograph and autograph represents a high-standard experience for both the athlete and the attendee.
+            </p>
+            <p>
+              For our business and event partners, we offer comprehensive booking and appearance services. We leverage our network to help you secure the right athlete for your specific needs, focusing on building brand equity and enhancing guest engagement. From keynote speaking to brand ambassadorships, Undrdawg Athletics is your partner in creating high-impact professional moments.
+            </p>
           </div>
         </div>
       </section>
