@@ -35,7 +35,7 @@ export default function HeroSlideshow({ images, indexOffset = 0 }: HeroSlideshow
                         src={img.src}
                         alt="Athlete"
                         fill
-                        className="object-cover"
+                        className="object-contain"
                         style={{ objectPosition: img.objectPosition || "center" }}
                         priority={index === currentIndex}
                     />
