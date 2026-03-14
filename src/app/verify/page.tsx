@@ -54,16 +54,14 @@ export default function VerifyPage() {
                         <div className="inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-primary/5 border border-primary/10 text-primary mb-8 shadow-sm">
                             <ShieldCheck size={40} />
                         </div>
-                        <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase mb-4 text-black">
+                        <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase mb-6 text-black">
                             VERIFY <span className="text-black italic">MEMORABILIA</span>
                         </h1>
+                        <p className="text-zinc-600 max-w-xl mx-auto font-medium text-lg">
+                            Undrdawg Athletics provides witness based authentication. Our representatives are present at all events and signings.
+                        </p>
                     </div>
                 </section>
-                <div className="text-center mb-16">
-                    <p className="text-zinc-600 max-w-xl mx-auto font-medium">
-                        Undrdawg Athletics provides witness based authentication. Our representatives are present at all events and signings.
-                    </p>
-                </div>
 
                 <div className="bg-zinc-50 border border-black/5 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden">
                     {/* Decorative Background */}
