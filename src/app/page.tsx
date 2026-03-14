@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Trophy, Users, Calendar } from "lucide-react";
+import { ArrowRight, Trophy, Users, Calendar, Handshake } from "lucide-react";
 import HeroSlideshow, { SlideshowImage } from "@/components/HeroSlideshow";
 
 const LEFT_IMAGES: SlideshowImage[] = [
@@ -69,8 +69,8 @@ export default function Home() {
       {/* Main Content Area - Below the Hero section to fill the white space */}
       <section className="w-full py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-          {/* 3-Column Stats Row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl mb-12">
+          {/* 4-Column Stats Row */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl mb-12">
             {/* Events */}
             <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-zinc-50 border border-zinc-100 transition-colors hover:bg-zinc-100">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-black text-white">
@@ -86,7 +86,7 @@ export default function Home() {
                 <Trophy size={24} />
               </div>
               <h3 className="text-xl font-bold text-black uppercase tracking-wider mb-2">Memorabilia</h3>
-              <p className="text-sm text-zinc-600">Verified Authentic Gear</p>
+              <p className="text-sm text-zinc-600">100% Verified Authentic Memorabilia</p>
             </div>
 
             {/* Roster */}
@@ -94,8 +94,17 @@ export default function Home() {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-black text-white">
                 <Users size={24} />
               </div>
-              <h3 className="text-xl font-bold text-black uppercase tracking-wider mb-2">Roster</h3>
+              <h3 className="text-xl font-bold text-black uppercase tracking-wider mb-2">Elite Roster</h3>
               <p className="text-sm text-zinc-600">Top Talent Connection</p>
+            </div>
+
+            {/* Partnerships */}
+            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-zinc-50 border border-zinc-100 transition-colors hover:bg-zinc-100">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-black text-white">
+                <Handshake size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-black uppercase tracking-wider mb-2">Partnerships</h3>
+              <p className="text-sm text-zinc-600">Elevate your event</p>
             </div>
           </div>
 
