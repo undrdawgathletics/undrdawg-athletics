@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 export interface SlideshowImage {
     src: string;
     objectPosition?: string;
+    objectFit?: "cover" | "contain";
 }
 
 interface HeroSlideshowProps {
@@ -29,13 +30,13 @@ export default function HeroSlideshow({ images, indexOffset = 0 }: HeroSlideshow
             {images.map((img, index) => (
                 <div
                     key={`${img.src}-${index}`}
-                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentIndex ? "opacity-100" : "opacity-0"}`}
+                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out bg-black ${index === currentIndex ? "opacity-100" : "opacity-0"}`}
                 >
                     <Image
                         src={img.src}
                         alt="Athlete"
                         fill
-                        className="object-cover"
+                        className={img.objectFit === "contain" ? "object-contain" : "object-cover"}
                         style={{ objectPosition: img.objectPosition || "center" }}
                         priority={index === currentIndex}
                     />
