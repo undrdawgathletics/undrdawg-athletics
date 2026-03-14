@@ -66,7 +66,16 @@ export default function ContactPage() {
                                 <Send size={40} />
                             </div>
                             <h3 className="text-2xl font-black uppercase mb-2">Message Sent!</h3>
-                            <p className="text-zinc-500">We'll get back to you shortly.</p>
+                            <p className="text-zinc-500 mb-8">We'll get back to you shortly.</p>
+                            <button 
+                                onClick={() => {
+                                    setFormData({ name: "", email: "", topic: "General Inquiry", message: "" });
+                                    setStatus('idle');
+                                }}
+                                className="inline-flex items-center justify-center h-12 px-6 rounded-xl border-2 border-black/10 font-bold uppercase tracking-wider text-sm hover:border-black hover:bg-black hover:text-white transition-all"
+                            >
+                                Submit Another Request
+                            </button>
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit} className="space-y-6">
