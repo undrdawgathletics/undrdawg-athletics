@@ -107,22 +107,21 @@ export default function BookAthletePage() {
                 {/* Hero Section - Stacked & Centered */}
                 <section className="relative pb-12 overflow-hidden border-b border-black/5 mb-12">
                     <div className="mx-auto max-w-4xl text-center">
-                        <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase text-black leading-none mb-4">
+                        <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase text-black leading-none mb-6">
                             BOOK AN <span className="text-black italic">ATHLETE</span>
                         </h1>
+                        
+                        <div className="max-w-3xl mx-auto mb-8">
+                            <p className="text-zinc-600 text-lg md:text-xl leading-relaxed italic font-semibold tracking-tight">
+                                "Whether you are looking to drive brand loyalty, inspire a team, or draw a crowd, our roster of professional talent is ready to deliver."
+                            </p>
+                        </div>
+
                         <p className="text-xl md:text-2xl text-zinc-500 font-bold uppercase tracking-[0.2em]">
                             Elevate Your Event with Undrdawg Athletics
                         </p>
                     </div>
                 </section>
-
-                <div className="max-w-4xl mx-auto relative group mb-12">
-                    <div className="p-4 md:p-6 relative">
-                        <p className="text-zinc-600 text-lg leading-relaxed italic font-semibold tracking-tight relative z-10">
-                            "Whether you are looking to drive brand loyalty, inspire a team, or draw a crowd, our roster of professional talent is ready to deliver."
-                        </p>
-                    </div>
-                </div>
 
                 {/* Introduction & Image Gallery */}
                 <div className="mb-32 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
