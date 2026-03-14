@@ -111,15 +111,15 @@ export default function BookAthletePage() {
                             BOOK AN <span className="text-black italic">ATHLETE</span>
                         </h1>
                         
-                        <div className="max-w-3xl mx-auto mb-8">
+                        <p className="text-xl md:text-2xl text-zinc-500 font-bold uppercase tracking-[0.2em] mb-8">
+                            Elevate Your Event with Undrdawg Athletics
+                        </p>
+
+                        <div className="max-w-3xl mx-auto">
                             <p className="text-zinc-600 text-lg md:text-xl leading-relaxed italic font-semibold tracking-tight">
                                 "Whether you are looking to drive brand loyalty, inspire a team, or draw a crowd, our roster of professional talent is ready to deliver."
                             </p>
                         </div>
-
-                        <p className="text-xl md:text-2xl text-zinc-500 font-bold uppercase tracking-[0.2em]">
-                            Elevate Your Event with Undrdawg Athletics
-                        </p>
                     </div>
                 </section>
 
