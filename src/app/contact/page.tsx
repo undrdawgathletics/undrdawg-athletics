@@ -4,13 +4,44 @@ import { Mail, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 
 export default function ContactPage() {
-    const [submitted, setSubmitted] = useState(false);
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        topic: "General Inquiry",
+        message: "",
+    });
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setSubmitted(true);
-        // Simulate submission
-        setTimeout(() => setSubmitted(false), 3000);
+        setStatus('loading');
+
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzmPxAYtxze4GrotOiq7akyk5naZJ5Si93WpXZV3qYanA08RsyB_UGN_VffyMVQQxpg/exec";
+
+        try {
+            const payload = {
+                ...formData,
+                isContactForm: true // Flag to tell the Google Apps Script to route to the second tab
+            };
+
+            const timeoutPromise = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error('Request timed out')), 5000)
+            );
+
+            await Promise.race([
+                fetch(WEB_APP_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: JSON.stringify(payload)
+                }),
+                timeoutPromise
+            ]);
+
+            setStatus('success');
+        } catch (error) {
+            console.error("Error submitting contact form:", error);
+            setStatus('error');
+        }
     };
 
     return (
@@ -29,7 +60,7 @@ export default function ContactPage() {
                 </section>
 
                 <div className="bg-zinc-50 border border-black/5 rounded-[3rem] p-8 md:p-16 shadow-sm">
-                    {submitted ? (
+                    {status === 'success' ? (
                         <div className="text-center py-20 animate-in fade-in zoom-in">
                             <div className="mx-auto h-20 w-20 rounded-full bg-green-100 text-green-600 flex items-center justify-center mb-6">
                                 <Send size={40} />
@@ -39,20 +70,46 @@ export default function ContactPage() {
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit} className="space-y-6">
+                            {status === 'error' && (
+                                <div className="bg-red-50 text-red-600 p-4 rounded-xl text-sm font-medium border border-red-100 text-center">
+                                    Something went wrong. Please try again or email us directly.
+                                </div>
+                            )}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">Name</label>
-                                    <input required type="text" className="w-full bg-white h-14 rounded-2xl border border-black/5 px-6 focus:outline-none focus:border-primary transition-colors" placeholder="Your Name" />
+                                    <input 
+                                        required 
+                                        type="text" 
+                                        value={formData.name}
+                                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                                        className="w-full bg-white h-14 rounded-2xl border border-black/5 px-6 focus:outline-none focus:border-black transition-colors" 
+                                        placeholder="Your Name" 
+                                        disabled={status === 'loading'}
+                                    />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">Email</label>
-                                    <input required type="email" className="w-full bg-white h-14 rounded-2xl border border-black/5 px-6 focus:outline-none focus:border-primary transition-colors" placeholder="email@address.com" />
+                                    <input 
+                                        required 
+                                        type="email" 
+                                        value={formData.email}
+                                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                                        className="w-full bg-white h-14 rounded-2xl border border-black/5 px-6 focus:outline-none focus:border-black transition-colors" 
+                                        placeholder="email@address.com" 
+                                        disabled={status === 'loading'}
+                                    />
                                 </div>
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">Topic</label>
-                                <select className="w-full bg-white h-14 rounded-2xl border border-black/5 px-6 focus:outline-none focus:border-primary transition-colors appearance-none">
+                                <select 
+                                    className="w-full bg-white h-14 rounded-2xl border border-black/5 px-6 focus:outline-none focus:border-black transition-colors appearance-none"
+                                    value={formData.topic}
+                                    onChange={(e) => setFormData({...formData, topic: e.target.value})}
+                                    disabled={status === 'loading'}
+                                >
                                     <option>General Inquiry</option>
                                     <option>Event Details</option>
                                     <option>Order Support</option>
@@ -63,11 +120,24 @@ export default function ContactPage() {
 
                             <div className="space-y-2">
                                 <label className="text-xs font-black uppercase tracking-widest text-zinc-500 ml-1">Message</label>
-                                <textarea required rows={5} className="w-full bg-white rounded-2xl border border-black/5 p-6 focus:outline-none focus:border-primary transition-colors resize-none" placeholder="How can we help?" />
+                                <textarea 
+                                    required 
+                                    rows={5} 
+                                    value={formData.message}
+                                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                                    className="w-full bg-white rounded-2xl border border-black/5 p-6 focus:outline-none focus:border-black transition-colors resize-none" 
+                                    placeholder="How can we help?" 
+                                    disabled={status === 'loading'}
+                                />
                             </div>
 
-                            <button type="submit" className="w-full bg-black text-white h-16 rounded-2xl font-black uppercase tracking-widest hover:bg-zinc-800 transition-all flex items-center justify-center gap-3">
-                                Send Message <Send size={18} />
+                            <button 
+                                type="submit" 
+                                disabled={status === 'loading'}
+                                className="w-full bg-black text-white h-16 rounded-2xl font-black uppercase tracking-widest hover:bg-zinc-800 transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                {status === 'loading' ? 'Sending...' : 'Send Message'} 
+                                {status !== 'loading' && <Send size={18} />}
                             </button>
                         </form>
                     )}
