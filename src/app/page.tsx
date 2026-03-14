@@ -5,20 +5,23 @@ import Image from "next/image";
 import { ArrowRight, Trophy, Users, Calendar } from "lucide-react";
 import HeroSlideshow, { SlideshowImage } from "@/components/HeroSlideshow";
 
-const SLIDESHOW_IMAGES: SlideshowImage[] = [
+const LEFT_IMAGES: SlideshowImage[] = [
   { src: "/images/slideshow/IMG_6507.jpeg" },
-  { src: "/images/slideshow/IMG_0321.jpeg" },
   { src: "/images/slideshow/392419D6-D028-4AB1-9E05-279BAA72BDC4OFF08509-Enhanced-NR (1).jpeg" },
-  { src: "/images/slideshow/IMG_0186 (1) (1).jpeg", objectPosition: "center 25%" },
-  { src: "/images/slideshow/IMG_0206.jpeg" },
-  { src: "/images/slideshow/IMG_0318.jpeg" },
+  { src: "/images/slideshow/IMG_0206.jpeg", objectPosition: "center 30%" },
   { src: "/images/slideshow/IMG_0319.jpeg" },
-  { src: "/images/slideshow/IMG_0320.jpeg" },
   { src: "/images/slideshow/IMG_0321 copy.jpeg" },
-  { src: "/images/slideshow/IMG_0322.jpeg" },
   { src: "/images/slideshow/IMG_0323.jpeg" },
-  { src: "/images/slideshow/IMG_0324.jpeg" },
   { src: "/images/slideshow/IMG_4290 (1).jpeg" },
+];
+
+const RIGHT_IMAGES: SlideshowImage[] = [
+  { src: "/images/slideshow/IMG_0321.jpeg" },
+  { src: "/images/slideshow/IMG_0186 (1) (1).jpeg", objectPosition: "center 25%" },
+  { src: "/images/slideshow/IMG_0318.jpeg" },
+  { src: "/images/slideshow/IMG_0320.jpeg" },
+  { src: "/images/slideshow/IMG_0322.jpeg" },
+  { src: "/images/slideshow/IMG_0324.jpeg" },
   { src: "/images/slideshow/JMF09275.jpg", objectPosition: "center bottom" },
 ];
 
@@ -31,7 +34,7 @@ export default function Home() {
         <div className="flex w-full items-center">
           {/* Left Slideshow */}
           <div className="hidden lg:block w-[30%] relative overflow-hidden h-[400px]">
-            <HeroSlideshow images={SLIDESHOW_IMAGES} indexOffset={0} />
+            <HeroSlideshow images={LEFT_IMAGES} />
           </div>
 
           {/* Center Logo Area */}
@@ -58,7 +61,7 @@ export default function Home() {
 
           {/* Right Slideshow */}
           <div className="hidden lg:block w-[30%] relative overflow-hidden h-[400px]">
-            <HeroSlideshow images={SLIDESHOW_IMAGES} indexOffset={1} />
+            <HeroSlideshow images={RIGHT_IMAGES} />
           </div>
         </div>
       </section>

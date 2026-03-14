@@ -10,25 +10,16 @@ export interface SlideshowImage {
 
 interface HeroSlideshowProps {
     images: SlideshowImage[];
-    indexOffset: number;
+    indexOffset?: number;
 }
 
-export default function HeroSlideshow({ images, indexOffset }: HeroSlideshowProps) {
+export default function HeroSlideshow({ images, indexOffset = 0 }: HeroSlideshowProps) {
     const [currentIndex, setCurrentIndex] = useState(indexOffset % images.length);
 
     useEffect(() => {
-        // Switch to a random picture shortly after mount
-        setCurrentIndex(Math.floor(Math.random() * images.length));
-        
         const interval = setInterval(() => {
-            setCurrentIndex((prev) => {
-                let next;
-                do {
-                    next = Math.floor(Math.random() * images.length);
-                } while (next === prev && images.length > 1);
-                return next;
-            });
-        }, 2500);
+            setCurrentIndex((prev) => (prev + 1) % images.length);
+        }, 3500);
 
         return () => clearInterval(interval);
     }, [images.length]);
