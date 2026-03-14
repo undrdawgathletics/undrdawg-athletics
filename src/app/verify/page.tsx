@@ -47,15 +47,19 @@ export default function VerifyPage() {
     };
 
     return (
-        <div className="bg-white min-h-screen text-black pt-12 pb-24">
+        <div className="bg-white min-h-screen text-black pt-24 pb-24">
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <div className="inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-primary/5 border border-primary/10 text-primary mb-8 shadow-sm">
-                        <ShieldCheck size={40} />
+                <section className="relative pb-12 overflow-hidden border-b border-black/5 mb-16">
+                    <div className="mx-auto max-w-4xl text-center">
+                        <div className="inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-primary/5 border border-primary/10 text-primary mb-8 shadow-sm">
+                            <ShieldCheck size={40} />
+                        </div>
+                        <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase mb-4 text-black">
+                            VERIFY <span className="text-black italic">MEMORABILIA</span>
+                        </h1>
                     </div>
-                    <h1 className="text-5xl font-black italic tracking-tighter uppercase mb-4 text-black">
-                        VERIFY <span className="text-primary italic">MEMORABILIA</span>
-                    </h1>
+                </section>
+                <div className="text-center mb-16">
                     <p className="text-zinc-600 max-w-xl mx-auto font-medium">
                         Undrdawg Athletics provides witness based authentication. Our representatives are present at all events and signings.
                     </p>

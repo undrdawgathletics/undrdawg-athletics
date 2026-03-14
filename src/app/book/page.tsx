@@ -102,27 +102,19 @@ export default function BookAthletePage() {
     ];
 
     return (
-        <div className="bg-white min-h-screen text-black pt-20 pb-24">
+        <div className="bg-white min-h-screen text-black pt-24 pb-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* Hero Section - Stacked & Centered */}
-                <div className="mb-12 text-center max-w-7xl mx-auto space-y-6">
-                    <div className="space-y-4">
-                        <h1 className="text-6xl md:text-9xl font-[900] italic tracking-tighter uppercase text-black leading-none whitespace-nowrap">
-                            BOOK AN <span className="text-primary italic">ATHLETE</span>
+                <section className="relative pb-12 overflow-hidden border-b border-black/5 mb-12">
+                    <div className="mx-auto max-w-4xl text-center">
+                        <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase text-black leading-none mb-4">
+                            BOOK AN <span className="text-black italic">ATHLETE</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-zinc-500 font-bold uppercase tracking-[0.2em]">
                             Elevate Your Event with Undrdawg Athletics
                         </p>
                     </div>
-
-                    <div className="max-w-4xl mx-auto relative group">
-                        <div className="p-4 md:p-6 relative">
-                            <p className="text-zinc-600 text-lg leading-relaxed italic font-semibold tracking-tight relative z-10">
-                                "Whether you are looking to drive brand loyalty, inspire a team, or draw a crowd, our roster of professional talent is ready to deliver."
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                </section>
 
                 {/* Introduction & Image Gallery */}
                 <div className="mb-32 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">

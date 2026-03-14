@@ -5,12 +5,15 @@ import EventsTab from "@/components/EventsTab";
 
 export default function EventsPage() {
     return (
-        <div className="bg-white min-h-screen text-black pt-28 pb-24">
+        <div className="bg-white min-h-screen text-black pt-24 pb-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-                <h1 className="text-5xl font-black italic tracking-tighter uppercase mb-8 text-black text-center">
-                    UPCOMING <span className="text-primary italic">EVENTS</span>
-                </h1>
+                <section className="relative pb-12 overflow-hidden border-b border-black/5 mb-12">
+                    <div className="mx-auto max-w-4xl text-center">
+                        <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase mb-4 text-black">
+                            UPCOMING <span className="text-black italic">EVENTS</span>
+                        </h1>
+                    </div>
+                </section>
 
                 <EventsTab />
 
