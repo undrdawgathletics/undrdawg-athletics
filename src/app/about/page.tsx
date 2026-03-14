@@ -78,8 +78,8 @@ export default function AboutPage() {
 
                     <div className="space-y-24">
                         {/* Chris */}
-                        <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
-                            <div className="flex-shrink-0 w-64 h-64 relative rounded-2xl overflow-hidden border-4 border-primary shadow-xl">
+                        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-stretch">
+                            <div className="flex-shrink-0 w-full md:w-80 relative min-h-[400px] md:min-h-0">
                                 <Image
                                     src="/images/about/ChrisHS.jpeg"
                                     alt="Chris Gallelli"
@@ -97,8 +97,8 @@ export default function AboutPage() {
                         </div>
 
                         {/* Julian */}
-                        <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
-                            <div className="flex-shrink-0 w-64 h-64 relative rounded-2xl overflow-hidden border-4 border-primary shadow-xl">
+                        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-stretch">
+                            <div className="flex-shrink-0 w-full md:w-80 relative min-h-[400px] md:min-h-0">
                                 <Image
                                     src="/images/about/JulianHS.jpeg"
                                     alt="Julian Pittaoulis"
