@@ -3,8 +3,13 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+export interface SlideshowImage {
+    src: string;
+    objectPosition?: string;
+}
+
 interface HeroSlideshowProps {
-    images: string[];
+    images: SlideshowImage[];
     indexOffset: number;
 }
 
@@ -12,8 +17,17 @@ export default function HeroSlideshow({ images, indexOffset }: HeroSlideshowProp
     const [currentIndex, setCurrentIndex] = useState(indexOffset % images.length);
 
     useEffect(() => {
+        // Switch to a random picture shortly after mount
+        setCurrentIndex(Math.floor(Math.random() * images.length));
+        
         const interval = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % images.length);
+            setCurrentIndex((prev) => {
+                let next;
+                do {
+                    next = Math.floor(Math.random() * images.length);
+                } while (next === prev && images.length > 1);
+                return next;
+            });
         }, 2500);
 
         return () => clearInterval(interval);
@@ -21,16 +35,17 @@ export default function HeroSlideshow({ images, indexOffset }: HeroSlideshowProp
 
     return (
         <div className="relative w-full h-full overflow-hidden select-none pointer-events-none">
-            {images.map((src, index) => (
+            {images.map((img, index) => (
                 <div
-                    key={`${src}-${index}`}
+                    key={`${img.src}-${index}`}
                     className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentIndex ? "opacity-100" : "opacity-0"}`}
                 >
                     <Image
-                        src={src}
+                        src={img.src}
                         alt="Athlete"
                         fill
                         className="object-cover"
+                        style={{ objectPosition: img.objectPosition || "center" }}
                         priority={index === currentIndex}
                     />
                 </div>

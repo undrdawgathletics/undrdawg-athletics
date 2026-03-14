@@ -3,41 +3,26 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Trophy, Users, Calendar } from "lucide-react";
-import HeroSlideshow from "@/components/HeroSlideshow";
-import { useState, useEffect } from "react";
+import HeroSlideshow, { SlideshowImage } from "@/components/HeroSlideshow";
 
-const SLIDESHOW_IMAGES = [
-  "/images/slideshow/IMG_6507.jpeg",
-  "/images/slideshow/IMG_0321.jpeg",
-  "/images/slideshow/392419D6-D028-4AB1-9E05-279BAA72BDC4OFF08509-Enhanced-NR (1).jpeg",
-  "/images/slideshow/IMG_0186 (1) (1).jpeg",
-  "/images/slideshow/IMG_0206.jpeg",
-  "/images/slideshow/IMG_0318.jpeg",
-  "/images/slideshow/IMG_0319.jpeg",
-  "/images/slideshow/IMG_0320.jpeg",
-  "/images/slideshow/IMG_0321 copy.jpeg",
-  "/images/slideshow/IMG_0322.jpeg",
-  "/images/slideshow/IMG_0323.jpeg",
-  "/images/slideshow/IMG_0324.jpeg",
-  "/images/slideshow/IMG_4290 (1).jpeg",
-  "/images/slideshow/JMF09275.jpg",
+const SLIDESHOW_IMAGES: SlideshowImage[] = [
+  { src: "/images/slideshow/IMG_6507.jpeg" },
+  { src: "/images/slideshow/IMG_0321.jpeg" },
+  { src: "/images/slideshow/392419D6-D028-4AB1-9E05-279BAA72BDC4OFF08509-Enhanced-NR (1).jpeg" },
+  { src: "/images/slideshow/IMG_0186 (1) (1).jpeg", objectPosition: "center 25%" },
+  { src: "/images/slideshow/IMG_0206.jpeg" },
+  { src: "/images/slideshow/IMG_0318.jpeg" },
+  { src: "/images/slideshow/IMG_0319.jpeg" },
+  { src: "/images/slideshow/IMG_0320.jpeg" },
+  { src: "/images/slideshow/IMG_0321 copy.jpeg" },
+  { src: "/images/slideshow/IMG_0322.jpeg" },
+  { src: "/images/slideshow/IMG_0323.jpeg" },
+  { src: "/images/slideshow/IMG_0324.jpeg" },
+  { src: "/images/slideshow/IMG_4290 (1).jpeg" },
+  { src: "/images/slideshow/JMF09275.jpg", objectPosition: "center bottom" },
 ];
 
-function shuffleArray(arr: string[]) {
-  const shuffled = [...arr];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-}
-
 export default function Home() {
-  const [shuffledImages, setShuffledImages] = useState(SLIDESHOW_IMAGES);
-
-  useEffect(() => {
-    setShuffledImages(shuffleArray(SLIDESHOW_IMAGES));
-  }, []);
 
   return (
     <div className="flex flex-col bg-white">
@@ -46,7 +31,7 @@ export default function Home() {
         <div className="flex w-full items-center">
           {/* Left Slideshow */}
           <div className="hidden lg:block w-[30%] relative overflow-hidden h-[400px]">
-            <HeroSlideshow images={shuffledImages} indexOffset={0} />
+            <HeroSlideshow images={SLIDESHOW_IMAGES} indexOffset={0} />
           </div>
 
           {/* Center Logo Area */}
@@ -73,7 +58,7 @@ export default function Home() {
 
           {/* Right Slideshow */}
           <div className="hidden lg:block w-[30%] relative overflow-hidden h-[400px]">
-            <HeroSlideshow images={shuffledImages} indexOffset={1} />
+            <HeroSlideshow images={SLIDESHOW_IMAGES} indexOffset={1} />
           </div>
         </div>
       </section>
