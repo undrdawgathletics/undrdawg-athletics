@@ -81,10 +81,10 @@ export default function AboutPage() {
                         <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
                             <div className="flex-shrink-0 w-64 h-64 relative rounded-full overflow-hidden border-4 border-primary shadow-xl">
                                 <Image
-                                    src="/logo.png" // Placeholder
+                                    src="/images/about/ChrisHS.jpeg"
                                     alt="Chris Gallelli"
                                     fill
-                                    className="object-cover invert brightness-200 bg-black"
+                                    className="object-cover"
                                 />
                             </div>
                             <div className="flex-1 text-center md:text-left">
@@ -100,10 +100,10 @@ export default function AboutPage() {
                         <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
                             <div className="flex-shrink-0 w-64 h-64 relative rounded-full overflow-hidden border-4 border-primary shadow-xl">
                                 <Image
-                                    src="/logo.png" // Placeholder
+                                    src="/images/about/JulianHS.jpeg"
                                     alt="Julian Pittaoulis"
                                     fill
-                                    className="object-cover invert brightness-200 bg-black"
+                                    className="object-cover"
                                 />
                             </div>
                             <div className="flex-1 text-center md:text-left">
