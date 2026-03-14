@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ArrowRight, Trophy, Users, Calendar, Handshake } from "lucide-react";
 import HeroSlideshow, { SlideshowImage } from "@/components/HeroSlideshow";
 
-const SLIDESHOW_IMAGES: SlideshowImage[] = [
+const LEFT_IMAGES: SlideshowImage[] = [
   { src: "/images/slideshow/IMG_6507.jpeg", objectPosition: "center top" },
   { src: "/images/slideshow/392419D6-D028-4AB1-9E05-279BAA72BDC4OFF08509-Enhanced-NR (1).jpeg", objectPosition: "center top" },
   { src: "/images/slideshow/IMG_0206.jpeg", objectPosition: "center 30%" },
@@ -13,6 +13,9 @@ const SLIDESHOW_IMAGES: SlideshowImage[] = [
   { src: "/images/slideshow/IMG_0321 copy.jpeg", objectPosition: "center top" },
   { src: "/images/slideshow/IMG_0323.jpeg", objectPosition: "center top" },
   { src: "/images/slideshow/IMG_4290 (1).jpeg", objectPosition: "center top" },
+];
+
+const RIGHT_IMAGES: SlideshowImage[] = [
   { src: "/images/slideshow/IMG_0321.jpeg", objectPosition: "center top" },
   { src: "/images/slideshow/IMG_0186 (1) (1).jpeg", objectPosition: "center 25%" },
   { src: "/images/slideshow/IMG_0318.jpeg", objectPosition: "center top" },
@@ -27,34 +30,38 @@ export default function Home() {
   return (
     <div className="flex flex-col bg-white">
       {/* Hero Row - flush under navbar */}
-      <section className="relative w-full -mt-20 pt-20 overflow-hidden flex flex-col min-h-[90vh] lg:min-h-screen mb-8">
-        
-        {/* Full Width Background Slideshow */}
-        <div className="absolute inset-0 z-0">
-          <HeroSlideshow images={SLIDESHOW_IMAGES} />
-          {/* Dark Overlay for better logo visibility */}
-          <div className="absolute inset-0 bg-black/40 z-10" />
-        </div>
+      <section className="relative w-full -mt-20 pt-20 overflow-hidden flex flex-col min-h-screen mb-8">
+        <div className="flex w-full items-stretch flex-1">
+          {/* Left Slideshow */}
+          <div className="hidden lg:block w-[30%] relative overflow-hidden">
+            <HeroSlideshow images={LEFT_IMAGES} />
+          </div>
 
-        {/* Center Logo Area */}
-        <div className="relative z-20 flex-1 flex flex-col items-center justify-center px-4 py-12">
-          <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] max-h-full">
-            {/* Fragment 1: Top Left */}
-            <div className="absolute inset-0 animate-fragment-1" style={{ clipPath: 'polygon(0 0, 50% 0, 50% 50%, 0 50%)' }}>
-              <Image src="/logo.png" alt="Undrdawg logo" fill className="object-contain drop-shadow-2xl" priority />
+          {/* Center Logo Area */}
+          <div className="flex-1 flex flex-col items-center justify-center z-10 px-4 py-12">
+            <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] max-h-full">
+              {/* Fragment 1: Top Left */}
+              <div className="absolute inset-0 animate-fragment-1" style={{ clipPath: 'polygon(0 0, 50% 0, 50% 50%, 0 50%)' }}>
+                <Image src="/logo.png" alt="Undrdawg logo" fill className="object-contain" priority />
+              </div>
+              {/* Fragment 2: Top Right */}
+              <div className="absolute inset-0 animate-fragment-2" style={{ clipPath: 'polygon(50% 0, 99.5% 0, 99.5% 50%, 50% 50%)' }}>
+                <Image src="/logo.png" alt="Undrdawg logo" fill className="object-contain" priority />
+              </div>
+              {/* Fragment 3: Bottom Left */}
+              <div className="absolute inset-0 animate-fragment-3" style={{ clipPath: 'polygon(0 50%, 50% 50%, 50% 100%, 0 100%)' }}>
+                <Image src="/logo.png" alt="Undrdawg logo" fill className="object-contain" priority />
+              </div>
+              {/* Fragment 4: Bottom Right */}
+              <div className="absolute inset-0 animate-fragment-4" style={{ clipPath: 'polygon(50% 50%, 99.5% 50%, 99.5% 100%, 50% 100%)' }}>
+                <Image src="/logo.png" alt="Undrdawg logo" fill className="object-contain" priority />
+              </div>
             </div>
-            {/* Fragment 2: Top Right */}
-            <div className="absolute inset-0 animate-fragment-2" style={{ clipPath: 'polygon(50% 0, 99.5% 0, 99.5% 50%, 50% 50%)' }}>
-              <Image src="/logo.png" alt="Undrdawg logo" fill className="object-contain drop-shadow-2xl" priority />
-            </div>
-            {/* Fragment 3: Bottom Left */}
-            <div className="absolute inset-0 animate-fragment-3" style={{ clipPath: 'polygon(0 50%, 50% 50%, 50% 100%, 0 100%)' }}>
-              <Image src="/logo.png" alt="Undrdawg logo" fill className="object-contain drop-shadow-2xl" priority />
-            </div>
-            {/* Fragment 4: Bottom Right */}
-            <div className="absolute inset-0 animate-fragment-4" style={{ clipPath: 'polygon(50% 50%, 99.5% 50%, 99.5% 100%, 50% 100%)' }}>
-              <Image src="/logo.png" alt="Undrdawg logo" fill className="object-contain drop-shadow-2xl" priority />
-            </div>
+          </div>
+
+          {/* Right Slideshow */}
+          <div className="hidden lg:block w-[30%] relative overflow-hidden">
+            <HeroSlideshow images={RIGHT_IMAGES} />
           </div>
         </div>
       </section>
