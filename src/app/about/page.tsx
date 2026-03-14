@@ -21,7 +21,7 @@ export default function AboutPage() {
             <section className="relative pt-24 pb-12 px-4 overflow-hidden border-b border-black/5">
                 <div className="mx-auto max-w-4xl text-center">
                     <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter mb-4 text-black">
-                        THE UNDRDAWG <span className="text-primary italic">STORY</span>
+                        THE UNDRDAWG <span className="text-black italic">STORY</span>
                     </h1>
                 </div>
             </section>
@@ -73,7 +73,7 @@ export default function AboutPage() {
             <section className="py-24 px-4 bg-zinc-50 border-t border-black/5">
                 <div className="mx-auto max-w-6xl">
                     <h2 className="text-4xl md:text-5xl font-black uppercase text-center mb-20 text-black">
-                        Meet the <span className="text-primary italic">Founders</span>
+                        Meet the <span className="text-black italic">Founders</span>
                     </h2>
 
                     <div className="space-y-24">

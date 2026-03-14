@@ -14,17 +14,19 @@ export default function ContactPage() {
     };
 
     return (
-        <div className="bg-white min-h-screen text-black pt-32 pb-24 px-4">
+        <div className="bg-white min-h-screen text-black pt-24 pb-24 px-4">
             <div className="mx-auto max-w-4xl">
-                <div className="text-center mb-16">
-                    <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase mb-6 text-black">
-                        GET IN <span className="text-primary italic">TOUCH</span>
-                    </h1>
-                    <p className="text-zinc-600 font-medium text-lg max-w-2xl mx-auto">
-                        Have a question about an event, an order, or booking an athlete?
-                        We're here to help.
-                    </p>
-                </div>
+                <section className="relative pb-12 overflow-hidden border-b border-black/5 mb-12">
+                    <div className="mx-auto max-w-4xl text-center">
+                        <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase mb-4 text-black">
+                            GET IN <span className="text-black italic">TOUCH</span>
+                        </h1>
+                        <p className="text-zinc-600 font-medium text-lg max-w-2xl mx-auto">
+                            Have a question about an event, an order, or booking an athlete?
+                            We're here to help.
+                        </p>
+                    </div>
+                </section>
 
                 <div className="bg-zinc-50 border border-black/5 rounded-[3rem] p-8 md:p-16 shadow-sm">
                     {submitted ? (

@@ -62,12 +62,16 @@ export default function UpcomingEventsPage() {
     };
 
     return (
-        <div className="bg-white min-h-screen text-black pt-28 pb-24">
+        <div className="bg-white min-h-screen text-black pt-24 pb-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <section className="relative pb-12 overflow-hidden border-b border-black/5 mb-12">
+                    <div className="mx-auto max-w-4xl text-center">
+                        <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase mb-4 text-black">
+                            UPCOMING <span className="text-black italic">EXPERIENCES</span>
+                        </h1>
+                    </div>
+                </section>
                 <div className="mb-16">
-                    <h1 className="text-5xl font-black italic tracking-tighter uppercase mb-4 text-black">
-                        UPCOMING <span className="text-primary italic">EXPERIENCES</span>
-                    </h1>
                     <p className="text-zinc-600 max-w-2xl font-medium">
                         Secure your spot for future appearances from Philadelphia stars.
                         Professional photos, official autographs, and elite access.

@@ -1,15 +1,17 @@
 export default function PrivacyPolicyPage() {
     return (
-        <div className="bg-white min-h-screen text-black pt-12 pb-24">
+        <div className="bg-white min-h-screen text-black pt-24 pb-24">
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-                <div className="mb-12">
-                    <h1 className="text-4xl md:text-5xl font-black italic tracking-tighter uppercase mb-4 text-black">
-                        PRIVACY <span className="text-primary italic">POLICY</span>
-                    </h1>
-                    <p className="text-zinc-500 text-sm uppercase tracking-widest font-bold">
-                        Last Updated: January 25, 2026
-                    </p>
-                </div>
+                <section className="relative pb-12 overflow-hidden border-b border-black/5 mb-12">
+                    <div className="mx-auto max-w-4xl">
+                        <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase mb-4 text-black">
+                            PRIVACY <span className="text-black italic">POLICY</span>
+                        </h1>
+                        <p className="text-zinc-500 text-sm uppercase tracking-widest font-bold">
+                            Last Updated: January 25, 2026
+                        </p>
+                    </div>
+                </section>
 
                 <div className="prose prose-zinc max-w-none">
                     <h3>1. Introduction</h3>

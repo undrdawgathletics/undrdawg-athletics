@@ -3,12 +3,16 @@ import { Download, Package, PenTool, Mail } from "lucide-react";
 
 export default function MailInPage() {
     return (
-        <div className="bg-white min-h-screen text-black pt-28 pb-24">
+        <div className="bg-white min-h-screen text-black pt-24 pb-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <section className="relative pb-12 overflow-hidden border-b border-black/5 mb-12">
+                    <div className="mx-auto max-w-4xl text-center">
+                        <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase mb-4 text-black">
+                            MAIL-IN <span className="text-black italic">ORDER</span>
+                        </h1>
+                    </div>
+                </section>
                 <div className="text-center mb-16">
-                    <h1 className="text-5xl font-black italic tracking-tighter uppercase mb-8 text-black">
-                        MAIL-IN <span className="text-primary italic">ORDER</span>
-                    </h1>
                     <EventsTab />
                 </div>
 

@@ -116,6 +116,14 @@ export default function BookAthletePage() {
                     </div>
                 </section>
 
+                <div className="max-w-4xl mx-auto relative group mb-12">
+                    <div className="p-4 md:p-6 relative">
+                        <p className="text-zinc-600 text-lg leading-relaxed italic font-semibold tracking-tight relative z-10">
+                            "Whether you are looking to drive brand loyalty, inspire a team, or draw a crowd, our roster of professional talent is ready to deliver."
+                        </p>
+                    </div>
+                </div>
+
                 {/* Introduction & Image Gallery */}
                 <div className="mb-32 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div className="space-y-8">

@@ -26,14 +26,16 @@ export default function ShopPage() {
     const { addItem } = useCart();
 
     return (
-        <div className="bg-white min-h-screen text-black pt-32 pb-24">
+        <div className="bg-white min-h-screen text-black pt-24 pb-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h1 className="text-5xl md:text-8xl font-black italic tracking-tighter uppercase text-black mb-4">
-                        SHOP <span className="text-primary">THE DROP</span>
-                    </h1>
-                    <p className="text-zinc-500 font-medium">Limited edition releases and exclusive memorabilia.</p>
-                </div>
+                <section className="relative pb-12 overflow-hidden border-b border-black/5 mb-12">
+                    <div className="mx-auto max-w-4xl text-center">
+                        <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase text-black mb-4">
+                            SHOP <span className="text-black">THE DROP</span>
+                        </h1>
+                        <p className="text-zinc-500 font-medium">Limited edition releases and exclusive memorabilia.</p>
+                    </div>
+                </section>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Jamie Drysdale Autographed Puck Card */}
