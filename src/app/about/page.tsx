@@ -79,7 +79,7 @@ export default function AboutPage() {
                     <div className="space-y-24">
                         {/* Chris */}
                         <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
-                            <div className="flex-shrink-0 w-64 h-64 relative rounded-full overflow-hidden border-4 border-primary shadow-xl">
+                            <div className="flex-shrink-0 w-64 h-64 relative rounded-2xl overflow-hidden border-4 border-primary shadow-xl">
                                 <Image
                                     src="/images/about/ChrisHS.jpeg"
                                     alt="Chris Gallelli"
@@ -91,14 +91,14 @@ export default function AboutPage() {
                                 <h3 className="text-3xl font-black uppercase text-black mb-2">Chris Gallelli</h3>
                                 <p className="text-primary font-bold tracking-widest uppercase mb-6">President & CEO</p>
                                 <p className="text-zinc-600 leading-relaxed text-lg">
-                                    A Senior at Drexel University double-majoring in Finance and Sport Management, Chris is the strategic engine behind Undrdawg Athletics. Drawing on the discipline and leadership cultivated within the championship-winning football program at St. Joseph’s Prep, he specializes in high-stakes talent negotiation and the logistical strategy required to secure premier athletes. Chris excels at navigating the intricate landscape of sports contracts, leveraging his finance background to manage budgets and ensure favorable terms for all parties involved. With professional experience as a Financial Analyst, he combines fiscal precision with industry-specific grit, ensuring that every partnership and event is executed with the highest standard of corporate service.
+                                    A recent graduate at Drexel University who double-majored in Finance and Sport Management, Chris is the strategic engine behind Undrdawg Athletics. Drawing on the discipline and leadership cultivated within the championship-winning football program at St. Joseph’s Prep, he specializes in high-stakes talent negotiation and the logistical strategy required to secure premier athletes. Chris excels at navigating the intricate landscape of sports contracts, leveraging his finance background to manage budgets and ensure favorable terms for all parties involved. With professional experience as a Financial Analyst, he combines fiscal precision with industry-specific grit, ensuring that every partnership and event is executed with the highest standard of corporate service.
                                 </p>
                             </div>
                         </div>
 
                         {/* Julian */}
                         <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
-                            <div className="flex-shrink-0 w-64 h-64 relative rounded-full overflow-hidden border-4 border-primary shadow-xl">
+                            <div className="flex-shrink-0 w-64 h-64 relative rounded-2xl overflow-hidden border-4 border-primary shadow-xl">
                                 <Image
                                     src="/images/about/JulianHS.jpeg"
                                     alt="Julian Pittaoulis"
