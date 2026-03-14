@@ -68,9 +68,9 @@ export default function Home() {
 
       {/* Main Content Area - Below the Hero section to fill the white space */}
       <section className="w-full py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
           {/* 4-Column Stats Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full px-4 sm:px-8 lg:px-12 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full mb-16">
             {/* Events */}
             <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-zinc-50 border border-zinc-100 transition-colors hover:bg-zinc-100">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-black text-white">
@@ -108,17 +108,28 @@ export default function Home() {
             </div>
           </div>
 
-          {/* About Text Section */}
-          <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-lg text-zinc-700 leading-relaxed space-y-6 text-center md:text-left">
-            <p>
-              At Undrdawg Athletics, we understand that an athlete's presence can transform an ordinary event into a landmark occasion. Our firm is built on the foundation of professional excellence, providing seamless coordination between elite talent and the organizations or fans who support them.
-            </p>
-            <p>
-              Our fan-centric services are designed to bring you closer to the action than ever before. Through high-quality signing events and structured meet-and-greets, we facilitate genuine interactions with sports icons. Each event is meticulously planned to ensure that every photograph and autograph represents a high-standard experience for both the athlete and the attendee.
-            </p>
-            <p>
-              For our business and event partners, we offer comprehensive booking and appearance services. We leverage our network to help you secure the right athlete for your specific needs, focusing on building brand equity and enhancing guest engagement. From keynote speaking to brand ambassadorships, Undrdawg Athletics is your partner in creating high-impact professional moments.
-            </p>
+          {/* About Text Section & Contact Button */}
+          <div className="w-full flex flex-col lg:flex-row items-center lg:items-center justify-between gap-12 text-lg text-zinc-700 leading-relaxed text-left">
+            <div className="flex-1 space-y-6">
+              <p>
+                At Undrdawg Athletics, we understand that an athlete's presence can transform an ordinary event into a landmark occasion. Our firm is built on the foundation of professional excellence, providing seamless coordination between elite talent and the organizations or fans who support them.
+              </p>
+              <p>
+                Our fan-centric services are designed to bring you closer to the action than ever before. Through high-quality signing events and structured meet-and-greets, we facilitate genuine interactions with sports icons. Each event is meticulously planned to ensure that every photograph and autograph represents a high-standard experience for both the athlete and the attendee.
+              </p>
+              <p>
+                For our business and event partners, we offer comprehensive booking and appearance services. We leverage our network to help you secure the right athlete for your specific needs, focusing on building brand equity and enhancing guest engagement. From keynote speaking to brand ambassadorships, Undrdawg Athletics is your partner in creating high-impact professional moments.
+              </p>
+            </div>
+            <div className="flex-shrink-0 lg:w-72 flex justify-center lg:justify-end">
+              <Link
+                href="/contact"
+                className="group flex h-14 w-full items-center justify-center gap-3 rounded-full bg-black px-10 text-lg font-bold text-white transition-all hover:bg-zinc-800 sm:w-auto shadow-lg hover:shadow-xl active:scale-95 whitespace-nowrap"
+              >
+                Contact Us
+                <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
