@@ -6,23 +6,23 @@ import { ArrowRight, Trophy, Users, Calendar, Handshake } from "lucide-react";
 import HeroSlideshow, { SlideshowImage } from "@/components/HeroSlideshow";
 
 const LEFT_IMAGES: SlideshowImage[] = [
-  { src: "/images/slideshow/IMG_6507.jpeg" },
-  { src: "/images/slideshow/392419D6-D028-4AB1-9E05-279BAA72BDC4OFF08509-Enhanced-NR (1).jpeg" },
+  { src: "/images/slideshow/IMG_6507.jpeg", objectPosition: "center top" },
+  { src: "/images/slideshow/392419D6-D028-4AB1-9E05-279BAA72BDC4OFF08509-Enhanced-NR (1).jpeg", objectPosition: "center top" },
   { src: "/images/slideshow/IMG_0206.jpeg", objectPosition: "center 30%" },
-  { src: "/images/slideshow/IMG_0319.jpeg" },
-  { src: "/images/slideshow/IMG_0321 copy.jpeg" },
-  { src: "/images/slideshow/IMG_0323.jpeg" },
-  { src: "/images/slideshow/IMG_4290 (1).jpeg" },
+  { src: "/images/slideshow/IMG_0319.jpeg", objectPosition: "center top" },
+  { src: "/images/slideshow/IMG_0321 copy.jpeg", objectPosition: "center top" },
+  { src: "/images/slideshow/IMG_0323.jpeg", objectPosition: "center top" },
+  { src: "/images/slideshow/IMG_4290 (1).jpeg", objectPosition: "center top" },
 ];
 
 const RIGHT_IMAGES: SlideshowImage[] = [
-  { src: "/images/slideshow/IMG_0321.jpeg" },
+  { src: "/images/slideshow/IMG_0321.jpeg", objectPosition: "center top" },
   { src: "/images/slideshow/IMG_0186 (1) (1).jpeg", objectPosition: "center 25%" },
-  { src: "/images/slideshow/IMG_0318.jpeg" },
-  { src: "/images/slideshow/IMG_0320.jpeg" },
-  { src: "/images/slideshow/IMG_0322.jpeg" },
-  { src: "/images/slideshow/IMG_0324.jpeg" },
-  { src: "/images/slideshow/JMF09275.jpg", objectPosition: "center bottom" },
+  { src: "/images/slideshow/IMG_0318.jpeg", objectPosition: "center top" },
+  { src: "/images/slideshow/IMG_0320.jpeg", objectPosition: "center top" },
+  { src: "/images/slideshow/IMG_0322.jpeg", objectPosition: "center top" },
+  { src: "/images/slideshow/IMG_0324.jpeg", objectPosition: "center top" },
+  { src: "/images/slideshow/JMF09275.jpg", objectPosition: "center 40%" },
 ];
 
 export default function Home() {
@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <div className="flex flex-col bg-white">
       {/* Hero Row - flush under navbar */}
-      <section className="relative w-full -mt-20 pt-24 overflow-hidden flex flex-col min-h-[90vh] lg:min-h-screen mb-8">
+      <section className="relative w-full -mt-20 pt-20 overflow-hidden flex flex-col min-h-screen mb-8">
         <div className="flex w-full items-stretch flex-1">
           {/* Left Slideshow */}
           <div className="hidden lg:block w-[30%] relative overflow-hidden">
