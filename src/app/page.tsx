@@ -30,16 +30,16 @@ export default function Home() {
   return (
     <div className="flex flex-col bg-white">
       {/* Hero Row - flush under navbar */}
-      <section className="relative w-full -mt-20 pt-24 overflow-hidden">
-        <div className="flex w-full items-center">
+      <section className="relative w-full -mt-20 pt-24 overflow-hidden flex flex-col min-h-[90vh] lg:min-h-screen mb-8">
+        <div className="flex w-full items-stretch flex-1">
           {/* Left Slideshow */}
-          <div className="hidden lg:block w-[30%] relative overflow-hidden h-[400px]">
+          <div className="hidden lg:block w-[30%] relative overflow-hidden">
             <HeroSlideshow images={LEFT_IMAGES} />
           </div>
 
           {/* Center Logo Area */}
-          <div className="flex-1 flex flex-col items-center justify-center z-10 px-4 h-[400px]">
-            <div className="relative h-[400px] w-[400px]">
+          <div className="flex-1 flex flex-col items-center justify-center z-10 px-4 py-12">
+            <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] max-h-full">
               {/* Fragment 1: Top Left */}
               <div className="absolute inset-0 animate-fragment-1" style={{ clipPath: 'polygon(0 0, 50% 0, 50% 50%, 0 50%)' }}>
                 <Image src="/logo.png" alt="Undrdawg logo" fill className="object-contain" priority />
@@ -60,7 +60,7 @@ export default function Home() {
           </div>
 
           {/* Right Slideshow */}
-          <div className="hidden lg:block w-[30%] relative overflow-hidden h-[400px]">
+          <div className="hidden lg:block w-[30%] relative overflow-hidden">
             <HeroSlideshow images={RIGHT_IMAGES} />
           </div>
         </div>
