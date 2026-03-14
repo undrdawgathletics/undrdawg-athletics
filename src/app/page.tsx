@@ -20,6 +20,7 @@ const SLIDESHOW_IMAGES = [
   "/images/slideshow/IMG_0323.jpeg",
   "/images/slideshow/IMG_0324.jpeg",
   "/images/slideshow/IMG_4290 (1).jpeg",
+  "/images/slideshow/JMF09275.jpg",
 ];
 
 function shuffleArray(arr: string[]) {
