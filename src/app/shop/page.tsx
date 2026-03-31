@@ -70,13 +70,13 @@ export default function ShopPage() {
                     </div>
 
                     {/* Jamie Drysdale Autographed Photo Card */}
-                    <div className="bg-zinc-50 border border-black/5 rounded-[2.5rem] p-6 hover:shadow-lg transition-all flex flex-col items-center">
+                    <div className="bg-zinc-50 border border-black/5 rounded-[2.5rem] p-6 hover:shadow-lg transition-all flex flex-col items-center group">
                         <div className="relative w-full aspect-square bg-zinc-100 rounded-3xl mb-6 flex items-center justify-center overflow-hidden">
                             <Image
-                                src="/images/shop/jamie-photo.png"
-                                alt="Jamie Drysdale Autographed 8x10 Photo"
+                                src="/images/shop/orange8x10.webp"
+                                alt="Jamie Drysdale Autographed Photo"
                                 fill
-                                className="object-cover transition-transform group-hover:scale-105"
+                                className="object-contain p-4 transition-transform group-hover:scale-105"
                             />
                         </div>
 

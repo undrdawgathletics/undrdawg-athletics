@@ -65,12 +65,12 @@ export default function JamieDrysdalePhotoPage() {
 
                     {/* Left Column: Product Image Gallery */}
                     <div className="flex flex-col gap-6">
-                        <div className="bg-zinc-50 border border-black/5 rounded-[3rem] p-8 aspect-[4/5] lg:aspect-square flex items-center justify-center relative overflow-hidden">
+                        <div className="bg-zinc-50 border border-black/5 rounded-[3rem] p-8 aspect-[4/5] lg:aspect-square flex items-center justify-center relative overflow-hidden shadow-sm">
                             <Image
                                 src={currentImage}
                                 alt="Jamie Drysdale Autographed Photo"
                                 fill
-                                className="object-cover p-2 lg:p-4 transition-all duration-300 shadow-xl rounded-2xl"
+                                className="object-contain p-6 lg:p-10 transition-all duration-300"
                             />
                         </div>
                         {/* More thumbnails could go here in the future once images are provided */}
