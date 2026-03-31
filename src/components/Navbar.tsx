@@ -110,6 +110,22 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-black border-b border-white/10">
           <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+            <div className="px-3 py-2 mb-2">
+              <input
+                type="text"
+                placeholder="Search..."
+                className="w-full bg-zinc-900 border-2 border-zinc-700 text-white text-sm rounded-full py-2 px-4 focus:outline-none focus:border-white transition-colors placeholder:text-zinc-500"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    const target = e.target as HTMLInputElement;
+                    if (target.value.trim()) {
+                      setIsOpen(false);
+                      router.push(`/search?q=${encodeURIComponent(target.value)}`);
+                    }
+                  }
+                }}
+              />
+            </div>
             {navLinks.map((link) => (
               <Link
                 key={link.name}
