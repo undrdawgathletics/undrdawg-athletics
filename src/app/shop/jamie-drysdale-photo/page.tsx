@@ -36,8 +36,19 @@ export default function JamieDrysdalePhotoPage() {
 
     const currentEbayLink = EBAY_LINKS[size][color] || "";
 
-    // We use a single placeholder for now until you provide the varied images
-    const currentImage = "/images/shop/jamie-photo.png";
+    const imageMap: Record<Size, Partial<Record<Color, string>>> = {
+        "8x10": {
+            "Orange": "/images/shop/orange8x10.webp",
+            "Blue": "/images/shop/blue8x10.webp",
+            "Black": "/images/shop/black8x10.webp"
+        },
+        "16x20": {
+            "Orange": "/images/shop/orange16x20.webp",
+            "Black": "/images/shop/black16x20.webp"
+        }
+    };
+
+    const currentImage = imageMap[size][color] || "/images/shop/jamie-photo.png";
 
     return (
         <div className="bg-white min-h-screen text-black pt-28 pb-24">
