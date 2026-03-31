@@ -6,23 +6,23 @@ import { ArrowRight, Trophy, Users, Calendar, Handshake } from "lucide-react";
 import HeroSlideshow, { SlideshowImage } from "@/components/HeroSlideshow";
 
 const LEFT_IMAGES: SlideshowImage[] = [
-  { src: "/images/slideshow/IMG_6507.jpeg", objectPosition: "center top" },
-  { src: "/images/slideshow/392419D6-D028-4AB1-9E05-279BAA72BDC4OFF08509-Enhanced-NR (1).jpeg", objectPosition: "center top" },
-  { src: "/images/slideshow/IMG_0206.jpeg", objectPosition: "center 30%" },
+  { src: "/images/slideshow/IMG_6507.jpeg", objectPosition: "center 30%" },
+  { src: "/images/slideshow/392419D6-D028-4AB1-9E05-279BAA72BDC4OFF08509-Enhanced-NR (1).jpeg", objectPosition: "center center", scale: 0.75 },
+  { src: "/images/slideshow/IMG_0206.jpeg", objectPosition: "30% 30%" },
   { src: "/images/slideshow/IMG_0319.jpeg", objectPosition: "center top" },
-  { src: "/images/slideshow/IMG_0321 copy.jpeg", objectPosition: "center top" },
-  { src: "/images/slideshow/IMG_0323.jpeg", objectPosition: "center top" },
+  { src: "/images/slideshow/IMG_0321 copy.jpeg", objectPosition: "center 30%", scale: 0.9 },
+  { src: "/images/slideshow/IMG_0323.jpeg", objectPosition: "center top", scale: 0.9 },
   { src: "/images/slideshow/IMG_4290 (1).jpeg", objectPosition: "center top" },
 ];
 
 const RIGHT_IMAGES: SlideshowImage[] = [
-  { src: "/images/slideshow/IMG_0321.jpeg", objectPosition: "center top" },
+  { src: "/images/slideshow/IMG_0321.jpeg", objectPosition: "center 30%", scale: 0.9 },
   { src: "/images/slideshow/IMG_0186 (1) (1).jpeg", objectPosition: "center 25%" },
-  { src: "/images/slideshow/IMG_0318.jpeg", objectPosition: "center top" },
+  { src: "/images/slideshow/IMG_0318.jpeg", objectPosition: "center top", scale: 0.9 },
   { src: "/images/slideshow/IMG_0320.jpeg", objectPosition: "center top" },
-  { src: "/images/slideshow/IMG_0322.jpeg", objectPosition: "center top" },
+  { src: "/images/slideshow/IMG_0322.jpeg", objectPosition: "center center", scale: 0.8 },
   { src: "/images/slideshow/IMG_0324.jpeg", objectPosition: "center top" },
-  { src: "/images/slideshow/JMF09275.jpg", objectPosition: "center 40%" },
+  { src: "/images/slideshow/JMF09275.jpg", objectPosition: "center 60%" },
 ];
 
 export default function Home() {
@@ -34,7 +34,7 @@ export default function Home() {
         <div className="flex w-full items-center">
           {/* Left Slideshow */}
           <div className="hidden lg:block w-[30%] relative overflow-hidden h-[500px]">
-            <HeroSlideshow images={LEFT_IMAGES} />
+            <HeroSlideshow images={LEFT_IMAGES} side="left" />
           </div>
 
           {/* Center Logo Area */}
@@ -61,7 +61,7 @@ export default function Home() {
 
           {/* Right Slideshow */}
           <div className="hidden lg:block w-[30%] relative overflow-hidden h-[500px]">
-            <HeroSlideshow images={RIGHT_IMAGES} />
+            <HeroSlideshow images={RIGHT_IMAGES} side="right" />
           </div>
         </div>
       </section>

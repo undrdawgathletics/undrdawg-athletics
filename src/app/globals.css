@@ -128,3 +128,8 @@ h6 {
 .animate-scroll-down {
   animation: scroll-down 25s linear infinite;
 }
+
+@keyframes kenBurns {
+  0%   { transform: scale(1.0); }
+  100% { transform: scale(1.06); }
+}
