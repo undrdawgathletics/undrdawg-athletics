@@ -32,6 +32,14 @@ const searchIndex = [
         keywords: ["jamie", "drysdale", "helmet", "mini helmet", "flyers", "autograph", "signed", "memorabilia", "shop", "buy"]
     },
     {
+        id: "shop-jamie-11x14-photo",
+        title: "Jamie Drysdale Autographed 11x14 Photo",
+        url: "/shop/jamie-drysdale-11x14-photo",
+        category: "Shop",
+        description: "Official authenticated Jamie Drysdale autographed 11x14 photo.",
+        keywords: ["jamie", "drysdale", "photo", "11x14", "flyers", "autograph", "signed", "memorabilia", "shop", "buy"]
+    },
+    {
         id: "shop-apparel",
         title: "Shop Apparel & Gear",
         url: "/shop",

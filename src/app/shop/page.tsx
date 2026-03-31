@@ -126,6 +126,35 @@ export default function ShopPage() {
                             View Details
                         </Link>
                     </div>
+
+                    {/* Jamie Drysdale Autographed 11x14 Photo Card */}
+                    <div className="bg-zinc-50 border border-black/5 rounded-[2.5rem] p-6 hover:shadow-lg transition-all flex flex-col items-center group">
+                        <div className="relative w-full aspect-square bg-zinc-100 rounded-3xl mb-6 flex items-center justify-center overflow-hidden">
+                            <Image
+                                src="/images/shop/11x14orange.webp"
+                                alt="Jamie Drysdale Autographed 11x14 Photo"
+                                fill
+                                className="object-contain p-4 transition-transform group-hover:scale-105"
+                            />
+                        </div>
+
+                        <div className="mb-6 w-full text-left">
+                            <div className="inline-block px-3 py-1 bg-[#F74F07] text-white text-[10px] font-black uppercase tracking-widest rounded-lg mb-3 shadow-md">
+                                Philadelphia Flyers
+                            </div>
+                            <h2 className="text-2xl font-black uppercase italic tracking-tighter text-black mb-1 leading-none">
+                                Jamie Drysdale<br />Autographed 11x14 Photo
+                            </h2>
+                            <p className="text-zinc-500 font-bold mt-2">Check eBay for price</p>
+                        </div>
+
+                        <Link
+                            href="/shop/jamie-drysdale-11x14-photo"
+                            className="mt-auto w-full h-14 bg-black hover:bg-zinc-800 transition-colors text-white rounded-2xl flex items-center justify-center font-black uppercase tracking-widest gap-2 shadow-xl hover:-translate-y-1"
+                        >
+                            View Details
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
