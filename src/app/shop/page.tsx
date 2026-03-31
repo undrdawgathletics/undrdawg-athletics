@@ -31,9 +31,9 @@ export default function ShopPage() {
                 <section className="relative pb-12 overflow-hidden border-b border-black/5 mb-12">
                     <div className="mx-auto max-w-4xl text-center">
                         <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase text-black mb-4">
-                            SHOP <span className="text-black">THE DROP</span>
+                            MEMORABILIA
                         </h1>
-                        <p className="text-zinc-500 font-medium">Limited edition releases and exclusive memorabilia.</p>
+                        <p className="text-zinc-500 font-medium">100% authentic guaranteed.</p>
                     </div>
                 </section>
 
