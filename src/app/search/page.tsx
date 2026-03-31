@@ -24,6 +24,14 @@ const searchIndex = [
         keywords: ["jamie", "drysdale", "photo", "flyers", "autograph", "signed", "memorabilia", "shop", "8x10", "16x20", "buy"]
     },
     {
+        id: "shop-jamie-helmet",
+        title: "Jamie Drysdale Autographed Mini Helmet",
+        url: "/shop/jamie-drysdale-helmet",
+        category: "Shop",
+        description: "Official authenticated Jamie Drysdale autographed mini helmet.",
+        keywords: ["jamie", "drysdale", "helmet", "mini helmet", "flyers", "autograph", "signed", "memorabilia", "shop", "buy"]
+    },
+    {
         id: "shop-apparel",
         title: "Shop Apparel & Gear",
         url: "/shop",
