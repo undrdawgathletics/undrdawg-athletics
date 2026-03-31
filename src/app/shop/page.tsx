@@ -33,7 +33,7 @@ export default function ShopPage() {
                         <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase text-black mb-4">
                             MEMORABILIA
                         </h1>
-                        <p className="text-zinc-500 font-medium">100% authentic guaranteed.</p>
+                        <p className="text-zinc-500 font-medium">100% Authentic Guaranteed</p>
                     </div>
                 </section>
 
