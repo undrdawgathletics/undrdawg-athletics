@@ -16,6 +16,14 @@ const searchIndex = [
         keywords: ["jamie", "drysdale", "puck", "flyers", "autograph", "signed", "memorabilia", "shop", "buy"]
     },
     {
+        id: "shop-jamie-photo",
+        title: "Jamie Drysdale Autographed Photo",
+        url: "/shop/jamie-drysdale-photo",
+        category: "Shop",
+        description: "Official Dynasty authenticated Jamie Drysdale autographed photo.",
+        keywords: ["jamie", "drysdale", "photo", "flyers", "autograph", "signed", "memorabilia", "shop", "8x10", "16x20", "buy"]
+    },
+    {
         id: "shop-apparel",
         title: "Shop Apparel & Gear",
         url: "/shop",
