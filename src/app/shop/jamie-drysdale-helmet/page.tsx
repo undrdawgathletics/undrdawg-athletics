@@ -1,11 +1,20 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2, ShoppingCart } from "lucide-react";
 
 export default function JamieDrysdaleHelmetPage() {
+    const [activeImageIndex, setActiveImageIndex] = useState(0);
     const ebayLink = "https://www.ebay.com/itm/147157306147?itmmeta=01KN0V4E6QY6YF1QPFCT7SMD95&hash=item2243424b23:g:KFwAAeSw7qFpk44F";
+
+    const images = [
+        "/images/shop/helmet.webp",
+        "/images/shop/helmet2.webp"
+    ];
+
+    const currentImage = images[activeImageIndex];
 
     return (
         <div className="bg-white min-h-screen text-black pt-28 pb-24">
@@ -24,11 +33,25 @@ export default function JamieDrysdaleHelmetPage() {
                     <div className="flex flex-col gap-6">
                         <div className="bg-zinc-50 border border-black/5 rounded-[3rem] p-8 aspect-[4/5] lg:aspect-square flex items-center justify-center relative overflow-hidden shadow-sm">
                             <Image
-                                src="/images/shop/helmet.webp"
+                                src={currentImage}
                                 alt="Jamie Drysdale Autographed Signed Mini Helmet"
                                 fill
                                 className="object-contain p-6 lg:p-10 transition-all duration-300"
                             />
+                        </div>
+
+                        {/* Thumbnails */}
+                        <div className="flex gap-4">
+                            {images.map((img, idx) => (
+                                <button
+                                    key={img}
+                                    onClick={() => setActiveImageIndex(idx)}
+                                    className={`relative w-24 h-24 rounded-2xl border-2 overflow-hidden transition-all bg-zinc-50 ${activeImageIndex === idx ? "border-black shadow-md scale-105" : "border-black/5 opacity-60 hover:opacity-100"
+                                        }`}
+                                >
+                                    <Image src={img} alt={`Thumbnail ${idx + 1}`} fill className="object-contain p-2" />
+                                </button>
+                            ))}
                         </div>
                     </div>
 

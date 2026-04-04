@@ -12,12 +12,12 @@ export default function JamieDrysdalePuckPage() {
 
     const whiteImages = [
         "/images/shop/hpuck.webp",
-        "/images/shop/whitesig#2.webp"
+        "/images/shop/whitesig-2.webp"
     ];
 
     const orangeImages = [
         "/images/shop/orangepuck.webp",
-        "/images/shop/orangesig#2.webp"
+        "/images/shop/orangesig-2.webp"
     ];
 
     const currentImages = isWhiteSignature ? whiteImages : orangeImages;
