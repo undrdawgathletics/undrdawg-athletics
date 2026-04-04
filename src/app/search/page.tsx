@@ -40,6 +40,22 @@ const searchIndex = [
         keywords: ["jamie", "drysdale", "photo", "11x14", "flyers", "autograph", "signed", "memorabilia", "shop", "buy"]
     },
     {
+        id: "shop-jamie-game-puck",
+        title: "Jamie Drysdale Autographed Game Puck",
+        url: "/shop/jamie-drysdale-game-puck",
+        category: "Shop",
+        description: "Official authenticated Jamie Drysdale autographed flyers game puck.",
+        keywords: ["jamie", "drysdale", "puck", "game", "flyers", "autograph", "signed", "memorabilia", "shop", "buy"]
+    },
+    {
+        id: "shop-jamie-8x10-photo-new",
+        title: "Jamie Drysdale Autographed 8x10 Photo (Black/Gold/Orange)",
+        url: "/shop/jamie-drysdale-8x10-photo",
+        category: "Shop",
+        description: "Official authenticated Jamie Drysdale autographed 8x10 photo with color signature options.",
+        keywords: ["jamie", "drysdale", "photo", "8x10", "black", "gold", "orange", "flyers", "autograph", "signed", "memorabilia", "shop", "buy"]
+    },
+    {
         id: "shop-apparel",
         title: "Shop Apparel & Gear",
         url: "/shop",
