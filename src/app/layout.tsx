@@ -14,7 +14,8 @@ export const metadata: Metadata = {
   title: "Undrdawg Athletics",
   description: "High-energy, premium e-commerce and booking website for Undrdawg Athletics. Born in Philadelphia.",
   icons: {
-    icon: "/logo.png",
+    icon: "/favicon.png",
+    apple: "/apple-icon.png",
   },
 };
 
