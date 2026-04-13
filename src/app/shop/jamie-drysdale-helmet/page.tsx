@@ -70,8 +70,11 @@ export default function JamieDrysdaleHelmetPage() {
                             <span className="uppercase tracking-widest text-sm text-black">Authenticated by Undrdawg Athletics or Dynasty Sports & Framing</span>
                         </div>
 
-                        <p className="text-zinc-500 text-lg mb-10 max-w-lg leading-relaxed">
+                        <p className="text-zinc-500 text-lg mb-4 max-w-lg leading-relaxed">
                             Own a piece of the action with this officially authenticated hand-signed mini helmet. Autographed by star Philadelphia Flyers defenseman Jamie Drysdale. Perfect for collectors and die-hard Flyers fans.
+                        </p>
+                        <p className="text-zinc-500 text-base mb-10 max-w-lg leading-relaxed">
+                            This item was signed on January 16, 2026 at a public signing at Oxford Valley Mall.
                         </p>
 
                         <hr className="border-black/5 mb-10" />

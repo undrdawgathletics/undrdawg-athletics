@@ -63,8 +63,11 @@ export default function JamieDrysdale11x14PhotoPage() {
                             <span className="uppercase tracking-widest text-sm text-black">Authenticated by Dynasty Sports & Framing</span>
                         </div>
 
-                        <p className="text-zinc-500 text-lg mb-10 max-w-lg leading-relaxed">
+                        <p className="text-zinc-500 text-lg mb-4 max-w-lg leading-relaxed">
                             Own a distinct piece of the action with this officially authenticated 11x14 photo. Hand signed by star Philadelphia Flyers defenseman Jamie Drysdale at our exclusive public signing event. Choose your preferred signature color below.
+                        </p>
+                        <p className="text-zinc-500 text-base mb-10 max-w-lg leading-relaxed">
+                            This item was signed on January 16, 2026 at a public signing at Oxford Valley Mall.
                         </p>
 
                         {/* Variants */}
