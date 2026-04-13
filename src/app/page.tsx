@@ -53,7 +53,7 @@ export default function Home() {
 
           {/* Center Logo Area */}
           <div className="flex-1 flex flex-col items-center justify-center z-10 px-4 h-[500px]">
-            <div className="relative h-[480px] w-[480px]">
+            <div className="relative h-[480px] w-[480px] max-w-full mx-auto">
               {/* Fragment 1: Top Left */}
               <div className="absolute inset-0 animate-fragment-1" style={{ clipPath: 'polygon(0 0, 50% 0, 50% 50%, 0 50%)' }}>
                 <Image src="/logo.png" alt="Undrdawg logo" fill className="object-contain" priority />

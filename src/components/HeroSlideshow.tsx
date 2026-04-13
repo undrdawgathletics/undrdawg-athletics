@@ -60,7 +60,7 @@ export default function HeroSlideshow({ images, indexOffset = 0, side }: HeroSli
                                 backgroundImage: `url(${img.src})`,
                                 backgroundSize: "cover",
                                 backgroundPosition: img.objectPosition || "center",
-                                filter: "blur(22px) brightness(0.65) saturate(1.1)",
+                                filter: "blur(16px) brightness(0.7) saturate(1.1)",
                                 transform: "scale(1.2)",
                                 transformOrigin: "center center",
                             }}
