@@ -135,7 +135,11 @@ export default function Home() {
                 For our business and event partners, we offer comprehensive booking and appearance services. We leverage our network to help you secure the right athlete for your specific needs, focusing on building brand equity and enhancing guest engagement. From keynote speaking to brand ambassadorships, Undrdawg Athletics is your partner in creating high-impact professional moments.
               </p>
             </div>
-            <div className="w-full lg:w-[40%] flex justify-center">
+            <div className="w-full lg:w-[40%] flex flex-col items-center text-center gap-6">
+              <div>
+                <h3 className="text-2xl font-bold text-black tracking-tight mb-2">Have Questions?</h3>
+                <p className="text-zinc-500 text-base">Reach out to our team — we&apos;d love to hear from you.</p>
+              </div>
               <Link
                 href="/contact"
                 className="group flex h-16 items-center justify-center gap-3 rounded-full bg-black px-14 text-xl font-bold text-white transition-all hover:bg-zinc-800 shadow-lg hover:shadow-xl active:scale-95 whitespace-nowrap"
