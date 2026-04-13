@@ -6,23 +6,37 @@ import { ArrowRight, Trophy, Users, Calendar, Handshake } from "lucide-react";
 import HeroSlideshow, { SlideshowImage } from "@/components/HeroSlideshow";
 
 const LEFT_IMAGES: SlideshowImage[] = [
-  { src: "/images/slideshow/IMG_6507.jpeg", objectPosition: "center 30%" },
-  { src: "/images/slideshow/392419D6-D028-4AB1-9E05-279BAA72BDC4OFF08509-Enhanced-NR (1).jpeg", objectPosition: "center center", scale: 0.75 },
-  { src: "/images/slideshow/IMG_0206.jpeg", objectPosition: "30% 30%" },
-  { src: "/images/slideshow/IMG_0319.jpeg", objectPosition: "center top" },
-  { src: "/images/slideshow/IMG_0321 copy.jpeg", objectPosition: "center 30%", scale: 0.9 },
-  { src: "/images/slideshow/IMG_0323.jpeg", objectPosition: "center top", scale: 0.9 },
-  { src: "/images/slideshow/IMG_4290 (1).jpeg", objectPosition: "center top" },
+  // Two guys standing (Eagles jersey + black hoodie) — portrait 4:3, fits panel well. Focus on upper body/faces.
+  { src: "/images/slideshow/IMG_6507.jpeg", objectPosition: "center 20%" },
+  // Two guys standing (AMIRI hoodie + Eagles #1 jersey) — landscape, heavy side-crop. Center on both faces.
+  { src: "/images/slideshow/392419D6-D028-4AB1-9E05-279BAA72BDC4OFF08509-Enhanced-NR (1).jpeg", objectPosition: "center 18%" },
+  // Two guys seated at signing table (Undrdawg backdrop) — very wide landscape. Center on faces.
+  { src: "/images/slideshow/IMG_0206.jpeg", objectPosition: "center 38%" },
+  // Two guys standing (checkered background, TKE shirt + red-head) — nearly square, fits well.
+  { src: "/images/slideshow/IMG_0319.jpeg", objectPosition: "center 22%" },
+  // Two guys standing (TKE sweatshirt + black hoodie man) — portrait 4:3, fits great. Keep heads in frame.
+  { src: "/images/slideshow/IMG_0321 copy.jpeg", objectPosition: "center 18%" },
+  // Tall athlete (AMIRI) with young girl in Eagles jacket — portrait-ish, subjects are very tall. Keep heads.
+  { src: "/images/slideshow/IMG_0323.jpeg", objectPosition: "center 12%" },
+  // Jersey signing close-up (Graham #55) — landscape action shot, no standing people. Center the action.
+  { src: "/images/slideshow/IMG_4290 (1).jpeg", objectPosition: "center 30%" },
 ];
 
 const RIGHT_IMAGES: SlideshowImage[] = [
-  { src: "/images/slideshow/IMG_0321.jpeg", objectPosition: "center 30%", scale: 0.9 },
-  { src: "/images/slideshow/IMG_0186 (1) (1).jpeg", objectPosition: "center 25%" },
-  { src: "/images/slideshow/IMG_0318.jpeg", objectPosition: "center top", scale: 0.9 },
-  { src: "/images/slideshow/IMG_0320.jpeg", objectPosition: "center top" },
-  { src: "/images/slideshow/IMG_0322.jpeg", objectPosition: "center center", scale: 0.8 },
-  { src: "/images/slideshow/IMG_0324.jpeg", objectPosition: "center top" },
-  { src: "/images/slideshow/JMF09275.jpg", objectPosition: "center 60%" },
+  // Two guys standing (green #1 jersey + Phillies hat athlete with SB ring) — landscape 3:2. Focus on faces.
+  { src: "/images/slideshow/IMG_0321.jpeg", objectPosition: "center 20%" },
+  // Athlete signing Undrdawg banner at table — landscape, action in center/lower area.
+  { src: "/images/slideshow/IMG_0186 (1) (1).jpeg", objectPosition: "center 35%" },
+  // Two guys standing (AMIRI hoodie + black tee, white backdrop) — landscape ~4:3. Keep heads visible.
+  { src: "/images/slideshow/IMG_0318.jpeg", objectPosition: "center 18%" },
+  // Two guys at checkered backdrop (TKE shirt + shorter guy) — landscape ~4:3. Faces in upper third.
+  { src: "/images/slideshow/IMG_0320.jpeg", objectPosition: "center 22%" },
+  // Three people standing (TKE hoodie, athlete center with ring, TKE tee) — landscape 3:2, 3 subjects.
+  { src: "/images/slideshow/IMG_0322.jpeg", objectPosition: "center 28%" },
+  // Tall athlete with young girl (hoodie glasses) — portrait-ish, very tall subjects. Prioritize heads.
+  { src: "/images/slideshow/IMG_0324.jpeg", objectPosition: "center 10%" },
+  // Athlete signing at table (76ers hat, sideways angle) — landscape 3:2. Subject in center.
+  { src: "/images/slideshow/JMF09275.jpg", objectPosition: "center 45%" },
 ];
 
 export default function Home() {
