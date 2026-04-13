@@ -79,7 +79,7 @@ export default function AboutPage() {
                     <div className="space-y-24">
                         {/* Chris */}
                         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-stretch">
-                            <div className="flex-shrink-0 w-full md:w-80 relative min-h-[400px] md:min-h-0">
+                            <div className="flex-shrink-0 w-full md:w-80 relative aspect-[4/5] min-h-[300px] md:min-h-0 md:aspect-auto overflow-hidden rounded-3xl shadow-md border border-black/5">
                                 <Image
                                     src="/images/about/ChrisHS.jpeg"
                                     alt="Chris Gallelli"
@@ -87,7 +87,7 @@ export default function AboutPage() {
                                     className="object-cover"
                                 />
                             </div>
-                            <div className="flex-1 text-center md:text-left">
+                            <div className="flex-1 text-center md:text-left flex flex-col justify-center">
                                 <h3 className="text-3xl font-black uppercase text-black mb-2">Chris Gallelli</h3>
                                 <p className="text-black font-bold tracking-widest uppercase mb-6">President & CEO</p>
                                 <p className="text-zinc-600 leading-relaxed text-lg">
@@ -98,7 +98,7 @@ export default function AboutPage() {
 
                         {/* Julian */}
                         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-stretch">
-                            <div className="flex-shrink-0 w-full md:w-80 relative min-h-[400px] md:min-h-0">
+                            <div className="flex-shrink-0 w-full md:w-80 relative aspect-[4/5] min-h-[300px] md:min-h-0 md:aspect-auto overflow-hidden rounded-3xl shadow-md border border-black/5">
                                 <Image
                                     src="/images/about/JulianHS.jpeg"
                                     alt="Julian Pittaoulis"
@@ -106,7 +106,7 @@ export default function AboutPage() {
                                     className="object-cover"
                                 />
                             </div>
-                            <div className="flex-1 text-center md:text-left">
+                            <div className="flex-1 text-center md:text-left flex flex-col justify-center">
                                 <h3 className="text-3xl font-black uppercase text-black mb-2">Julian Pittaoulis</h3>
                                 <p className="text-black font-bold tracking-widest uppercase mb-6">Chief Marketing Officer (CMO)</p>
                                 <p className="text-zinc-600 leading-relaxed text-lg">
