@@ -88,7 +88,7 @@ export default function JamieDrysdalePhotoPage() {
 
                         <div className="flex items-center gap-2 text-green-600 font-bold mb-8">
                             <CheckCircle2 size={20} />
-                            <span className="uppercase tracking-widest text-sm text-black">Dynasty Authenticated</span>
+                            <span className="uppercase tracking-widest text-sm text-black">Dynasty Sport & Framing Authenticated</span>
                         </div>
 
                         <p className="text-zinc-500 text-lg mb-10 max-w-lg leading-relaxed">
