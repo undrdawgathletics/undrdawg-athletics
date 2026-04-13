@@ -17,6 +17,27 @@ export const metadata: Metadata = {
     icon: "/favicon.png",
     apple: "/apple-icon.png",
   },
+  openGraph: {
+    title: "Undrdawg Athletics",
+    description: "High-energy, premium e-commerce and booking website for Undrdawg Athletics. Born in Philadelphia.",
+    url: "https://undrdawgathletics.com",
+    siteName: "Undrdawg Athletics",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1024,
+        height: 1024,
+        alt: "Undrdawg Athletics Logo",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Undrdawg Athletics",
+    description: "High-energy, premium e-commerce and booking website for Undrdawg Athletics. Born in Philadelphia.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({
