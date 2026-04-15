@@ -19,27 +19,44 @@ export default function EventsPage() {
 
                 {/* Events Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-                    {/* Coming Soon Card */}
-                    <div className="group relative flex flex-col rounded-[2.5rem] bg-zinc-50 border border-black/5 overflow-hidden transition-all duration-300">
-                        <div className="relative aspect-square w-full bg-zinc-200 flex items-center justify-center">
-                            <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors" />
-                            <span className="text-4xl font-black italic uppercase tracking-tighter text-zinc-300 select-none">Coming Soon</span>
+                    {/* Hugh Douglas Event Card */}
+                    <div className="group relative flex flex-col rounded-[2.5rem] bg-white border border-black/10 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:border-black/20">
+                        <div className="relative aspect-square w-full bg-zinc-200 overflow-hidden flex items-center justify-center">
+                            <span className="text-zinc-400 absolute z-0 text-sm font-medium">Flyer Placeholder</span>
+                            <Image 
+                                src="/events/hugh-douglas/flyer.png" 
+                                alt="Hugh Douglas Meet & Greet Flyer" 
+                                fill 
+                                className="object-cover group-hover:scale-105 transition-transform duration-500 z-10"
+                            />
                         </div>
                         <div className="p-8 flex-1 flex flex-col">
                             <div className="mb-4">
-                                <h3 className="text-2xl font-black italic uppercase tracking-tighter text-zinc-400 mb-1">New Event</h3>
-                                <p className="text-sm font-bold text-zinc-300 uppercase tracking-widest">Public Signing</p>
+                                <h3 className="text-2xl font-black italic uppercase tracking-tighter text-black mb-1">Hugh Douglas</h3>
+                                <p className="text-sm font-bold text-zinc-500 uppercase tracking-widest">Meet & Greet</p>
                             </div>
 
                             <div className="space-y-3 mb-8 flex-1">
-                                <div className="flex items-center gap-3 text-sm text-zinc-300 font-medium">
+                                <div className="flex items-center gap-3 text-sm text-zinc-600 font-medium">
                                     <Calendar size={16} />
-                                    <span>TBA 2026</span>
+                                    <span>May 15, 2026 at 7:00 PM</span>
                                 </div>
-                                <div className="flex items-center gap-3 text-sm text-zinc-300 font-medium">
+                                <div className="flex items-center gap-3 text-sm text-zinc-600 font-medium">
                                     <MapPin size={16} />
-                                    <span>To Be Announced</span>
+                                    <span>Palmisano's Sandwich Shop</span>
                                 </div>
+                            </div>
+
+                            <div className="mt-auto">
+                                <a 
+                                    href="https://events.ticketleap.com/tickets/undrdawg-athletics/hugh-douglas-meet-greet" 
+                                    target="_blank" 
+                                    id="btn-constructor" 
+                                    rel="noreferrer" 
+                                    className="bg-[#00944A] border border-[#00944A] rounded-[22.5rem] text-white hover:bg-[#007a3d] hover:border-[#007a3d] cursor-pointer flex items-center justify-center font-['Helvetica','Arial',sans-serif] text-[0.875rem] font-normal leading-[1.5] w-full py-[10px] px-[20px] text-center no-underline whitespace-nowrap transition-colors duration-150 ease-in-out select-none shadow-sm"
+                                >
+                                    Buy Tickets
+                                </a>
                             </div>
                         </div>
                     </div>
