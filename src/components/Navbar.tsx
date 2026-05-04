@@ -87,30 +87,28 @@ export default function Navbar() {
           </div>
 
           {/* Mobile header controls */}
-          <div className="flex md:hidden items-center flex-1 justify-end ml-2">
-            <div className="flex-1 flex items-center space-x-3 mr-4">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="flex-1 bg-zinc-900 border-2 border-zinc-700 text-white text-sm rounded-full py-2 px-4 focus:outline-none focus:border-white transition-colors placeholder:text-zinc-500"
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    const target = e.target as HTMLInputElement;
-                    if (target.value.trim()) {
-                      setIsOpen(false);
-                      router.push(`/search?q=${encodeURIComponent(target.value)}`);
-                    }
+          <div className="flex md:hidden items-center flex-1 justify-end ml-2 space-x-2">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="flex-1 min-w-0 bg-zinc-900 border-2 border-zinc-700 text-white text-sm rounded-full py-2 px-3 focus:outline-none focus:border-white transition-colors placeholder:text-zinc-500"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  const target = e.target as HTMLInputElement;
+                  if (target.value.trim()) {
+                    setIsOpen(false);
+                    router.push(`/search?q=${encodeURIComponent(target.value)}`);
                   }
-                }}
-              />
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="inline-flex items-center justify-center rounded-md p-2 text-zinc-300 hover:bg-zinc-800 hover:text-white focus:outline-none"
-              >
-                {isOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
-            <Link href="/checkout" className="relative text-zinc-300 hover:text-white transition-colors">
+                }
+              }}
+            />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="flex-shrink-0 inline-flex items-center justify-center rounded-md p-1 text-zinc-300 hover:bg-zinc-800 hover:text-white focus:outline-none"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+            <Link href="/checkout" className="flex-shrink-0 relative text-zinc-300 hover:text-white transition-colors">
               <ShoppingCart size={20} />
               {itemCount > 0 && (
                 <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-cyan-500 text-[10px] font-bold text-black">
