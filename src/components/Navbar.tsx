@@ -87,8 +87,8 @@ export default function Navbar() {
           </div>
 
           {/* Mobile header controls */}
-          <div className="flex md:hidden items-center w-full">
-            <div className="flex-1 flex items-center space-x-2">
+          <div className="flex md:hidden items-center flex-1 justify-end ml-2">
+            <div className="flex-1 flex items-center space-x-3 mr-4">
               <input
                 type="text"
                 placeholder="Search..."
