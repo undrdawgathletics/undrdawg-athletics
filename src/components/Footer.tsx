@@ -4,7 +4,7 @@ import { Instagram, Twitter, Facebook } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="border-t border-black/5 bg-black pt-16 pb-8">
+        <footer className="bg-black pt-16 pb-8">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
                     <div className="col-span-1 md:col-span-2">
@@ -76,7 +76,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div className="mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-xs text-zinc-600">
                         © {new Date().getFullYear()} Undrdawg Athletics. All rights reserved.
                     </p>
