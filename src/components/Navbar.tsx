@@ -22,16 +22,16 @@ export default function Navbar() {
   return (
         <nav className="fixed top-0 z-50 w-full bg-black backdrop-blur-md">
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex h-24 items-center gap-4">
+        <div className="flex h-24 items-center gap-2 md:gap-4">
           {/* Logo - Left Corner & Vertically Centered */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/logo.png"
                 alt="Undrdawg Athletics"
-                width={90}
-                height={90}
-                className="invert brightness-200 object-contain max-h-24 w-auto"
+                width={75}
+                height={75}
+                className="invert brightness-200 object-contain max-h-16 md:max-h-24 w-auto"
                 priority
               />
             </Link>
@@ -91,7 +91,7 @@ export default function Navbar() {
             <input
               type="text"
               placeholder="Search..."
-              className="flex-1 min-w-0 bg-zinc-900 border-2 border-zinc-700 text-white text-sm rounded-full py-2 px-3 focus:outline-none focus:border-white transition-colors placeholder:text-zinc-500"
+              className="flex-1 min-w-0 bg-zinc-900 border border-zinc-700 text-white text-xs rounded-full py-1.5 px-3 focus:outline-none focus:border-white transition-colors placeholder:text-zinc-500"
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
                   const target = e.target as HTMLInputElement;
