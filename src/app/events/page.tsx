@@ -1,6 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-import { Calendar, MapPin, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import EventsTab from "@/components/EventsTab";
 
 export default function EventsPage() {
@@ -17,49 +16,15 @@ export default function EventsPage() {
 
                 <EventsTab />
 
-                {/* Events Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-                    {/* Hugh Douglas Event Card */}
-                    <div className="group relative flex flex-col rounded-[2.5rem] bg-white border border-black/10 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:border-black/20">
-                        <div className="relative aspect-square w-full bg-zinc-200 overflow-hidden flex items-center justify-center">
-                            <span className="text-zinc-400 absolute z-0 text-sm font-medium">Flyer Placeholder</span>
-                            <Image 
-                                src="/events/hugh-douglas/flyer.png" 
-                                alt="Hugh Douglas Meet & Greet Flyer" 
-                                fill 
-                                className="object-cover group-hover:scale-105 transition-transform duration-500 z-10"
-                            />
-                        </div>
-                        <div className="p-8 flex-1 flex flex-col">
-                            <div className="mb-4">
-                                <h3 className="text-2xl font-black italic uppercase tracking-tighter text-black mb-1">Hugh Douglas</h3>
-                                <p className="text-sm font-bold text-zinc-500 uppercase tracking-widest">Meet & Greet</p>
-                            </div>
-
-                            <div className="space-y-3 mb-8 flex-1">
-                                <div className="flex items-center gap-3 text-sm text-zinc-600 font-medium">
-                                    <Calendar size={16} />
-                                    <span>May 15, 2026 at 7:00 PM</span>
-                                </div>
-                                <div className="flex items-center gap-3 text-sm text-zinc-600 font-medium">
-                                    <MapPin size={16} />
-                                    <span>Palmisano's Sandwich Shop</span>
-                                </div>
-                            </div>
-
-                            <div className="mt-auto">
-                                <a 
-                                    href="https://events.ticketleap.com/tickets/undrdawg-athletics/hugh-douglas-meet-greet" 
-                                    target="_blank" 
-                                    id="btn-constructor" 
-                                    rel="noreferrer" 
-                                    className="bg-[#00944A] border border-[#00944A] rounded-[22.5rem] text-white hover:bg-[#007a3d] hover:border-[#007a3d] cursor-pointer flex items-center justify-center font-['Helvetica','Arial',sans-serif] text-[0.875rem] font-normal leading-[1.5] w-full py-[10px] px-[20px] text-center no-underline whitespace-nowrap transition-colors duration-150 ease-in-out select-none shadow-sm"
-                                >
-                                    Buy Tickets
-                                </a>
-                            </div>
-                        </div>
+                {/* Empty state — no upcoming events */}
+                <div className="flex flex-col items-center justify-center py-24 text-center">
+                    <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-zinc-100 border border-black/5">
+                        <ArrowRight size={24} className="text-zinc-400 -rotate-45" />
                     </div>
+                    <h2 className="text-2xl font-black uppercase italic tracking-tighter text-black mb-2">No Upcoming Events</h2>
+                    <p className="text-zinc-500 font-medium max-w-sm">
+                        Check back soon — new signings and appearances are added regularly.
+                    </p>
                 </div>
 
                 {/* Global Experiences CTA */}

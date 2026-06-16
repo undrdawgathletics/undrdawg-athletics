@@ -6,6 +6,7 @@ import Link from "next/link";
 import EventsTab from "@/components/EventsTab";
 
 const FLYERS_ORANGE = "#F74F07";
+const EAGLES_GREEN = "#004C54";
 
 export default function PastEventsPage() {
     return (
@@ -92,6 +93,71 @@ export default function PastEventsPage() {
                         >
                             <span>→ View Event Gallery</span>
                         </Link>
+                    </div>
+                </div>
+
+                {/* Hugh Douglas Card */}
+                <div className="group relative flex flex-col rounded-[2.5rem] bg-zinc-50 border border-black/5 p-8 md:p-10 transition-all overflow-hidden max-w-2xl shadow-sm hover:shadow-md">
+                    {/* Background glow */}
+                    <div
+                        className="absolute top-0 right-0 h-32 w-32 blur-[80px] opacity-10 transition-opacity group-hover:opacity-20"
+                        style={{ backgroundColor: EAGLES_GREEN }}
+                    />
+
+                    {/* Team badge + status */}
+                    <div className="mb-8 flex justify-between items-start relative z-10">
+                        <div
+                            className="rounded-full px-4 py-1.5 text-[10px] font-black uppercase tracking-widest text-white shadow-xl"
+                            style={{ backgroundColor: EAGLES_GREEN }}
+                        >
+                            Philadelphia Eagles
+                        </div>
+                        <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">
+                            COMPLETED
+                        </span>
+                    </div>
+
+                    {/* Athlete name */}
+                    <div className="relative z-10 mb-6">
+                        <h3 className="text-4xl md:text-5xl font-black mb-2 uppercase italic tracking-tighter text-black leading-none whitespace-nowrap">
+                            Hugh Douglas
+                        </h3>
+                    </div>
+
+                    {/* Signature + Photo — blank until assets are available */}
+                    <div className="relative z-10 flex gap-4 mb-4 w-full items-center h-80">
+                        {/* Signature placeholder */}
+                        <div className="relative w-[45%] h-48 flex items-center justify-center bg-zinc-100 rounded-2xl border border-black/5">
+                            <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Signature</span>
+                        </div>
+                        {/* Photo placeholder */}
+                        <div className="relative w-[55%] h-full flex items-center justify-center bg-zinc-100 rounded-2xl border border-black/5">
+                            <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Photo</span>
+                        </div>
+                    </div>
+
+                    {/* Date and Event Type */}
+                    <div className="relative z-10 mb-6 flex flex-wrap items-center gap-3">
+                        <div className="inline-flex items-center gap-3 text-sm font-bold text-white bg-black px-4 py-2 rounded-xl">
+                            <Calendar size={16} />
+                            <span>May 15, 2026</span>
+                        </div>
+                        <div
+                            className="inline-flex items-center gap-3 text-sm font-black text-white px-4 py-2 rounded-xl uppercase tracking-widest"
+                            style={{ backgroundColor: EAGLES_GREEN }}
+                        >
+                            Meet &amp; Greet
+                        </div>
+                    </div>
+
+                    {/* Gallery link — placeholder until gallery is ready */}
+                    <div className="mt-auto pt-6 border-t border-black/5 relative z-10">
+                        <span
+                            className="flex items-center gap-2 text-sm font-black uppercase tracking-widest opacity-30 cursor-not-allowed select-none"
+                            style={{ color: EAGLES_GREEN }}
+                        >
+                            <span>→ Gallery Coming Soon</span>
+                        </span>
                     </div>
                 </div>
             </div>
