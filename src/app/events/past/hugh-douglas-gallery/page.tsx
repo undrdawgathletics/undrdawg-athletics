@@ -7,14 +7,19 @@ import { ChevronLeft, ChevronRight, X, ArrowLeft } from "lucide-react";
 
 const EAGLES_GREEN = "#004C54";
 
-// Placeholder gallery — swap these out once real event photos are provided
 const GALLERY_MEDIA: string[] = [
-    "/images/gallery/hugh-douglas/placeholder-1.jpg",
-    "/images/gallery/hugh-douglas/placeholder-2.jpg",
-    "/images/gallery/hugh-douglas/placeholder-3.jpg",
-    "/images/gallery/hugh-douglas/placeholder-4.jpg",
-    "/images/gallery/hugh-douglas/placeholder-5.jpg",
-    "/images/gallery/hugh-douglas/placeholder-6.jpg",
+    "/images/gallery/hugh-douglas/IMG_0343.JPG",
+    "/images/gallery/hugh-douglas/IMG_0349.JPG",
+    "/images/gallery/hugh-douglas/IMG_0355.JPG",
+    "/images/gallery/hugh-douglas/IMG_0360.JPG",
+    "/images/gallery/hugh-douglas/IMG_0361.JPG",
+    "/images/gallery/hugh-douglas/IMG_0365.JPG",
+    "/images/gallery/hugh-douglas/IMG_0387.JPG",
+    "/images/gallery/hugh-douglas/IMG_0390.JPG",
+    "/images/gallery/hugh-douglas/IMG_0392.JPG",
+    "/images/gallery/hugh-douglas/IMG_0393.JPG",
+    "/images/gallery/hugh-douglas/IMG_0402.JPG",
+    "/images/gallery/hugh-douglas/IMG_0408.JPG",
 ];
 
 const isVideo = (src: string) => src.endsWith(".mov") || src.endsWith(".mp4");
