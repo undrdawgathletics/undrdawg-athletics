@@ -128,14 +128,14 @@ export default function PastEventsPage() {
 
                     {/* Signature + Photo cutout */}
                     <div className="relative z-10 flex gap-4 mb-4 w-full items-center h-80">
-                        {/* Signature — coming soon */}
-                        <div className="relative w-[45%] h-48 flex flex-col items-center justify-center bg-zinc-100 rounded-2xl border-2 border-dashed border-zinc-300">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="mb-2 opacity-30">
-                                <path d="M8 36 Q16 20 24 28 Q32 36 40 12" stroke="#004C54" strokeWidth="3" strokeLinecap="round" fill="none"/>
-                                <path d="M8 40 H40" stroke="#004C54" strokeWidth="1.5" strokeLinecap="round"/>
-                            </svg>
-                            <span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest">Signature</span>
-                            <span className="text-[9px] font-bold text-zinc-300 uppercase tracking-widest mt-0.5">Coming Soon</span>
+                        {/* Signature */}
+                        <div className="relative w-[45%] h-48 flex items-center justify-center overflow-visible z-20">
+                            <Image
+                                src="/images/past-events/hugh-douglas-signature-nobg.png"
+                                alt="Hugh Douglas Signature"
+                                fill
+                                className="object-contain scale-[1.4]"
+                            />
                         </div>
                         {/* Photo cutout */}
                         <div className="relative w-[55%] h-full flex items-end justify-center overflow-visible z-10">
