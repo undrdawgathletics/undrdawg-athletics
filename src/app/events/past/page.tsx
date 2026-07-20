@@ -23,8 +23,10 @@ export default function PastEventsPage() {
                     <EventsTab />
                 </div>
 
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
                 {/* Jamie Drysdale Card */}
-                <div className="group relative flex flex-col rounded-[2.5rem] bg-zinc-50 border border-black/5 p-8 md:p-10 transition-all overflow-hidden max-w-2xl shadow-sm hover:shadow-md">
+                <div className="group relative flex flex-col rounded-[2.5rem] bg-zinc-50 border border-black/5 p-8 md:p-10 transition-all overflow-hidden shadow-sm hover:shadow-md">
                     {/* Background glow */}
                     <div
                         className="absolute top-0 right-0 h-32 w-32 blur-[80px] opacity-10 transition-opacity group-hover:opacity-20"
@@ -97,7 +99,7 @@ export default function PastEventsPage() {
                 </div>
 
                 {/* Hugh Douglas Card */}
-                <div className="group relative flex flex-col rounded-[2.5rem] bg-zinc-50 border border-black/5 p-8 md:p-10 transition-all overflow-hidden max-w-2xl shadow-sm hover:shadow-md">
+                <div className="group relative flex flex-col rounded-[2.5rem] bg-zinc-50 border border-black/5 p-8 md:p-10 transition-all overflow-hidden shadow-sm hover:shadow-md">
                     {/* Background glow */}
                     <div
                         className="absolute top-0 right-0 h-32 w-32 blur-[80px] opacity-10 transition-opacity group-hover:opacity-20"
@@ -172,6 +174,8 @@ export default function PastEventsPage() {
                         </Link>
                     </div>
                 </div>
+
+                </div>{/* end grid */}
             </div>
         </div>
     );
