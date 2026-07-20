@@ -124,15 +124,26 @@ export default function PastEventsPage() {
                         </h3>
                     </div>
 
-                    {/* Signature + Photo — blank until assets are available */}
+                    {/* Signature + Photo cutout — filler until real assets provided */}
                     <div className="relative z-10 flex gap-4 mb-4 w-full items-center h-80">
-                        {/* Signature placeholder */}
-                        <div className="relative w-[45%] h-48 flex items-center justify-center bg-zinc-100 rounded-2xl border border-black/5">
-                            <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Signature</span>
+                        {/* Signature filler */}
+                        <div className="relative w-[45%] h-48 flex flex-col items-center justify-center bg-zinc-100 rounded-2xl border-2 border-dashed border-zinc-300">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="mb-2 opacity-30">
+                                <path d="M8 36 Q16 20 24 28 Q32 36 40 12" stroke="#004C54" strokeWidth="3" strokeLinecap="round" fill="none"/>
+                                <path d="M8 40 H40" stroke="#004C54" strokeWidth="1.5" strokeLinecap="round"/>
+                            </svg>
+                            <span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest">Signature</span>
+                            <span className="text-[9px] font-bold text-zinc-300 uppercase tracking-widest mt-0.5">Coming Soon</span>
                         </div>
-                        {/* Photo placeholder */}
-                        <div className="relative w-[55%] h-full flex items-center justify-center bg-zinc-100 rounded-2xl border border-black/5">
-                            <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Photo</span>
+                        {/* Photo cutout filler */}
+                        <div className="relative w-[55%] h-full flex flex-col items-center justify-end pb-4 bg-gradient-to-b from-zinc-100 to-zinc-200 rounded-2xl border-2 border-dashed border-zinc-300 overflow-hidden">
+                            {/* Silhouette shape */}
+                            <svg viewBox="0 0 120 200" className="absolute bottom-0 w-3/4 opacity-20" fill="#004C54">
+                                <ellipse cx="60" cy="50" rx="30" ry="35" />
+                                <path d="M20 200 Q20 120 60 110 Q100 120 100 200 Z" />
+                            </svg>
+                            <span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest relative z-10">Headshot</span>
+                            <span className="text-[9px] font-bold text-zinc-300 uppercase tracking-widest mt-0.5 relative z-10">Coming Soon</span>
                         </div>
                     </div>
 
@@ -150,14 +161,15 @@ export default function PastEventsPage() {
                         </div>
                     </div>
 
-                    {/* Gallery link — placeholder until gallery is ready */}
+                    {/* Gallery link */}
                     <div className="mt-auto pt-6 border-t border-black/5 relative z-10">
-                        <span
-                            className="flex items-center gap-2 text-sm font-black uppercase tracking-widest opacity-30 cursor-not-allowed select-none"
+                        <Link
+                            href="/events/past/hugh-douglas-gallery"
+                            className="flex items-center gap-2 text-sm font-black uppercase tracking-widest transition-colors hover:opacity-70"
                             style={{ color: EAGLES_GREEN }}
                         >
-                            <span>→ Gallery Coming Soon</span>
-                        </span>
+                            <span>→ View Event Gallery</span>
+                        </Link>
                     </div>
                 </div>
             </div>
