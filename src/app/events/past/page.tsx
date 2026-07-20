@@ -126,9 +126,9 @@ export default function PastEventsPage() {
                         </h3>
                     </div>
 
-                    {/* Signature + Photo cutout — filler until real assets provided */}
+                    {/* Signature + Photo cutout */}
                     <div className="relative z-10 flex gap-4 mb-4 w-full items-center h-80">
-                        {/* Signature filler */}
+                        {/* Signature — coming soon */}
                         <div className="relative w-[45%] h-48 flex flex-col items-center justify-center bg-zinc-100 rounded-2xl border-2 border-dashed border-zinc-300">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="mb-2 opacity-30">
                                 <path d="M8 36 Q16 20 24 28 Q32 36 40 12" stroke="#004C54" strokeWidth="3" strokeLinecap="round" fill="none"/>
@@ -137,15 +137,14 @@ export default function PastEventsPage() {
                             <span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest">Signature</span>
                             <span className="text-[9px] font-bold text-zinc-300 uppercase tracking-widest mt-0.5">Coming Soon</span>
                         </div>
-                        {/* Photo cutout filler */}
-                        <div className="relative w-[55%] h-full flex flex-col items-center justify-end pb-4 bg-gradient-to-b from-zinc-100 to-zinc-200 rounded-2xl border-2 border-dashed border-zinc-300 overflow-hidden">
-                            {/* Silhouette shape */}
-                            <svg viewBox="0 0 120 200" className="absolute bottom-0 w-3/4 opacity-20" fill="#004C54">
-                                <ellipse cx="60" cy="50" rx="30" ry="35" />
-                                <path d="M20 200 Q20 120 60 110 Q100 120 100 200 Z" />
-                            </svg>
-                            <span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest relative z-10">Headshot</span>
-                            <span className="text-[9px] font-bold text-zinc-300 uppercase tracking-widest mt-0.5 relative z-10">Coming Soon</span>
+                        {/* Photo cutout */}
+                        <div className="relative w-[55%] h-full flex items-end justify-center overflow-visible z-10">
+                            <Image
+                                src="/images/past-events/hugh-douglas-nobg.png"
+                                alt="Hugh Douglas"
+                                fill
+                                className="object-contain object-bottom scale-[1.6] translate-x-6 origin-bottom"
+                            />
                         </div>
                     </div>
 
