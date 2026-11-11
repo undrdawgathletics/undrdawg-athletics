@@ -47,7 +47,7 @@ export default function PastEventsPage() {
                     </div>
 
                     {/* Athlete name */}
-                    <div className="relative z-10 mb-6">
+                    <div className="relative z-20 mb-6">
                         <h3 className="text-4xl md:text-5xl font-black mb-2 uppercase italic tracking-tighter text-black leading-none whitespace-nowrap">
                             Jamie Drysdale
                         </h3>
@@ -120,7 +120,7 @@ export default function PastEventsPage() {
                     </div>
 
                     {/* Athlete name */}
-                    <div className="relative z-10 mb-6">
+                    <div className="relative z-20 mb-6">
                         <h3 className="text-4xl md:text-5xl font-black mb-2 uppercase italic tracking-tighter text-black leading-none whitespace-nowrap">
                             Hugh Douglas
                         </h3>
@@ -143,7 +143,7 @@ export default function PastEventsPage() {
                                 src="/images/past-events/hugh-douglas-nobg.png"
                                 alt="Hugh Douglas"
                                 fill
-                                className="object-contain object-bottom scale-[1.6] translate-x-6 origin-bottom"
+                                className="object-contain object-bottom scale-[1.5] translate-x-6 translate-y-2 origin-bottom"
                             />
                         </div>
                     </div>
