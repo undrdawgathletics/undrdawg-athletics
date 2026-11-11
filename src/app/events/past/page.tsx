@@ -143,7 +143,7 @@ export default function PastEventsPage() {
                                 src="/images/past-events/hugh-douglas-nobg.png"
                                 alt="Hugh Douglas"
                                 fill
-                                className="object-contain object-bottom scale-[1.5] translate-x-6 translate-y-2 origin-bottom"
+                                className="object-contain object-bottom scale-[1.65] translate-x-6 translate-y-1 origin-bottom"
                             />
                         </div>
                     </div>
